@@ -1,1 +1,3 @@
-const a = 10
+import { Shopping } from '@/utils/tools'
+
+console.log(Shopping())

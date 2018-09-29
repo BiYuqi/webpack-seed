@@ -16,7 +16,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: '[id].[chunkhash].js'
   },
   plugins: [
-
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, "../index.html"),
+      to: './', // 此处相对于 path: resolve('dist')
+      ignore: ['.*']
+     }])
   ].concat(utils.htmlPlugin())
 })
 

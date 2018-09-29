@@ -12,7 +12,7 @@ function resolve (dir) {
 const webpackConfig = merge(baseWebpackConfig, {
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '..'), // 此处有坑 需要再研究下文档
     publicPath: '/',
     compress: true,
     port: 9000
@@ -24,11 +24,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: '[id].[chunkhash].js'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(__dirname, '../index.html'),
-      inject: true
-    })
+    // new HtmlWebpackPlugin({
+    //   filename: 'index.html',
+    //   template: path.resolve(__dirname, '../index.html'),
+    //   inject: true
+    // })
   ].concat(utils.htmlPlugin())
 })
 

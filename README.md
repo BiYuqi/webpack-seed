@@ -6,6 +6,17 @@
 #### normal(无框架版)
 > 基于webpack多页面
 
-#### Now
+**dev**
+```js
+npm run dev
+```
 
+**build**
+```js
+npm run build
+```
+
+#### Now
+- [x] normal搭建阶段
+- [x] normal未与apicloud整合测试
 - [ ] 搭建阶段
