@@ -12,11 +12,19 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: utils.entries(),
-  output: {
-    path: resolve('html'),
-    publicPath: '/',
-    filename: '[name]/[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js'
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

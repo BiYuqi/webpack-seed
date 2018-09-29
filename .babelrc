@@ -1,3 +1,14 @@
 {
-  "presets": ["env"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["Android >= 4.0", "ios >= 7", "not ie <= 8"]
+        },
+        "useBuiltIns": "usage",
+        "debug": true
+      }
+    ]
+  ]
 }
