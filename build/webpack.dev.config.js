@@ -29,7 +29,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       template: path.resolve(__dirname, '../index.html'),
       inject: true
     })
-  ]
+  ].concat(utils.htmlPlugin())
 })
 
 module.exports = webpackConfig
