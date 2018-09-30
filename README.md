@@ -26,12 +26,12 @@ npm run build
 
 **打包后输出目录**
 
-dist/
-----html
-----image
-----js
-----config.xml
-----index.html
+* dist/
+* ----html
+* ----image
+* ----js
+* ----config.xml
+* ----index.html
 
 **TODO**
 res文件, icon文件等创建.
