@@ -1,6 +1,5 @@
 import { About } from 'utils/tools'
-import about from './about.scss'
-about.use()
+import './about.scss'
 console.log(About())
 
 document.querySelector('.about-btn').addEventListener('click', () => {
