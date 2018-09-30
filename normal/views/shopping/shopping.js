@@ -1,3 +1,3 @@
-import { Shopping } from '@/utils/tools'
+import { Shopping } from 'utils/tools'
 
 console.log(Shopping())

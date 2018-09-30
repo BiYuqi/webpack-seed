@@ -1,3 +1,3 @@
-import { Good } from '@/utils/tools'
+import { Good } from 'utils/tools'
 
 console.log(Good())

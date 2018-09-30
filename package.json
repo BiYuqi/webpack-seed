@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode development --config build/webpack.dev.config",
-    "build": "webpack --mode production --config build/webpack.prod.config.js"
+    "dev": "webpack-dev-server --open --inline --mode development --config build/webpack.dev.config",
+    "build": "webpack --mode production --config build/webpack.prod.config.js",
+    "wifistart": "apicloud wifiStart --port 8686",
+    "wifiupdate": "apicloud wifiSync --project ./index.html --updateAll false --port 8686",
+    "wifiupdateall": "apicloud wifiSync --project ./ --updateAll true --port 8686"
   },
   "repository": {
     "type": "git",
@@ -24,9 +27,19 @@
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
     "glob": "^7.1.3",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9",

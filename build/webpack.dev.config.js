@@ -1,8 +1,7 @@
 const path = require('path')
+const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const utils = require('./utils')
 
 function resolve (dir) {
@@ -10,25 +9,19 @@ function resolve (dir) {
 }
 
 const webpackConfig = merge(baseWebpackConfig, {
+  mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, '..'), // 此处有坑 需要再研究下文档
+    // 此处有坑 需要再研究下文档
+    contentBase: path.join(__dirname, '../'),
     publicPath: '/',
     compress: true,
-    port: 9000
-  },
-  output: {
-    path: resolve('dist'),
-    publicPath: '/',
-    filename: '[name]/[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js'
+    port: 9000,
+    noInfo: true
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: path.resolve(__dirname, '../index.html'),
-    //   inject: true
-    // })
+    // hot replace 热更新需要配置该项
+    new webpack.HotModuleReplacementPlugin()
   ].concat(utils.htmlPlugin())
 })
 

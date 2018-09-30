@@ -3,6 +3,8 @@ const glob = require('glob')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const baseConfig = require('./config.js')
+
 // 普通模式页面配置
 const NORMAL_PAGE_PATH = path.resolve(__dirname, '../normal/views')
 
@@ -28,10 +30,11 @@ exports.htmlPlugin = () => {
     const filename = htmlPath.match(/(\w+)\.html$/)[1]
     let config = {
       template: htmlPath,
-      filename: `${filename}/${filename}.html`,
+      filename: `${baseConfig.build.assetsSubDirectory}/${filename}/${filename}.html`,
       chunks: [
-        'manifest',
+        'commons',
         'vendor',
+        'manifest',
         filename
       ],
       inject: true
@@ -49,4 +52,15 @@ exports.htmlPlugin = () => {
     arrHtml.push(new HtmlWebpackPlugin(config))
   })
   return arrHtml
+}
+/**
+ * 
+ * @param {*} _path
+ */
+exports.assetsPath = function (_path) {
+  const assetsSubDirectory = process.env.NODE_ENV === 'production'
+    ? baseConfig.build.assetsSubDirectory
+    : baseConfig.dev.assetsSubDirectory
+
+  return path.posix.join(assetsSubDirectory, _path)
 }
