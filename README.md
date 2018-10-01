@@ -45,3 +45,4 @@ res文件, icon文件等创建.
 
 ## TODO
 - [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件
+- [ ] 添加ejs模板，进行页面(首尾)复用

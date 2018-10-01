@@ -63,6 +63,11 @@ module.exports = {
           limit: 10000,
           name: 'image/[name].[hash:7].[ext]'
         }
+      },
+      // TODO 后期进行项目改造，复用页面
+      {
+        test: /\.ejs$/,
+        loader: 'ejs-loader'
       }
     ]
   },
