@@ -75,9 +75,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     // 配置项目文件别名
     alias: {
-      '@': resolve('normal'),
-      'assets': resolve('normal/common/assets'),
-      'utils': resolve('normal/common/utils')
+      '@': resolve('src'),
+      'assets': resolve('src/common/assets'),
+      'utils': resolve('src/common/utils')
     }
   }
 }

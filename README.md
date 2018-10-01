@@ -1,9 +1,5 @@
-## 基于webpack工具模块化开发基于apicloud的终端应用
+## 基于webpack工具模块化开发可复用的现代化网站(Without Vue Angular React)
 
-## vue版
-> 基于vue-cli改造
-
-## normal(无框架版)
 > 基于webpack多页面
 
 **dev**
@@ -30,18 +26,15 @@ npm run build
 * ----html
 * ----image
 * ----js
-* ----config.xml
 * ----index.html
 
 **TODO**
-res文件, icon文件等创建.
+index.html 文件重新改造
 
 ## Now
-- [x] normal / 基于webpack搭建项目
-- [x] normal / 公共js自动提取，模块js自动注入所属模块页面
-- [x] normal / 样式编写直接import载入
-- [ ] normal / 未与apicloud整合测试
-- [ ] 基于vue搭建
+- [x] src / 基于webpack搭建项目
+- [x] src / 公共js自动提取，模块js自动注入所属模块页面
+- [x] src / 样式编写直接import载入
 
 ## TODO
 - [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件

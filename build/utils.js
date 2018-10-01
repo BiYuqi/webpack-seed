@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseConfig = require('./config.js')
 
 // 普通模式页面配置
-const NORMAL_PAGE_PATH = path.resolve(__dirname, '../normal/views')
+const NORMAL_PAGE_PATH = path.resolve(__dirname, '../src/views')
 
 /**
  * 多入口配置
