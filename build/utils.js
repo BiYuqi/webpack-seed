@@ -9,13 +9,18 @@ const baseConfig = require('./config.js')
 const NORMAL_PAGE_PATH = path.resolve(__dirname, '../src/views')
 
 /**
+ * 每个模块下 tpl.js 是页面模板入口
+ * 每个模块下 index.js 是业务逻辑入口
+*/
+
+/**
  * 多入口配置
  */
 exports.entries = () => {
-  const entryFiles = glob.sync(NORMAL_PAGE_PATH + '/*/*js')
+  const entryFiles = glob.sync(NORMAL_PAGE_PATH + '/*/index.js')
   const entry = {}
   entryFiles.forEach(filePath => {
-    const fileName = filePath.match(/(\w+)\.js$/)[1]
+    const fileName = filePath.match(/(\w+)\/index.js$/)[1]
     entry[fileName] = filePath
   })
   return entry
@@ -24,10 +29,10 @@ exports.entries = () => {
  * 多页面页面配置
  */
 exports.htmlPlugin = () => {
-  const entryHtml = glob.sync(NORMAL_PAGE_PATH + '/*/*.html')
+  const entryHtml = glob.sync(NORMAL_PAGE_PATH + '/*/tpl.js')
   const arrHtml = []
   entryHtml.forEach(htmlPath => {
-    const filename = htmlPath.match(/(\w+)\.html$/)[1]
+    const filename = htmlPath.match(/(\w+)\/tpl\.js$/)[1]
     let config = {
       template: htmlPath,
       filename: `${baseConfig.build.assetsSubDirectory}/${filename}/${filename}.html`,
@@ -37,7 +42,8 @@ exports.htmlPlugin = () => {
         'manifest',
         filename
       ],
-      inject: true
+      inject: true,
+      xhtml: true
     }
     if (process.env.NODE_ENV === 'production') {
       config = merge(config, {

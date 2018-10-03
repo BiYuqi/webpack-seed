@@ -30,6 +30,22 @@ module.exports = {
           }
         }
       },
+      // 处理页面引入的图片文件
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src', 'link:href']
+          }
+        }
+      },
+      // TODO 后期进行项目改造，复用页面
+      {
+        test: /\.ejs$/,
+        include: resolve('src'),
+        loader: 'ejs-loader'
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -44,17 +60,6 @@ module.exports = {
           }
         ]
       },
-      // 处理页面引入的图片文件
-      {
-        test: /\.(html)$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            //开启link的替换
-            attrs: ['img:src', 'link:href']
-          }
-        }
-      },
       // url-loader 底层是依赖file-loader的
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -63,11 +68,6 @@ module.exports = {
           limit: 10000,
           name: 'image/[name].[hash:7].[ext]'
         }
-      },
-      // TODO 后期进行项目改造，复用页面
-      {
-        test: /\.ejs$/,
-        loader: 'ejs-loader'
       }
     ]
   },
@@ -77,7 +77,8 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       'assets': resolve('src/common/assets'),
-      'utils': resolve('src/common/utils')
+      'utils': resolve('src/common/utils'),
+      'layout': resolve('src/layout/layout.js')
     }
   }
 }
