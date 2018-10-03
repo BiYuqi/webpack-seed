@@ -24,7 +24,7 @@ npm run dev
 ```js
 npm run build
 ```
-## 模块开发规范（Useage
+## 模块开发规范（Useage）
 ```js
 每个页面(模板)都必须包含(基础)以下文件
 index.js（业务逻辑代码入口）
@@ -45,9 +45,9 @@ eg:
 <img src="<%= require('assets/image/demo.png') %>" alt="xxx">
 ```
 * 全部采用模块化开发，**每个模块都是一个文件夹** (开发环境views下创建)
-* 该文件夹包含 **模块模板(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件
+* 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件
 * 各个js功能模块之间互相引用，一律使用ES6语法
-* 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考normal/views/about/about.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
+* 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考src/views/about/about.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
 * 页面(.ejs)--图片引入方式为
 ```html
 assets是webpack resolve配置好的别名，代表assets目录
