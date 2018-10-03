@@ -39,13 +39,13 @@ eg:
         ---- b.js
 都是需要通过ES6规范导出导入
 ```
-* 页面开发跳转页面都是基于绝对路径 **html/模块/模块.html**
+* 页面开发跳转页面都是基于绝对路径 **src/模块/tpl.ejs**
 * 页面引入的图片都是以 **~assets** 开头 代表 **assets文件夹目录**
 * 全部采用模块化开发，**每个模块都是一个文件夹** (开发环境views下创建)
-* 该文件夹包含 **模块名 + 同名js** 打包后会自动注入，无需手动引入js文件
+* 该文件夹包含 **模块模板(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件
 * 各个js功能模块之间互相引用，一律使用ES6语法
 * 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考normal/views/about/about.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
-* 页面(.ejs)图片引入方式为
+* 页面(.ejs)--图片引入方式为
 ```html
 assets是webpack resolve配置好的别名，代表assets目录
 
