@@ -65,8 +65,10 @@ assets是webpack resolve配置好的别名，代表assets目录
 * src/
 * ---common 项目公用资源（图片, 各种工具等）
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
-* ---layout 项目结构模板 (供各个子模块调用，后续可扩展多样化模板)
-* ---views （模块开发文件夹）
+* ---layout 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
+	------------lauout 默认模板
+	.................without-nav-layout [可以添加类似模板] #todo
+* ---views （模块开发文件夹)
 * ------------子模块，各种页面
 
 ## 打包后输出目录
@@ -75,22 +77,23 @@ assets是webpack resolve配置好的别名，代表assets目录
 * ---html
 * ---image
 * ---js
+* ---lib #todo
 * ---index.html
 
-## Now
-- [x] src / 基于webpack搭建项目
-- [x] src / 公共js自动提取，模块js自动注入所属模块页面
-- [x] src / 样式编写直接import载入
-
 ## TODO
-- [x] 添加ejs模板，进行页面(首尾)复用
+- [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
 - [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件
 - [x] 首页页面模板未完成（单独处理打包）
+- [ ] 添加第三方库以链接的方式引入
+- [ ] 添加多样化layout模板支持(示例)
+
+## LONG TODO（基于主分支）
+- [ ] 建立分支web-system（后台管理系统模板）, web-pc (大众网站模板), web-mobile(移动端模板)
 
 ## 实现思路
 
 > utils.js 为js, html入口方法
-
+* ejs目前仅仅是共用(比如header, footer, nav, sidebar)部分整合, 模块开发暂不支持动态数据
 * 每个js就是一个入口
 * 每个入口打包为一个html页面(自动注入相关js)
 * TODO 待有空仔细讲解下具体实现
