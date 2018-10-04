@@ -25,11 +25,12 @@ const webpackConfig = merge(baseWebpackConfig, {
      * 首页的js单独打包进入js文件夹
      * 其他模块跟着自己的模块走
      * 注意：根据name匹配的首页 index
+     * [name]表示entry每一项中的key，用以批量指定生成后文件的名称
+     * https://webpack.js.org/configuration/output/#output-filename
      */
     filename: (bundle) => {
       return bundle.chunk.name === 'index' ? 'js/[name].[chunkhash].js' : utils.assetsPath('[name]/[name].[chunkhash].js')
     },
-    // filename: 'js/[name].[chunkhash].js',
     // 公共模块js单独放一个js文件夹
     chunkFilename: 'js/[name].[id].[chunkhash].js'
   },
