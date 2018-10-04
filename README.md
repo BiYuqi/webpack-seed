@@ -55,14 +55,27 @@ assets是webpack resolve配置好的别名，代表assets目录
 <img src="<%= require('assets/image/demo.png') %>" alt="">
 
 ```
+## 项目目录介绍
+* build/
+* ---config.js 开发，打包基础配置
+* ---utils.js 多入口，多页面基础配置
+* ---webpack.base.config.js 基础配置
+* ---webpack.dev.config.js 开发环境
+* ---webpack.prod.config.js 打包环境
+* src/
+* ---common 项目公用资源（图片, 各种工具等）
+* ---components 项目模板 （复用的页面片段,目前已趋于稳定，细节需调整）
+* ---layout 项目结构模板 (供各个子模块调用，后续可扩展多样化模板)
+* ---views （模块开发文件夹）
+* ------------子模块，各种页面
 
 ## 打包后输出目录
 
 * dist/
-* ----html
-* ----image
-* ----js
-* ----index.html
+* ---html
+* ---image
+* ---js
+* ---index.html
 
 ## Now
 - [x] src / 基于webpack搭建项目
@@ -72,7 +85,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 ## TODO
 - [x] 添加ejs模板，进行页面(首尾)复用
 - [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件
-- [ ] 首页页面模板未完成（单独处理打包
+- [ ] 首页页面模板未完成（单独处理打包）
 
 ## 实现思路
 
