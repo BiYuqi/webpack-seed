@@ -47,7 +47,7 @@ eg:
 * 全部采用模块化开发，**每个模块都是一个文件夹** (开发环境views下创建)
 * 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件
 * 各个js功能模块之间互相引用，一律使用ES6语法
-* 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考src/views/about/about.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
+* 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考src/views/about/index.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
 * 页面(.ejs)--图片引入方式为
 ```html
 assets是webpack resolve配置好的别名，代表assets目录
@@ -64,7 +64,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 * ---webpack.prod.config.js 打包环境
 * src/
 * ---common 项目公用资源（图片, 各种工具等）
-* ---components 项目模板 （复用的页面片段,目前已趋于稳定，细节需调整）
+* ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout 项目结构模板 (供各个子模块调用，后续可扩展多样化模板)
 * ---views （模块开发文件夹）
 * ------------子模块，各种页面
@@ -85,7 +85,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 ## TODO
 - [x] 添加ejs模板，进行页面(首尾)复用
 - [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件
-- [ ] 首页页面模板未完成（单独处理打包）
+- [x] 首页页面模板未完成（单独处理打包）
 
 ## 实现思路
 
