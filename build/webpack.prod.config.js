@@ -20,8 +20,16 @@ const webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: resolve('dist'),
     publicPath: '/',
-    // 模块的js打包后跟着模块走
-    filename: utils.assetsPath('[name]/[name].[chunkhash].js'),
+    /**
+     * 模块的js打包后跟着模块走
+     * 首页的js单独打包进入js文件夹
+     * 其他模块跟着自己的模块走
+     * 注意：根据name匹配的首页 index
+     */
+    filename: (bundle) => {
+      return bundle.chunk.name === 'index' ? 'js/[name].[chunkhash].js' : utils.assetsPath('[name]/[name].[chunkhash].js')
+    },
+    // filename: 'js/[name].[chunkhash].js',
     // 公共模块js单独放一个js文件夹
     chunkFilename: 'js/[name].[id].[chunkhash].js'
   },

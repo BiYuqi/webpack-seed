@@ -5,8 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./config.js')
 
-// 普通模式页面配置
+// 页面模块路径
 const NORMAL_PAGE_PATH = path.resolve(__dirname, '../src/views')
+
+// 页面逻辑名称 默认index.js
+const STATIC_JS_NAME = 'index'
+
+// 页面模板默认名称 默认tpl.ejs
+const STATIC_TEMPLATE_NAME = 'tpl'
 
 /**
  * 每个模块下 tpl.js 是页面模板入口
@@ -17,10 +23,11 @@ const NORMAL_PAGE_PATH = path.resolve(__dirname, '../src/views')
  * 多入口配置
  */
 exports.entries = () => {
-  const entryFiles = glob.sync(NORMAL_PAGE_PATH + '/*/index.js')
+  const entryFiles = glob.sync(NORMAL_PAGE_PATH + `/*/${STATIC_JS_NAME}.js`)
   const entry = {}
   entryFiles.forEach(filePath => {
-    const fileName = filePath.match(/(\w+)\/index.js$/)[1]
+    const fileNameReg = new RegExp(`(\\w+)\/${STATIC_JS_NAME}.js$`)
+    const fileName = filePath.match(fileNameReg)[1]
     entry[fileName] = filePath
   })
   return entry
@@ -29,13 +36,14 @@ exports.entries = () => {
  * 多页面页面配置
  */
 exports.htmlPlugin = () => {
-  const entryHtml = glob.sync(NORMAL_PAGE_PATH + '/*/tpl.js')
+  const entryHtml = glob.sync(NORMAL_PAGE_PATH + `/*/${STATIC_TEMPLATE_NAME}.js`)
   const arrHtml = []
   entryHtml.forEach(htmlPath => {
-    const filename = htmlPath.match(/(\w+)\/tpl\.js$/)[1]
+    const htmlReg = new RegExp(`(\\w+)\/${STATIC_TEMPLATE_NAME}\.js$`)
+    const filename = htmlPath.match(htmlReg)[1]
     let config = {
       template: htmlPath,
-      filename: `${baseConfig.build.assetsSubDirectory}/${filename}/${filename}.html`,
+      filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}/${filename}.html`,
       chunks: [
         'commons',
         'vendor',
