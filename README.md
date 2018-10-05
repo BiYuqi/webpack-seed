@@ -13,7 +13,7 @@
 
 ## 基于webpack工具模块化开发可复用的现代化网站(Without Vue Angular React)
 
-> 基于webpack4.x babel7 的多页面脚手架
+> 基于webpack4.2x babel7.1x 的多页面脚手架
 
 ## 本地开发(dev)
 ```js
@@ -25,30 +25,30 @@ npm run dev
 npm run build
 ```
 ## 模块开发规范（Useage）
+**import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
 ```js
-每个页面(模板)都必须包含(基础)以下文件
-index.js（业务逻辑代码入口）
-tpl.js (模板拼装入口)
-模块名.ejs (页面模板入口)
+// 每个页面(模板)都必须包含(基础)以下文件
+index.js //（业务逻辑代码入口）
+tpl.js // (模板拼装入口)
+模块名.ejs // (页面编写入口)
 
-...以下可根据自己需要添加...
-模块下可以建立文件目录用来填写业务代码,上述只是基础规范，扩展性比较强
+
+/**
+ * 以下可根据自己需要添加
+ * 模块下可以建立文件目录用来填写业务代码,上述只是基础规范，扩展性比较强
+ * /
 eg:
   aboutCommponet
         ---- a.js
         ---- b.js
 都是需要通过ES6规范导出导入
 ```
-* 页面开发跳转页面都是基于绝对路径 **src/模块/tpl.ejs**
-* 页面引入的图片都是以ejs模板编写，assets代表 **assets文件夹目录**
-```html
-<img src="<%= require('assets/image/demo.png') %>" alt="xxx">
-```
-* 全部采用模块化开发，**每个模块都是一个文件夹** (开发环境views下创建)
-* 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件
+* 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块/模块.html** [具体请看首页跳转链接编写方式](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
+* 全部采用模块化开发，**每个模块都是一个文件夹** [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views) (开发环境views下创建)
+* 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件 [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views/about)
 * 各个js功能模块之间互相引用，一律使用ES6语法
-* 样式编写基于各模块入口js直接 **import '样式地址 '** 具体可参考src/views/about/index.js **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
-* 页面(.ejs)--图片引入方式为
+* 样式编写基于各模块入口js直接 **import '样式地址 '** [参考](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L2) 
+* 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/webpack.base.config.js#L74)
 ```html
 assets是webpack resolve配置好的别名，代表assets目录
 
@@ -65,11 +65,11 @@ assets是webpack resolve配置好的别名，代表assets目录
 * src/
 * ---common 项目公用资源（图片, 各种工具等）
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
-* ---layout 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
-* ------------layout 默认模板
-* ------------without-nav-layout [可以添加类似模板] #todo
+* ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
+* ----------------layout 默认模板（header+footer）
+* ----------------without-nav-layout [可以添加类似模板] #todo
 * ---views （模块开发文件夹)
-* ------------子模块，各种页面
+* ----------------子模块，各种模块页面
 
 ## 打包后输出目录
 
