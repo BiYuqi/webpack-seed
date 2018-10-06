@@ -43,7 +43,7 @@ eg:
         ---- b.js
 都是需要通过ES6规范导出导入
 ```
-* 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块/模块.html** [具体请看首页跳转链接编写方式](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
+* 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块/模块.html** [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
 * 全部采用模块化开发，**每个模块都是一个文件夹** [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views) (开发环境views下创建)
 * 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件 [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views/about)
 * 各个js功能模块之间互相引用，一律使用ES6语法
@@ -69,7 +69,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
 * ----------------layout-without-nav [可以添加类似模板] #todo
-* ---views （模块开发文件夹)
+* ---views/ （模块开发文件夹)
 * ----------------子模块，各种模块页面
 * ---vendor/ 第三方库存放在此
 
@@ -83,7 +83,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 * ---index.html
 
 ## TODO
-- [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
+- [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
 - [ ] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（待解决）
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
@@ -100,6 +100,10 @@ assets是webpack resolve配置好的别名，代表assets目录
 * 每个js就是一个入口
 * 每个入口打包为一个html页面(自动注入相关js)
 * TODO 待有空仔细讲解下具体实现
+
+## 更新：
+2018.10.07
+* 修改打包后js输出路径，原有js跟着页面文件夹打包后在一起, 现在统一打包到dist/js目录下, 理由是页面script 展示好看...算是优化项
 ## 参考(感谢)
 
 本脚手架开发中，ejs模板渲染实现这块参考了[webpack-seed](https://github.com/Array-Huang/webpack-seed), 特此备注
