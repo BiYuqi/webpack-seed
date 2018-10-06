@@ -56,14 +56,14 @@ assets是webpack resolve配置好的别名，代表assets目录
 
 ```
 ## 项目目录介绍
-* build/
+* **build/
 * ---config.js 开发，打包基础配置
 * ---utils.js 多入口，多页面基础配置
-* ---libs.js 第三库自动渲染到页面 [componets/footer.ejs 引入](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs)
+* ---libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs)
 * ---webpack.base.config.js 基础配置
 * ---webpack.dev.config.js 开发环境
 * ---webpack.prod.config.js 打包环境
-* src/
+* **src/**
 * ---common 项目公用资源（图片, 各种工具等）
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
@@ -71,7 +71,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 * ----------------layout-without-nav [可以添加类似模板] #todo
 * ---views （模块开发文件夹)
 * ----------------子模块，各种模块页面
-* ---vendor 第三方库
+* ---vendor/ 第三方库存放在此
 
 ## 打包后输出目录
 
@@ -84,10 +84,11 @@ assets是webpack resolve配置好的别名，代表assets目录
 
 ## TODO
 - [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
-- [ ] webpack 4.X mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件
+- [ ] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（待解决）
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
 - [ ] 添加多样化layout模板支持(示例)
+- [ ] 增加ESLint代码校验
 
 ## LONG TODO（基于主分支）
 - [ ] 建立分支web-system（后台管理系统模板）, web-pc (大众网站模板), web-mobile(移动端模板)
