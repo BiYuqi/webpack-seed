@@ -78,7 +78,8 @@ module.exports = {
       '@': resolve('src'),
       'assets': resolve('src/common/assets'),
       'utils': resolve('src/common/utils'),
-      'layout': resolve('src/layout')
+      'layout': resolve('src/layout'),
+      'build': resolve('build')
     }
   }
 }

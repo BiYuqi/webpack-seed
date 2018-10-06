@@ -82,15 +82,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
-    }),
-
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, "../index.html"),
-      // 此处相对于 path: resolve('dist')
-      to: './',
-      ignore: ['.*']
-    }])
-
+    })
   ].concat(utils.htmlPlugin())
 })
 
