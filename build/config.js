@@ -6,15 +6,13 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'html',
     assetsPublicPath: '/',
-    port: 8080,
+    port: 9000,
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false,
   },
   build: {
-    // Template for index.html 暂未用到
-    index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'html',
     assetsPublicPath: '/',

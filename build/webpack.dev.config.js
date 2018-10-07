@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const utils = require('./utils')
+const config = require('./config.js')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -16,7 +17,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     contentBase: path.join(__dirname, '../dist/index.html'),
     publicPath: '/',
     compress: true,
-    port: 9000,
+    port: config.dev.port,
     noInfo: true
   },
   plugins: [

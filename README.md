@@ -59,7 +59,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 * **build/
 * ---config.js 开发，打包基础配置
 * ---utils.js 多入口，多页面基础配置
-* ---libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs)
+* ---libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/build/libs.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
 * ---webpack.base.config.js 基础配置
 * ---webpack.dev.config.js 开发环境
 * ---webpack.prod.config.js 打包环境
@@ -103,7 +103,7 @@ assets是webpack resolve配置好的别名，代表assets目录
 
 ## 更新：
 2018.10.07
-* 修改打包后js输出路径，原有js跟着页面文件夹打包后在一起, 现在统一打包到dist/js目录下, 理由是页面script 展示好看...算是优化项
+* 修改打包后js输出路径，原有js跟着页面文件夹打包后在一起, 现在统一打包到dist/js目录下, 理由是页面script 展示好看...属于优化项
 ## 参考(感谢)
 
 本脚手架开发中，ejs模板渲染实现这块参考了[webpack-seed](https://github.com/Array-Huang/webpack-seed), 特此备注
