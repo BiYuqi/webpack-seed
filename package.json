@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --inline --mode development --config build/webpack.dev.config",
-    "build": "webpack --mode production --config build/webpack.prod.config.js",
-    "wifistart": "apicloud wifiStart --port 8686",
-    "wifiupdate": "apicloud wifiSync --project ./index.html --updateAll false --port 8686",
-    "wifiupdateall": "apicloud wifiSync --project ./ --updateAll true --port 8686"
+    "build": "webpack --mode production --config build/webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
