@@ -13,7 +13,6 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    // 此处有坑 需要再研究下文档
     contentBase: path.join(__dirname, '../dist/index.html'),
     publicPath: '/',
     compress: true,
