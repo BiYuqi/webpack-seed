@@ -7,5 +7,9 @@
   <title>
     <% if (pageTitle) { %> <%= pageTitle %> - <% }  %> LoadingMore
   </title>
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="<%= STATIC_BUILD.js.html5shive %>"></script>
+    <script type="text/javascript" src="<%= STATIC_BUILD.js.respond %>"></script>
+  <![endif]-->
 </head>
 <body>

@@ -6,7 +6,9 @@
 const BUILD_STATIC_FILES = {
   STATIC_BUILD: {
     js: {
-      jquery: require('!!file-loader?name=libs/js/[name].[ext]!../src/vendor/jquery-3.3.1.min.js')
+      jquery: require('!!file-loader?name=libs/js/[name].[ext]!../src/vendor/jquery-3.3.1.min.js'),
+      html5shive: require('!!file-loader?name=libs/js/[name].[ext]!../src/vendor/html5shiv.min.js'),
+      respond: require('!!file-loader?name=libs/js/[name].[ext]!../src/vendor/respond.min.js')
     }
   }
 }
