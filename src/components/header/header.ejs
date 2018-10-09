@@ -11,5 +11,35 @@
     <script type="text/javascript" src="<%= STATIC_BUILD.js.html5shive %>"></script>
     <script type="text/javascript" src="<%= STATIC_BUILD.js.respond %>"></script>
   <![endif]-->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .web-ejs-wrap {
+      min-height: 100%;
+    }
+    .web-ejs-inside {
+      padding-bottom: 50px;
+    }
+    .web-ejs-inside .header{
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      background-color: beige;
+    }
+    .footer {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin-top: -50px;
+      background-color: beige;
+    }
+  </style>
 </head>
 <body>
+    <div class="web-ejs-wrap">
+        <div class="web-ejs-inside">
+          <header class="header">
+              Header
+          </header>

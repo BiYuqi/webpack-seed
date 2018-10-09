@@ -20,7 +20,6 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "@babel/preset-stage-2": "^7.0.0",
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.19",
