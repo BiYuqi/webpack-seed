@@ -15,6 +15,17 @@
 
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站(Without Vue Angular React)
 
+
+## 特性 （Feature）
+
+- 支持前后端分离开发
+- 配置完整的打包方案
+- 支持本地开发热更新
+- 集成代码风格校验Eslint
+- ES6编写源码，编译生成生产代码
+- 开发(生产)环境代码自动注入页面, 专注于开发
+- 编译后的程序不依赖于外部的资源, 可放到CDN
+
 ## 使用指南 （Usage）
 
 下载使用
@@ -35,13 +46,6 @@ npm run dev
 ```js
 npm run build
 ```
-
-## 特性 （Feature）
-- ES6编写源码，编译生成生产代码
-- 开发环境代码自动注入页面
-- 集成代码风格校验eslint
-- 支持本地开发热更新
-- 完备的打包方案
 
 ## 开发规范 （Standard）
 **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
