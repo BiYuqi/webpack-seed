@@ -1,0 +1,28 @@
+language: node_js
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_script:
+  - cd ./dist
+  - git init 
+  - git config user.name "BiYuqi"
+  - git config user.email "biyuqiwan@163.com"
+  - git add .
+  - git commit -m "Deployed by travis-ci"
+  - git push --force --quiet "https://${WEBPACK_SEED}@${GH_REF}" master:gh-pages
+
+branches:
+  only:
+    - master
+env:
+ global:
+   - GH_REF: github.com/BiYuqi/webpack-seed.git
