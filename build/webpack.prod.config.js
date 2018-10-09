@@ -17,7 +17,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
     path: resolve('dist'),
-    publicPath: '/',
+    publicPath: './',
     /**
      * 该方案页面路径显示不友好 暂不采取2018.10.07 00:07
      * 模块的js打包后跟着模块走
