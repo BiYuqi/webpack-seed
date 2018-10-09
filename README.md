@@ -78,7 +78,7 @@ eg:
 * ---webpack.prod.config.js 打包环境
 * **src/**
 * ---common/ 项目公用资源（图片, 各种工具等）
-* ----------------libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/build/libs.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
+* ----------------libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
