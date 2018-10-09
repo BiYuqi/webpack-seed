@@ -67,7 +67,7 @@ eg:
         ---- b.js 业务b代码
 都是需要通过ES6规范导出导入
 ```
-* 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块/模块.html** [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
+* 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块.html** [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
 * 全部采用模块化开发，**每个模块都是一个文件夹** [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views) (开发环境views下创建)
 * 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件 [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views/about)
 * 各个js功能模块之间互相引用，一律使用ES6语法
