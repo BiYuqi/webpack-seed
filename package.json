@@ -1,5 +1,5 @@
 {
-  "name": "apicloud-seed",
+  "name": "webpack-seed",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BiYuqi/apicloud-seed.git"
+    "url": "git+https://github.com/BiYuqi/webpack-seed.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "BiYuqi",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BiYuqi/apicloud-seed/issues"
+    "url": "https://github.com/BiYuqi/webpack-seed/issues"
   },
-  "homepage": "https://github.com/BiYuqi/apicloud-seed#readme",
+  "homepage": "https://github.com/BiYuqi/webpack-seed#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",

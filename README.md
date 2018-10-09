@@ -17,6 +17,15 @@
 
 ## 使用指南 （Usage）
 
+下载使用
+```js
+git clone https://github.com/BiYuqi/webpack-seed.git
+
+cd webpack-seed
+
+npm install
+```
+
 本地开发(dev)
 ```js
 npm run dev
