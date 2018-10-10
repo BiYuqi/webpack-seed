@@ -2,12 +2,23 @@ const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const utils = require('./utils')
+const config = require('./config')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
+
+const webpackEslintRule = () => ({
+  test: /\.js$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: resolve('src'),
+  options: {
+    formatter: require('eslint-friendly-formatter')
+  }
+})
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -19,6 +30,7 @@ module.exports = {
   },
   module: {
     rules: [
+      ...(config.dev.useEslint ? [webpackEslintRule()] : []),
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,

@@ -11,6 +11,7 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false,
+    useEslint: true
   },
   build: {
     assetsRoot: path.resolve(__dirname, '../dist'),
