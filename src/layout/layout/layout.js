@@ -1,6 +1,7 @@
 const layout = require('./layout.ejs')
 const header = require('@/components/header/header.ejs')
 const footer = require('@/components/footer/footer.ejs')
+const navBar = require('@/components/nav-bar/nav-bar.ejs')
 // 第三方库静态地址变量--->注入模板
 const STATIC_FILE = require('@/common/libs/libs.js')
 
@@ -19,6 +20,7 @@ const moduleExports = {
     const renderData = {
       header: header(componentBaseData),
       footer: footer(componentBaseData),
+      navBar: navBar(componentBaseData),
       content
     }
     return layout(renderData)
