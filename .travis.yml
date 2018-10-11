@@ -9,7 +9,10 @@ install:
   - npm install
 
 script:
-  - npm run build
+  # 为了能在git-pages预览 单独发布带有二级域名的包
+  - npm run build:git
+  # 默认(大部分)
+  # - npm run build
 
 after_script:
   - cd ./dist

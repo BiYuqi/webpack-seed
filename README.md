@@ -49,10 +49,16 @@ npm run dev
 * 例如，如果你的应用被部署在 https://www.my-app.com/my-app/
 * 则设置 webpack的output.publicPath 为 /my-app/
 * 本项目由于需要临时部署在git-pages预览 所以改配置临时改为/webpack-seed/
-
-* **请自行配置build/config.js build对象下的assetsPublicPath,改为assetsPublicPath: '/'**
+* 普通打包(大部分) npm run build 默认 '/'
+* 该命令具体请看package.json scripts命令配置
+* [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L30)
+* [package.json > scripts](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
 ```js
+// 普通打包(大部分) npm run build publicPath默认 '/'
 npm run build
+
+// 打包时 npm run build:git 该命令会打包的路径会自动带上github项目地址/webpack-seed/, 方便本项目预览
+npm run build:git
 
 ```
 
@@ -111,11 +117,12 @@ eg:
 
 
 ## 输出目录 （Output）
-
+[查看输出](https://github.com/BiYuqi/webpack-seed/tree/gh-pages)
 * dist/
 * ---html
 * ---image
 * ---media
+* ---css
 * ---js
 * ---lib
 * ---index.html
@@ -125,11 +132,11 @@ eg:
 
 ## TODO
 - [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
-- [ ] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（待解决）
+- [x] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（已解决）
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
 - [ ] 添加多样化layout模板支持(示例)
-- [ ] 增加ESLint代码校验
+- [x] 增加ESLint代码校验
 
 ## LONG TODO（Base on master）
 - [ ] 建立分支web-system（后台管理系统模板）, web-pc (大众网站模板), web-mobile(移动端模板)
@@ -144,6 +151,8 @@ eg:
 * TODO 待有空仔细讲解下具体实现
 
 ## 更新日志 (Update log)
+2018.10.11
+* 单独抽离css样式问题修复
 
 2018.10.07
 * 修改打包后js输出路径，原有js跟着页面文件夹打包后在一起, 现在统一打包到dist/js目录下, 理由是页面script 展示好看...属于优化项

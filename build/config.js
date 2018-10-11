@@ -24,10 +24,11 @@ module.exports = {
      * 则设置 baseUrl 为 /my-app/
      * @desc
      * 由于需要部署在git-pages 所以改配置临时改为/webpack-seed/
-     * 默认为 /
     */
-    // assetsPublicPath: '/',
-    assetsPublicPath: '/webpack-seed/',
+    // 打包时 npm run build:git 该命令会打包的路径会自动带上项目地址/webpack-seed/
+    // 普通打包(大部分) npm run build 默认 '/'
+    // 该命令具体请看package.json scripts命令配置
+    assetsPublicPath: process.env.env_config === 'git' ? '/webpack-seed/' : '/',
     productionSourceMap: false,
     devtool: '#source-map'
   }
