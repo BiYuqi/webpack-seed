@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
@@ -17,7 +17,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
     path: resolve('dist'),
-    publicPath: '/',
+    publicPath: '/webpack-seed/',
     /**
      * 该方案页面路径显示不友好 暂不采取2018.10.07 00:07
      * 模块的js打包后跟着模块走
@@ -39,8 +39,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       cacheGroups: {
         // 复用的文件，单独抽离 后续再优化此配置
         commons: {
-          name: "commons",
-          chunks: "all", 
+          name: 'commons',
+          chunks: 'all', 
           minChunks: 2,
           minSize: 1,
           priority: 0 

@@ -22,9 +22,7 @@ after_script:
 
 branches:
   only:
-  # 暂时关闭travis-ci自动部署，因为gitpage有二级目录，导致部署后警台资源路径不对
-  # 等后续脚手架开发稳定后，单独开分支做预览
-    - feature
+    - master
 env:
  global:
    - GH_REF: github.com/BiYuqi/webpack-seed.git
