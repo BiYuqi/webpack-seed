@@ -8,9 +8,13 @@
 	<a href="https://babeljs.io/">
 		<img src="https://img.shields.io/badge/babel-7.1.2-brightgreen.svg" alt="babel">
 	</a>
+  <a href="https://github.com/BiYuqi/webpack-seed/tree/gh-pages">
+    <img src="https://img.shields.io/travis/BiYuqi/webpack-seed.svg">
+  </a>
   <a href="https://github.com/BiYuqi/webpack-seed/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   </a>
+  
 </p>
 
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站(Without Vue Angular React)
