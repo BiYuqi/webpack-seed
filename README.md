@@ -32,7 +32,7 @@
 
 ## 使用指南 （Usage）
 
-下载使用
+**下载使用**
 ```js
 git clone https://github.com/BiYuqi/webpack-seed.git
 
@@ -41,12 +41,12 @@ cd webpack-seed
 npm install
 ```
 
-本地开发(dev)
+**本地开发(dev)**
 ```js
 npm run dev
 ```
 
-打包(build)
+**打包(build)**
 
 * 默认情况下，该配置方案假设你的应用是被部署在一个域名的根路径上例如 https://www.my-app.com/
 * 如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径
@@ -61,10 +61,12 @@ npm run dev
 // 普通打包(大部分) npm run build publicPath默认 '/'
 npm run build
 
-// 打包时 npm run build:git 该命令会打包的路径会自动带上github项目地址/webpack-seed/, 方便本项目预览
+// 打包时 npm run build:git 该命令会打包的路径会自动带上github项目地址/webpack-seed/
+//(当发布环境不是服务器根路径，都可以采用该方案，只需更改路径名称即可，本项目二级路径为webpack-seed)
 npm run build:git
 
 ```
+[预览](https://loadingmore.com/webpack-seed)
 
 ## 开发规范 （Standard）
 **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
