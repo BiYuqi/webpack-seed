@@ -1,6 +1,8 @@
 'use strict'
 
 const path = require('path')
+// 输出路径
+const BUILD_PATH = process.env.env_config === 'git' ? '/webpack-seed/' : '/'
 module.exports = {
   dev: {
     // Paths
@@ -28,7 +30,7 @@ module.exports = {
     // 打包时 npm run build:git 该命令会打包的路径会自动带上项目地址/webpack-seed/
     // 普通打包(大部分) npm run build 默认 '/'
     // 该命令具体请看package.json scripts命令配置
-    assetsPublicPath: process.env.env_config === 'git' ? '/webpack-seed/' : '/',
+    assetsPublicPath: BUILD_PATH,
     productionSourceMap: false,
     devtool: '#source-map'
   }

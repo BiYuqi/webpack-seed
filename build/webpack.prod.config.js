@@ -3,12 +3,13 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const utils = require('./utils.js')
-
+const config = require('./config')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -17,7 +18,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
     path: resolve('dist'),
-    publicPath: '/webpack-seed/',
+    publicPath: config.build.assetsPublicPath,
     /**
      * 该方案页面路径显示不友好 暂不采取2018.10.07 00:07
      * 模块的js打包后跟着模块走
@@ -82,8 +83,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
-    })
+    }),
+
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../src/common/assets/image/favicon.ico'),
+      to: './',
+      ignore: ['.*']
+    }])
   ].concat(utils.htmlPlugin())
 })
-
+console.log(process.env.env_config === 'git')
 module.exports = webpackConfig
