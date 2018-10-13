@@ -56,7 +56,8 @@ npm run dev
 * 普通打包(大部分) npm run build 默认 '/'
 * 该命令具体请看package.json scripts命令配置
 * [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L30)
-* [package.json > scripts](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
+* [scripts命令配置](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
+* [预览](https://loadingmore.com/webpack-seed)
 ```js
 // 普通打包(大部分) npm run build publicPath默认 '/'
 npm run build
@@ -66,7 +67,6 @@ npm run build
 npm run build:git
 
 ```
-[预览](https://loadingmore.com/webpack-seed)
 
 ## 开发规范 （Standard）
 **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
@@ -95,12 +95,11 @@ eg:
 * 样式编写基于各模块入口js直接 **import '样式地址 '** [参考](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L2) 
 * 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/webpack.base.config.js#L74)
 
-**assets是webpack resolve配置好的别名，代表assets目录**
+* **assets是webpack resolve配置好的别名，代表assets目录**
 ```html
-
 <img src="<%= require('assets/image/demo.png') %>" alt="">
-
 ```
+* 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/nav-bar/nav-bar.ejs)
 
 ## 目录介绍 （Introduction）
 
