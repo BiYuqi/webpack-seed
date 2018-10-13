@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "autoprefixer": "^9.1.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
@@ -39,6 +40,7 @@
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
@@ -51,5 +53,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

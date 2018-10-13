@@ -1,5 +1,5 @@
 const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const utils = require('./utils')
 const config = require('./config')
@@ -68,6 +68,9 @@ module.exports = {
           },
           {
             loader: 'sass-loader'
+          },
+          {
+            loader: 'postcss-loader'
           }
         ]
       },
