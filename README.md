@@ -94,7 +94,7 @@ eg:
 * 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件 [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views/about)
 * 各个js功能模块之间互相引用，一律使用ES6语法
 * 样式编写基于各模块入口js直接 **import '样式地址 '** [参考](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L2) 
-* 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/webpack.base.config.js#L74)
+* 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/about.ejs#L6)
 
 * **assets是webpack resolve配置好的别名，代表assets目录**
 ```html
@@ -141,8 +141,10 @@ eg:
 - [x] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（已解决）
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
-- [ ] 添加多样化layout模板支持(示例)
 - [x] 增加ESLint代码校验
+- [ ] 添加多样化layout模板支持(示例)
+- [ ] 添加完整网站demo示例
+- [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）
 - [ ] 建立分支web-system（后台管理系统模板）, web-pc (大众网站模板), web-mobile(移动端模板)
