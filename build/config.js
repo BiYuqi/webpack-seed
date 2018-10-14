@@ -2,6 +2,8 @@
 
 const path = require('path')
 // 输出路径
+// 默认 '/'根目录
+// 有需要二级目录的可在此配置
 const BUILD_PATH = process.env.env_config === 'git' ? '/webpack-seed/' : '/'
 module.exports = {
   dev: {

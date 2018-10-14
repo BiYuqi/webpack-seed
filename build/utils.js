@@ -44,7 +44,6 @@ exports.htmlPlugin = () => {
     let config = {
       template: htmlPath,
       filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
-      // 部署到git pages 时由于有二级目录, 导致引入资源路径问题暂无法解决 2018.10.09 13:29
       // filename: `${filename}.html`,
       chunks: [
         'commons',
