@@ -1,4 +1,6 @@
     <footer class="footer">Footer</footer>
-    <script type="text/javascript" src="<%= STATIC_BUILD.js.jquery %>"></script>
+    <% for(var i in STATIC_BUILD.js){ %>
+      <script type="text/javascript" src="<%= STATIC_BUILD.js[i] %>"></script>
+    <% } %>
   </body>
 </html>

@@ -112,7 +112,7 @@ eg:
 * ---webpack.prod.config.js 打包环境
 * **src/**
 * ---common/ 项目公用资源（图片, 各种工具等）
-* ----------------libs.js 第三库自动渲染到页面 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
+* ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [自动注入源码](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
@@ -142,7 +142,7 @@ eg:
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
 - [x] 增加ESLint代码校验
-- [ ] 增加两个文件夹，一个是fix IE兼容, 一个是引入的公用库，自动加载第三方库到页面，避免手动填写
+- [x] 增加两个文件夹，一个是fix IE兼容, 一个是引入的公用库，自动加载第三方库到页面，避免手动填写
 - [ ] 添加多样化layout模板支持(示例)
 - [ ] 添加完整网站demo示例
 - [ ] 添加doc使用说明以及实现思路解析
@@ -160,6 +160,9 @@ eg:
 * TODO 待有空仔细讲解下具体实现
 
 ## 更新日志 (Update log)
+2018.10.11
+* 静态资源vendor文件夹分类，common与fixIe 这两个文件夹的文件都会被自动注入到页面引用; 使用者只需要配置[lib.js](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js)即可
+
 2018.10.11
 * 单独抽离css样式问题修复
 
