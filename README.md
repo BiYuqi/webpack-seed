@@ -101,6 +101,7 @@ eg:
 <img src="<%= require('assets/image/demo.png') %>" alt="">
 ```
 * 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/nav-bar/nav-bar.ejs)
+* 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/bottom/bottom.ejs)
 
 ## 目录介绍 （Introduction）
 
