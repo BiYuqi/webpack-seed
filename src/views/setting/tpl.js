@@ -1,6 +1,6 @@
-const content = require('./shopping.ejs')
+const content = require('./setting.ejs')
 const layout = require('layout/layout/layout.js')
-const pageTitle = '购物车'
+const pageTitle = '设置'
 
 const temp = layout.init({pageTitle}).run(content({pageTitle}))
 
