@@ -1,7 +1,7 @@
 /**
  * 默认样式+默认逻辑
  */
-import 'assets/js/base'
+import '@/common/js/base'
 // 测试用的工具函数
 import { indexPage } from 'utils/tools'
 

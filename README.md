@@ -102,6 +102,7 @@ eg:
 ```
 * 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/nav-bar/nav-bar.ejs)
 * 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/bottom/bottom.ejs)
+* 页面header footer业务逻辑(即两者公用js)建议写在common/js该文件下, 统一由base.js注入[示例](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js)
 
 ## 目录介绍 （Introduction）
 
@@ -161,7 +162,7 @@ eg:
 * TODO 待有空仔细讲解下具体实现
 
 ## 更新日志 (Update log)
-2018.10.11
+2018.10.15
 * 静态资源vendor文件夹分类，common与fixIe 这两个文件夹的文件都会被自动注入到页面引用; 使用者只需要配置[lib.js](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js)即可
 
 2018.10.11
