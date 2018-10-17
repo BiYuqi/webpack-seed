@@ -1,7 +1,43 @@
-.about-btn{
-  color: #fff;
-  background-color: #4bbbdd;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.about-page{
+  display: flex;
+  justify-content: space-between;
+  .about-left,
+  .movie-list{
+    width: 50%;
+  }
+  .about-btn{
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #4bbbdd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .js-box{
+    text-align: center;
+    margin: 15px;
+  }
+  .img-box{
+    text-align: center;
+    img{
+      width: 95%;
+      border: 1px dashed #4bbbdd;
+    }
+  }
+  .movie-item{
+    list-style: none;
+    li{
+      border-bottom: 1px dashed rgb(174, 174, 174);
+      margin-bottom: 15px;
+      padding: 4px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-page{
+    display: flex;
+    justify-content: inherit;
+    flex-direction: column;
+  }
 }
