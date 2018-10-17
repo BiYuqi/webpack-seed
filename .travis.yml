@@ -5,6 +5,9 @@ cache:
   directories:
     - node_modules
 
+before_install:
+  - export TZ='Asia/Beijing' # 更改时区
+
 install:
   - npm install
 
@@ -20,7 +23,7 @@ after_script:
   - git config user.name "BiYuqi"
   - git config user.email "biyuqiwan@163.com"
   - git add .
-  - git commit -m "Deployed by travis-ci"
+  - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
   - git push --force --quiet "https://${WEBPACK_SEED}@${GH_REF}" master:gh-pages
 
 branches:
