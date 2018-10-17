@@ -115,6 +115,7 @@ eg:
 * **src/**
 * ---common/ 项目公用资源（图片, 各种工具等）
 * ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [自动注入源码](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
+* ---api 接口请求配置 [接口编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js)[使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L8)
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
