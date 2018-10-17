@@ -79,7 +79,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       root: path.resolve(__dirname, '../'),
       verbose:  true
     }),
-    // cant't build in css file, i dont't konw why 2018.10.02 19:57 by BYq
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'

@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const utils = require('./utils')
-const config = require('./config.js')
+const baseConfig = require('./config.js')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -13,10 +13,11 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, '../dist/index.html'),
+    // 本地环境地址配置
+    contentBase: path.join(__dirname, `../${baseConfig.OUT_PUT_FOLDER_NAME}/index.html`),
     publicPath: '/',
     compress: true,
-    port: config.dev.port,
+    port: baseConfig.dev.port,
     noInfo: true
   },
   plugins: [

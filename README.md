@@ -107,7 +107,7 @@ eg:
 ## 目录介绍 （Introduction）
 
 * **build/**
-* ---config.js 开发，打包基础配置
+* ---config.js 开发，打包基础配置(包含输出文件名, 路径配置等都在此配置)
 * ---utils.js 多入口，多页面基础配置
 * ---webpack.base.config.js 基础配置
 * ---webpack.dev.config.js 开发环境

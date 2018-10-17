@@ -1,14 +1,45 @@
 'use strict'
 
 const path = require('path')
+
+// 页面模块路径(页面存放地址)
+const NORMAL_PAGE_PATH = path.resolve(__dirname, '../src/views')
+
+/**
+ * 可自行修改,在此配置，需要与页面对应
+ * 每个模块下 tpl.js 是页面模板入口
+ * 每个模块下 index.js 是业务逻辑入口
+*/
+
+// 页面逻辑名称 默认index.js
+const STATIC_JS_NAME = 'index'
+
+// 页面模板默认名称 默认tpl.ejs
+const STATIC_TEMPLATE_NAME = 'tpl'
+
 // 输出路径
 // 默认 '/'根目录
 // 有需要二级目录的可在此配置
 const BUILD_PATH = process.env.env_config === 'git' ? '/webpack-seed/' : '/'
+
+/**
+ * 页面输出html文件夹命名
+*/
+const OUT_PUT_HTML_FOLDER = 'html'
+
+/**
+ * 打包输出文件夹名 默认dist 不建议修改
+*/
+const OUT_PUT_FOLDER_NAME = 'dist'
+
 module.exports = {
+  NORMAL_PAGE_PATH,
+  STATIC_JS_NAME,
+  STATIC_TEMPLATE_NAME,
+  OUT_PUT_FOLDER_NAME,
   dev: {
     // Paths
-    assetsSubDirectory: 'html',
+    assetsSubDirectory: OUT_PUT_HTML_FOLDER,
     assetsPublicPath: '/',
     port: 9000,
     autoOpenBrowser: true,
@@ -18,8 +49,8 @@ module.exports = {
     useEslint: true
   },
   build: {
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'html',
+    assetsRoot: path.resolve(__dirname, `../${OUT_PUT_FOLDER_NAME}`),
+    assetsSubDirectory: OUT_PUT_HTML_FOLDER,
     /**
      * assetsPublicPath 设置的
      * 默认情况下，该配置方案假设你的应用是被部署在一个域名的根路径上例如 https://www.my-app.com/
