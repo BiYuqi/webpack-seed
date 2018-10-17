@@ -39,5 +39,11 @@ aboutAjax.on('click', () => {
     aboutAjax.css({
       cursor: 'pointer'
     })
+  }).catch(error => {
+    $('.movie-item').html('请求失败,请检查网络, 重新发起请求')
+    aboutAjax.prop('disabled', false)
+    aboutAjax.css({
+      cursor: 'pointer'
+    })
   })
 })
