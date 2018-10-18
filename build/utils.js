@@ -9,10 +9,10 @@ const baseConfig = require('./config.js')
  * 多入口配置
  */
 exports.entries = () => {
-  const entryFiles = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/*/${baseConfig.STATIC_JS_NAME}.js`)
+  const entryFiles = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_JS_NAME}.js`)
   const entry = {}
   entryFiles.forEach(filePath => {
-    const fileNameReg = new RegExp(`(\\w+)\/${baseConfig.STATIC_JS_NAME}.js$`)
+    const fileNameReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_JS_NAME}.js$`)
     const fileName = filePath.match(fileNameReg)[1]
     entry[fileName] = filePath
   })
@@ -22,10 +22,10 @@ exports.entries = () => {
  * 多页面页面配置
  */
 exports.htmlPlugin = () => {
-  const entryHtml = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/*/${baseConfig.STATIC_TEMPLATE_NAME}.js`)
+  const entryHtml = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_TEMPLATE_NAME}.js`)
   const arrHtml = []
   entryHtml.forEach(htmlPath => {
-    const htmlReg = new RegExp(`(\\w+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
+    const htmlReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
     const filename = htmlPath.match(htmlReg)[1]
     let config = {
       template: htmlPath,
