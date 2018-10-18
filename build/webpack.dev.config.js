@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const utils = require('./utils')
 const baseConfig = require('./config.js')
 
@@ -22,7 +23,14 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // hot replace 热更新需要配置该项
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    
+    // add web site ico file, you can replace yours or remove it
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../src/common/assets/image/favicon.ico'),
+      to: './',
+      ignore: ['.*']
+    }])
   ].concat(utils.htmlPlugin())
 })
 
