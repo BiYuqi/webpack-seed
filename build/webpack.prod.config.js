@@ -52,16 +52,17 @@ const webpackConfig = merge(baseWebpackConfig, {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all', 
           priority: 10
-        },
-        /**
-         * 对应原来的 minchunks: Infinity
-         * 提取 webpack 运行时代码
-         * 直接置为 true 或设置 name
-         */
-        runtimeChunk: {
-          name: 'manifest'
         }
       }
+    },
+    /**
+     * 提取 webpack 运行时代码
+     * optimization.runtimeChunk 直接置为 true 或设置 name
+     * webpack会添加一个只包含运行时(runtime)额外代码块到每一个入口
+     * 注：这个需要看场景使用，会导致每个入口都加载多一份运行时代码
+     */
+    runtimeChunk: {
+      name: 'manifest'
     },
     // 样式优化
     minimizer: [
