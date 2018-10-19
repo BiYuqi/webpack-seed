@@ -55,7 +55,7 @@ npm run dev
 * 本项目由于需要临时部署在git-pages预览 所以改配置临时改为/webpack-seed/
 * 普通打包(大部分) npm run build 默认 '/'
 * 该命令具体请看package.json scripts命令配置
-* [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L30)
+* [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L23)
 * [scripts命令配置](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
 * [预览](https://loadingmore.com/webpack-seed)
 ```js
@@ -88,13 +88,13 @@ eg:
         ---- b.js 业务b代码
 都是需要通过ES6规范导出导入
 ```
-* 页面公用css，全部需要在公用base.js引入(便于webpack处理),[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/assets/js/base.js),然后每个页面引入base.js[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L4)
+* 页面公用css，全部需要在公用base.js引入(便于webpack处理),[配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js/base.js),然后每个页面引入base.js [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L4)
 * 页面开发跳转页面都是基于打包后输出的绝对路径进行编写 **html/模块.html** [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.ejs)
 * 全部采用模块化开发，**每个模块都是一个文件夹** [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views) (开发环境views下创建)
 * 该文件夹包含 **模块模板写页面(模块名.ejs) + 模板混合(tpl.js) + index.js（该模块业务逻辑）** 打包后会自动注入，无需手动引入js文件 [详情](https://github.com/BiYuqi/webpack-seed/tree/master/src/views/about)
 * 各个js功能模块之间互相引用，一律使用ES6语法
 * 样式编写基于各模块入口js直接 **import '样式地址 '** [参考](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L2) 
-* 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/about.ejs#L6)
+* 页面(.ejs)--图片引入方式 [详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/about.ejs#L10)
 
 * **assets是webpack resolve配置好的别名，代表assets目录**
 ```html
@@ -114,8 +114,8 @@ eg:
 * ---webpack.prod.config.js 打包环境
 * **src/**
 * ---common/ 项目公用资源（图片, 各种工具等）
-* ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [自动注入源码](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
-* ---api 接口请求配置 [接口编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js)[使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L8)
+* ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
+* ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L8)
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
