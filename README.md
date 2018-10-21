@@ -151,7 +151,7 @@ eg:
 - [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）
-- [ ] 建立分支web-system（后台管理系统模板）, web-pc (大众网站模板), web-mobile(移动端模板)
+- [ ] 建立分支web-system（后台管理系统模板）, [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板), web-mobile(移动端模板)
 
 
 ## 实现思路 （Ideas）
