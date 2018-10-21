@@ -26,7 +26,8 @@
 - 配置完整的打包方案
 - 支持本地开发热更新
 - 集成代码风格校验Eslint
-- ES6编写源码，编译生成生产代码
+- 支持ES6编写源码，编译生成生产代码
+- 内置sass开发环境，自动加样式前缀,自动编译css && 注入到页面
 - 开发(生产)环境代码自动注入页面, 专注于开发
 - 编译后的程序不依赖于外部的资源, 可放到CDN
 
@@ -103,7 +104,7 @@ eg:
 * 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/nav-bar/nav-bar.ejs)
 * 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/bottom/bottom.ejs)
 * 页面header footer业务逻辑(即两者公用js)建议写在common/js该文件下, 统一由base.js注入[示例](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js)
-
+* 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
 ## 目录介绍 （Introduction）
 
 * **build/**
@@ -140,7 +141,7 @@ eg:
 
 
 ## TODO
-- [x] 添加ejs模板，进行页面(首尾)复用（ejs在本项目中目前只做模板引用，具体页面目前只能写html,后期考虑增加模板支持，暂定[art-template](https://github.com/aui/art-template)  [art-template中文文档](https://aui.github.io/art-template/zh-cn/docs/)）
+- [x] 添加ejs模板，进行页面(首尾)复用, 页面功能模板渲染
 - [x] mini-css-extract-plugin 提取js内引入scss文件失败, 打包后依然在js文件（已解决）
 - [x] 首页页面模板未完成（单独处理打包）
 - [x] 添加第三方库以链接的方式引入
@@ -157,8 +158,6 @@ eg:
 ## 实现思路 （Ideas）
 
 * build/utils.js 为js, html多入口逻辑方法
-* ejs目前仅仅是共用(比如header, footer, nav, sidebar)部分整合, 模块开发暂不支持动态数据
-* 每个js就是一个入口
 * 每个入口打包为一个html页面(自动注入相关js)
 * TODO 待有空仔细讲解下具体实现
 
