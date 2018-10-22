@@ -1,3 +1,4 @@
+@import '../../common/css/variable.scss';
 .home-sign{
   text-align: center;
 }
@@ -12,7 +13,7 @@
     padding: 6px 10px;
     border-radius: 4px;
     color: #fff;
-    background-color: #4bbbdd;
+    background-color: $baseBtn;
     border: none;
     outline: none;
     cursor: pointer;

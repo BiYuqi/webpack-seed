@@ -1,5 +1,5 @@
 // 公用css 引入入口
-import '../assets/css/base.scss'
+import '../css/base.scss'
 
 // @babel/polyfill
 import '@babel/polyfill'

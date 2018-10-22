@@ -2,6 +2,7 @@
  * 默认样式+默认逻辑
  */
 import '@/common/js/base'
+import './index.scss'
 // 测试用的工具函数
 import { indexPage } from 'utils/tools'
 import EjsTest from '@/templates/index.test.ejs'

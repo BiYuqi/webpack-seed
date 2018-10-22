@@ -114,7 +114,7 @@ eg:
 * ---webpack.dev.config.js 开发环境
 * ---webpack.prod.config.js 打包环境
 * **src/**
-* ---common/ 项目公用资源（图片, 各种工具等）
+* ---common/ 项目公用资源 (公用图片,css,js等配置)
 * ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
 * ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/about/index.js#L8)
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
