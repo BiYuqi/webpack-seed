@@ -121,6 +121,7 @@ eg:
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
 * ----------------layout-without-nav [可以添加类似模板] #todo
+* ---templates/ 页面中使用到的模板片段存放目录
 * ---views/ （模块开发文件夹)
 * ----------------子模块，各种模块页面
 * ---vendor/ 第三方库存放在此
@@ -147,6 +148,7 @@ eg:
 - [x] 添加第三方库以链接的方式引入
 - [x] 增加ESLint代码校验
 - [x] 增加两个文件夹，一个是fix IE兼容, 一个是引入的公用库，自动加载第三方库到页面，避免手动填写
+- [ ] 增加网站未登录的模板(无header,footer)
 - [ ] 添加多样化layout模板支持(示例)
 - [ ] 添加完整网站demo示例
 - [ ] 添加doc使用说明以及实现思路解析
@@ -162,6 +164,9 @@ eg:
 * TODO 待有空仔细讲解下具体实现
 
 ## 更新日志 (Update log)
+2018.10.21
+* 增加模板片段支持,页面中可复用的html都可以抽离为ejs模板片段, 然后由ejs-loader进行编译 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
+
 2018.10.15
 * 静态资源vendor文件夹分类，common与fixIe 这两个文件夹的文件都会被自动注入到页面引用; 使用者只需要配置[lib.js](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js)即可
 
