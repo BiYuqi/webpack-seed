@@ -1,0 +1,15 @@
+@import '../../common/css/variable.scss';
+.ws-login{
+  @include abs(50%, auto, auto, 50%);
+  @include tf;
+  width: 400px;
+  height: 340px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .2);
+  .ws-login-block{
+    height: 100%;
+    line-height: 100%;
+    text-align: center;
+    @include flex(center, center)
+  }
+}

@@ -148,9 +148,9 @@ eg:
 - [x] 添加第三方库以链接的方式引入
 - [x] 增加ESLint代码校验
 - [x] 增加两个文件夹，一个是fix IE兼容, 一个是引入的公用库，自动加载第三方库到页面，避免手动填写
-- [ ] 增加网站未登录的模板(无header,footer)
-- [ ] 添加多样化layout模板支持(示例)
-- [ ] 添加完整网站demo示例
+- [x] 增加网站未登录的模板(无header,footer)
+- [x] 添加多样化layout模板支持(示例layout/layoutAuth)
+- [ ] 添加完整网站demo示例(进行中...)
 - [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）

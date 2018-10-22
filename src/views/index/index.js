@@ -20,6 +20,10 @@ const data = [
     key: '设置页面'
   },
   {
+    link: 'html/login.html',
+    key: '登录页面'
+  },
+  {
     link: 'html/news-tech.html',
     key: '多目录测试'
   }
