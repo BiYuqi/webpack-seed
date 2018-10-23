@@ -19,6 +19,8 @@
 
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站(Without Vue Angular React)
 
+如果你感兴趣，请点[star](https://github.com/BiYuqi/webpack-seed/stargazers)
+
 
 ## 特性 （Feature）
 
@@ -70,7 +72,7 @@ npm run build:git
 ```
 
 ## 开发规范 （Standard）
-**import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
+* **import引入 export导出** [具体请参考 ES6 module语法](http://es6.ruanyifeng.com/#docs/module)
 ```js
 /**
  * 每个页面(模板)都必须包含(基础)以下文件
