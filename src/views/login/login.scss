@@ -2,14 +2,34 @@
 .ws-login{
   @include abs(50%, auto, auto, 50%);
   @include tf;
+  @include flex(center, center, column);
   width: 400px;
   height: 340px;
   border-radius: 6px;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .2);
+  box-shadow: 1px 2px 18px 1px rgba(0, 0, 0, 0.2);
+  .login-title{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(63, 60, 60);
+    font-weight: 700;
+    height: 80px;
+    line-height: 80px;
+  }
   .ws-login-block{
     height: 100%;
     line-height: 100%;
     text-align: center;
-    @include flex(center, center)
+    flex: 1;
+    @include flex(center, center);
+  }
+}
+@media screen and (max-width: 480px) {
+  .ws-login{
+    width: 85%;
+    height: 35%;
+    .login-title{
+      height: 50px;
+      line-height: 50px;
+    }
   }
 }

@@ -105,7 +105,7 @@ eg:
 * 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/bottom/bottom.ejs)
 * 页面header footer业务逻辑(即两者公用js)建议写在common/js该文件下, 统一由base.js注入[示例](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js)
 * 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
-## 目录介绍 （Introduction）
+## 目录结构 （Source）
 
 * **build/**
 * ---config.js 开发，打包基础配置(包含输出文件名, 路径配置等都在此配置)
@@ -120,7 +120,8 @@ eg:
 * ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 * ----------------layout 默认模板（header+footer）
-* ----------------layout-without-nav [可以添加类似模板] #todo
+* ----------------layoutAuth 定制化模板 (比如登录页没有header或者相关)
+* ----------------XXXXXXXX 可根据业务需求，定制自己的页面基础模板
 * ---templates/ 页面中使用到的模板片段存放目录
 * ---views/ （模块开发文件夹)
 * ----------------子模块，各种模块页面
@@ -164,6 +165,10 @@ eg:
 * TODO 待有空仔细讲解下具体实现
 
 ## 更新日志 (Update log)
+
+2018.10.22
+* 增加个性化模板案例[layoutAuth](https://github.com/BiYuqi/webpack-seed/tree/master/src/layout/layoutAuth)
+
 2018.10.21
 * 增加模板片段支持,页面中可复用的html都可以抽离为ejs模板片段, 由ejs-loader进行编译 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
 

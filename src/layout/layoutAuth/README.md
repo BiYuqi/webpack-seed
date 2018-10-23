@@ -1,5 +1,5 @@
 ## 备注
-剔除header footer的模板页，以便适应特殊场景,比如登录也
+剔除header footer的模板页，以便适应特殊场景,比如登录页
 
 ## TODO
 
