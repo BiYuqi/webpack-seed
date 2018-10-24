@@ -1,0 +1,10 @@
+@import './variable.scss';
+.test-btn{
+  border: none;
+  outline: none;
+  background-color: $baseBtn;
+  padding: 8px 15px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}

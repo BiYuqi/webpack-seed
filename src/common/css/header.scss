@@ -1,0 +1,9 @@
+@import './variable.scss';
+.header{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  background-color: $baseBg;
+}
