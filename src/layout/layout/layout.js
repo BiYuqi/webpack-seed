@@ -14,14 +14,6 @@ const printConfig = {
 }
 
 /**
- * 抽离footer单独写出来 与footerBase合并
- * 布局需要，可自行修改
- */
-const footerTemplete = {
-  footer: footer()
-}
-
-/**
  * 该处两个方法
  * 第一个为给每个页面注入title对象
  * 第二个是拼装页面,这个比较灵活，看自己需求怎么配置页面，目前给的是一个经典的布局 header + content + footer
@@ -37,8 +29,9 @@ const moduleExports = {
     const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
     const renderData = {
       headerBase: headerBase(componentBaseData),
-      footerBase: footerBase(Object.assign({}, footerTemplete, componentBaseData)),
+      footerBase: footerBase(componentBaseData),
       header: header(),
+      footer: footer(),
       content
     }
     return layout(renderData)
