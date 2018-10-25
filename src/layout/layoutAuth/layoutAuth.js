@@ -1,6 +1,6 @@
 const layoutAuth = require('./layoutAuth.ejs')
-const header = require('@/components/header/header.ejs')
-const footer = require('@/components/footerAuth/footerAuth.ejs')
+const headerBase = require('@/components/headerBase/headerBase.ejs')
+const footerBase = require('@/components/footerAuth/footerAuth.ejs')
 
 // 第三方库静态地址变量--->注入模板
 const STATIC_FILE = require('@/common/libs/libs.js')
@@ -27,8 +27,8 @@ const moduleExports = {
     // 此处后续可添加全局的初始化配置加载第三库的选项
     const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
     const renderData = {
-      header: header(componentBaseData),
-      footer: footer(componentBaseData),
+      headerBase: headerBase(componentBaseData),
+      footerBase: footerBase(componentBaseData),
       content
     }
     return layoutAuth(renderData)

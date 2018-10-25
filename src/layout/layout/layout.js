@@ -1,8 +1,8 @@
 const layout = require('./layout.ejs')
+const headerBase = require('@/components/headerBase/headerBase.ejs')
+const footerBase = require('@/components/footerBase/footerBase.ejs')
 const header = require('@/components/header/header.ejs')
 const footer = require('@/components/footer/footer.ejs')
-const bottom = require('@/components/bottom/bottom.ejs')
-const navBar = require('@/components/nav-bar/nav-bar.ejs')
 // 第三方库静态地址变量--->注入模板
 const STATIC_FILE = require('@/common/libs/libs.js')
 
@@ -14,11 +14,11 @@ const printConfig = {
 }
 
 /**
- * 抽离bottom单独写出来 与nav一样
- * 只不过此处的bottom需要与footer组件合并
+ * 抽离footer单独写出来 与footerBase合并
+ * 布局需要，可自行修改
  */
-const BottomTemplete = {
-  bottom: bottom()
+const footerTemplete = {
+  footer: footer()
 }
 
 /**
@@ -36,9 +36,9 @@ const moduleExports = {
     // 此处后续可添加全局的初始化配置加载第三库的选项
     const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
     const renderData = {
-      header: header(componentBaseData),
-      footer: footer(Object.assign({}, BottomTemplete, componentBaseData)),
-      navBar: navBar(componentBaseData),
+      headerBase: headerBase(componentBaseData),
+      footerBase: footerBase(Object.assign({}, footerTemplete, componentBaseData)),
+      header: header(),
       content
     }
     return layout(renderData)
