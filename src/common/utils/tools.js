@@ -7,3 +7,7 @@ export const About = () => {
 export const indexPage = () => {
   return '首页'
 }
+
+export const $$ = (t) => {
+  return document.querySelector(t)
+}
