@@ -19,9 +19,9 @@
 
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站(Without Vue Angular React)
 
-如果你感兴趣，请点个[star](https://github.com/BiYuqi/webpack-seed/stargazers)
-
-
+如果你感兴趣，请点个 [star](https://github.com/BiYuqi/webpack-seed/stargazers)
+关注项目更新，请点个 [watch](https://github.com/BiYuqi/webpack-seed/stargazers)
+项目bug,请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)
 ## 特性 （Feature）
 
 - 支持前后端分离开发
