@@ -19,7 +19,7 @@
 
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站(Without Vue Angular React)
 
-如果你感兴趣，请点[star](https://github.com/BiYuqi/webpack-seed/stargazers)
+如果你感兴趣，请点个[star](https://github.com/BiYuqi/webpack-seed/stargazers)
 
 
 ## 特性 （Feature）
