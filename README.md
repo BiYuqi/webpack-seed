@@ -44,7 +44,7 @@
 
 页面 | 公用样式 | 当前页面私有样式| 底层核心库 | 页面公用类库 | 当前页面私有模块
 --------- | ---------- | ------ | ------ | ------ | ------
-页面 | common.css | index.css |core.js|common.js | index.js
+首页 | common.css | index.css |core.js|common.js | index.js
 列表页 | common.css | list.css |core.js|common.js | list.js
 详情页 | common.css | detail.css |core.js|common.js | detail.js
 购物车 | common.css | goods.css |core.js|common.js | goods.js
