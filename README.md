@@ -38,6 +38,18 @@
 - 开发(生产)环境代码自动注入页面, 专注于开发
 - 编译后的程序不依赖于外部的资源, 可放到CDN
 
+## 模块化成果
+
+展示下页面呈现结果(页面资源加载逻辑),这可能就是我们想要的模块化吧:sparkles:
+
+页面 | 公用样式 | 当前页面私有样式| 底层核心库 | 页面公用类库 | 当前页面私有模块
+--------- | ---------- | ------ | ------ | ------ | ------
+页面 | common.css | index.css |core.js|common.js | index.js
+列表页 | common.css | list.css |core.js|common.js | list.js
+详情页 | common.css | detail.css |core.js|common.js | detail.js
+购物车 | common.css | goods.css |core.js|common.js | goods.js
+登录页 | common.css | login.css |core.js|common.js | login.js
+
 ## 使用指南 （Usage）
 
 **下载使用**
