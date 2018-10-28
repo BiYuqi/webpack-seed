@@ -35,6 +35,7 @@ eg:
 * 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs)
 * 页面header footer业务逻辑(即两者公用js)建议写在common/js该文件下, 统一由base.js注入[示例](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js)
 * 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
+
 ## 目录结构 （Source）
 
 * **build/**
@@ -56,3 +57,8 @@ eg:
 * ---views/ （模块开发文件夹)
 * ----------------子模块，各种模块页面
 * ---vendor/ 第三方库存放在此
+
+## 接口调用说明(axios)
+> 本项目默认使用axios调用，可自行更换为JQ的ajax(兼容性好)，本项目目前(axios)接口只能支持到IE10+, 项目本身支持IE9+
+
+[接口使用说明](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/README.md)

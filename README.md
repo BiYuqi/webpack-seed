@@ -22,7 +22,7 @@
 **如果感兴趣该项目, 请点个 [star](https://github.com/BiYuqi/webpack-seed/stargazers)**
 
 
-**及时关注项目更新, 请点个 [watch](https://github.com/BiYuqi/webpack-seed/stargazers)**
+**及时关注项目更新, 请点个 [watch](https://github.com/BiYuqi/webpack-seed/watchers)**
 
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
@@ -98,6 +98,10 @@ npm run build:git
 
 查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
 
+## 目录结构 （Source）
+
+查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
+
 ## 输出目录 （Output）
 [查看输出](https://github.com/BiYuqi/webpack-seed/tree/gh-pages)
 * dist/
@@ -137,6 +141,8 @@ npm run build:git
 ## 更新日志 (Update log)
 
 查看[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
+
+> 本项目目前接口(axios)只能支持到IE10+, 项目本身支持IE9+
 
 ## 参考（Thanks）
 
