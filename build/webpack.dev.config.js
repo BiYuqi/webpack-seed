@@ -19,7 +19,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     publicPath: '/',
     compress: true,
     port: baseConfig.dev.port,
-    noInfo: true
+    noInfo: true,
+    // 开启调试, 可在移动端等同wifi环境下 ip访问
+    disableHostCheck: true
   },
   plugins: [
     // hot replace 热更新需要配置该项
