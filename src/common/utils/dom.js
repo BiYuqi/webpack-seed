@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 class MinJQ {
   constructor(selector) {
     this.elem = document.querySelector(selector)
