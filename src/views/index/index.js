@@ -4,11 +4,11 @@
 import '@/common/js/base'
 import './index.scss'
 // 测试用的工具函数
-import { indexPage, $$ } from 'utils/tools'
+import { indexPage } from 'utils/tools'
+import __ from 'utils/dom'
 import EjsTest from '@/templates/index.test.ejs'
 
-$$('.index-title').innerHTML = indexPage()
-
+__('.index-title').html(indexPage())
 // 测试ejs模板使用
 const data = [
   {
@@ -35,9 +35,9 @@ const data = [
 ]
 // 注入模板数据
 // 经过测试 ajax异步返回数据, 打包后亦正常渲染
-$$('.ejs-dynamic-inject').innerHTML = EjsTest({
+__('.ejs-dynamic-inject').html(EjsTest({
   index: data
-})
+}))
 // setTimeout(() => {
 //   $('.ejs-dynamic-inject').html(EjsTest({
 //     index: data
