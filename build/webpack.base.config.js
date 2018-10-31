@@ -102,7 +102,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.json'],
     // 配置项目文件别名
     alias: {
       '@': resolve('src'),

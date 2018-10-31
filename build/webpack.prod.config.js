@@ -10,6 +10,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const utils = require('./utils.js')
 const config = require('./config')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -76,21 +77,21 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
+    // 打包前清理旧文件夹
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
       verbose:  true
     }),
+
+    // 压缩抽离样式
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
 
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, '../src/common/assets/image/favicon.ico'),
-      to: './',
-      ignore: ['.*']
-    }])
-  ].concat(utils.htmlPlugin())
+    // 页面模板
+    ...utils.htmlPlugin()
+  ]
 })
 console.log(process.env.env_config === 'git')
 module.exports = webpackConfig

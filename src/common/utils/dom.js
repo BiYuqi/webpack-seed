@@ -57,6 +57,7 @@ class MinJQ {
     for (let i in style) {
       this.elem[i] = style[i]
     }
+    return this
   }
   prop(...arg) {
     if (arg.length === 0 || arg.length > 2) {
