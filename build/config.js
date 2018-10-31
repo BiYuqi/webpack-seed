@@ -41,12 +41,29 @@ module.exports = {
     // Paths
     assetsSubDirectory: OUT_PUT_HTML_FOLDER,
     assetsPublicPath: '/',
+    // 默认端口
     port: 9000,
+    // 自动打开浏览器
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false,
-    useEslint: true
+    useEslint: true,
+    /**
+     * https://webpack.docschina.org/configuration/dev-server/#devserver-proxy
+     * 开发环境跨域配置, 默认关闭, 配置如下
+     * 请求到 /api/users 现在会被代理到请求 http://localhost:3000/api/users
+     * pathRewrite重写路径
+    */
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://localhost:3000',
+    //     pathRewrite: {
+    //       '^/api' : ''
+    //     }
+    //   }
+    // }
+    proxyTable: {}
   },
   build: {
     assetsRoot: path.resolve(__dirname, `../${OUT_PUT_FOLDER_NAME}`),

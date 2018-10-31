@@ -18,7 +18,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     port: baseConfig.dev.port,
     noInfo: true,
     // 开启调试, 可在移动端等同wifi环境下 ip访问
-    disableHostCheck: true
+    disableHostCheck: true,
+    // 跨域配置
+    proxy: baseConfig.dev.proxyTable
   },
   plugins: [
     // hot replace 热更新需要配置该项
