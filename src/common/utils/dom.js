@@ -45,17 +45,30 @@ class MinJQ {
     return this
   }
   val(val) {
+    if (!val) {
+      throw Error('The value cannot be empty')
+    }
     this.elem.value = val
     return this
   }
-  attr() {}
-  getStyle() {}
+  attr(...arg) {
+    if (arg.length === 0) {
+      throw Error('The attr method passes at least one parameter')
+    }
+    if (arg.length === 1) {
+      this.elem.getAttribute(arg[0])
+    }
+    if (arg.length === 2) {
+      this.elem.setAttribute(arg[0], arg[1])
+    }
+    return this
+  }
   css(style) {
     if (typeof style !== 'object') {
       throw Error('The css method only support an object')
     }
     for (let i in style) {
-      this.elem[i] = style[i]
+      this.elem.style[i] = style[i]
     }
     return this
   }
@@ -71,6 +84,7 @@ class MinJQ {
     }
     return this
   }
+  getStyle() {}
 }
 const minJq = (arg) => {
   return new MinJQ(arg)
