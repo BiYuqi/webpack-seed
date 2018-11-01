@@ -70,8 +70,14 @@ const webpackConfig = merge(baseWebpackConfig, {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        // set to true if you want JS source maps
-        sourceMap: false
+        // sourceMap 默认false
+        sourceMap: false,
+        compress: {
+          // 移除 warning
+          warnings: false,
+          // 移除 console
+          drop_console: true
+        }
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
