@@ -99,7 +99,7 @@ npm run build:git
 
 ## 目录结构 （Source）
 
-查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
+查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-source)
 
 ## 输出目录 （Output）
 [查看输出](https://github.com/BiYuqi/webpack-seed/tree/gh-pages)
