@@ -2,20 +2,26 @@
 .test-btn{
   border: none;
   outline: none;
-  background-color: $baseBtn;
-  padding: 8px 15px;
-  color: #fff;
   cursor: pointer;
   border-radius: 6px;
 }
 // header
 .header{
   height: 60px;
-  line-height: 60px;
-  text-align: center;
-  color: #fff;
   font-weight: bold;
-  background-color: $baseBg;
+  background-color: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+  color: #666;
+  .header-btn{
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  img{
+    margin-right: 12px;
+  }
 }
 // footer
 .footer {
@@ -26,4 +32,13 @@
   color: #fff;
   font-weight: bold;
   background-color: $baseBg;
+  .icon-heart-fill{
+    color: red;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header{
+    padding: 0 15px;
+  }
 }

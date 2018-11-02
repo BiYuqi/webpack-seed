@@ -1,3 +1,3 @@
 $('.footer-btn').on('click', () => {
-  alert('我是footer.js')
+  alert('哎呦, 这都能被你发现~~')
 })

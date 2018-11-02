@@ -364,6 +364,19 @@ pre{
   background: #fff;
 }
 
+/***BiYuqi****/
+@media screen and (max-width: 960px) {
+  .main{
+    width: 100%;
+    padding: 30px;
+  }
+  .icon_lists li{
+    width: 33.333%;
+  }
+  .markdown > ul li, .markdown blockquote ul > li{
+    margin-left: 0;
+  }
+}
 
 
 

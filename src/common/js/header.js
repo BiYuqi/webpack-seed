@@ -1,3 +1,3 @@
 $('.header-btn').on('click', () => {
-  alert('我是header.js')
+  alert('哎呦, 点到我头了~~')
 })

@@ -1,19 +1,43 @@
 #wrap{
   text-align: center;
-  line-height: 50px;
+  min-height: 400px;
+  .index-title{
+    padding: 15px;
+  }
   .ejs-dynamic-inject{
-    width: 800px;
-    margin: 50px auto 50px;
+    width: 600px;
+    margin: 20px auto 50px;
     box-shadow: 0 2px 4px 2px rgba(14,30,37,.12);
     border-radius: 4px;
-    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 300px;
+    li{
+      width: 25%;
+      height: 150px;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .iconfont{
+        font-size: 80px;
+      }
+    }
   }
 }
 @media screen and (max-width: 480px) {
   #wrap{
     .ejs-dynamic-inject{
       width: 70%;
-      margin: 25% auto;
+      margin: 10% auto;
+      li{
+        width: 50%;
+        height: auto;
+        .iconfont{
+          font-size: 40px;
+        }
+      }
     }
   }
 }

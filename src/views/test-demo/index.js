@@ -2,7 +2,7 @@
  * 默认样式+默认逻辑 common/js/base.js
  */
 import '@/common/js/base'
-import './about.scss'
+import './test-demo.scss'
 // 测试用的工具函数
 import { About } from 'utils/tools'
 import __ from 'utils/dom'
@@ -12,7 +12,7 @@ import { movieList } from '@/api/movie'
 __('.about-title').html(About())
 
 __('.about-test').on('click', () => {
-  alert('about')
+  alert('Test Page Js')
 })
 
 // render moview list

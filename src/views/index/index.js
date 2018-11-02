@@ -12,24 +12,24 @@ __('.index-title').html(indexPage())
 // 测试ejs模板使用
 const data = [
   {
-    link: 'html/about.html',
-    key: '关于页面'
+    link: 'html/test-demo.html',
+    key: '测试页面',
+    icon: 'iconfont icon-rocket'
   },
   {
     link: 'html/fonts-demo.html',
-    key: '内置图标库'
-  },
-  {
-    link: 'html/setting.html',
-    key: '设置页面'
+    key: '内置图标库',
+    icon: 'iconfont icon-Dollar'
   },
   {
     link: 'html/login.html',
-    key: '登录页面'
+    key: '登录页面',
+    icon: 'iconfont icon-login'
   },
   {
     link: 'html/news-tech.html',
-    key: '多目录测试'
+    key: '多目录测试',
+    icon: 'iconfont icon-edit'
   }
   
 ]
