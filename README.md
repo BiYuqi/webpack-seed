@@ -27,7 +27,6 @@
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
 
-**有想法? 来一起参与吧 [Pull Request](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)**
 ## 特性 （Feature）
 
 - 支持前后端分离开发
@@ -132,11 +131,14 @@ npm run build:git
 - [ ] 建立分支web-system（后台管理系统模板）, [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板), web-mobile(移动端模板)
 
 
-## 实现思路 （Ideas）
+## 贡献代码
+* 先 Fork (https://github.com/BiYuqi/webpack-seed/fork)
+* 创建分支 (git checkout -b my-idea)
+* 提交更改 (git commit -am 'Fixed something')
+* 推送更改 (git push origin my-idea)
+* 创建一个 Pull Request
 
-* build/utils.js 为js, html多入口逻辑方法
-* 每个入口打包为一个html页面(自动注入相关js)
-* TODO 待有空仔细讲解下具体实现
+> [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
 ## 更新日志 (Update log)
 
