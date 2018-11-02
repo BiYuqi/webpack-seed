@@ -68,15 +68,17 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 样式优化
     minimizer: [
       new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        // sourceMap 默认false
-        sourceMap: false,
-        compress: {
-          // 移除 warning
+        uglifyOptions: {
+          cache: true,
+          parallel: true,
           warnings: false,
-          // 移除 console
-          drop_console: true
+          comments: false,
+          compress: {
+            // 移除 warning
+            warnings: false,
+            // 移除 console
+            drop_console: true
+          }
         }
       }),
       new OptimizeCSSAssetsPlugin({})
