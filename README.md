@@ -92,6 +92,12 @@ npm run build
 npm run build:git
 
 ```
+**依赖分析**
+```js
+// 利用webpack-bundle-analyzer 进行代码构建分析
+
+npm run analyzer
+```
 
 ## 开发规范 （Standard）
 
