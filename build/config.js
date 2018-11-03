@@ -82,6 +82,7 @@ module.exports = {
     // 该命令具体请看package.json scripts命令配置
     assetsPublicPath: BUILD_PATH,
     productionSourceMap: false,
-    devtool: '#source-map'
+    devtool: '#source-map',
+    bundleAnalyzerReport: process.env.npm_config_report
   }
 }

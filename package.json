@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --open --inline --mode development --config build/webpack.dev.config",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js",
-    "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js"
+    "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
+    "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9",
     "webpack-merge": "^4.1.4"

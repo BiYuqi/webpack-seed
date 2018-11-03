@@ -101,5 +101,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     ...utils.htmlPlugin()
   ]
 })
-console.log(process.env.env_config === 'git')
+// 分析依赖图
+// 执行 npm run analyzer 即可自动打开预览
+if (config.build.bundleAnalyzerReport) {
+  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+  webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
 module.exports = webpackConfig
