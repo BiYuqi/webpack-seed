@@ -7,6 +7,11 @@
   height: 340px;
   border-radius: 6px;
   box-shadow: 1px 2px 18px 1px rgba(0, 0, 0, 0.2);
+  .login-btn{
+    background-color: $baseBtn;
+    color: #fff;
+    padding: 5px 13px;
+  }
   .login-title{
     text-align: center;
     font-size: 18px;

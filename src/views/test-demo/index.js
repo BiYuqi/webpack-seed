@@ -18,10 +18,11 @@ __('.about-test').on('click', () => {
 // render moview list
 const aboutAjax = __('.about-ajax')
 aboutAjax.on('click', () => {
-  aboutAjax.prop('disabled', true)
-  aboutAjax.css({
-    cursor: 'not-allowed'
-  })
+  aboutAjax
+    .prop('disabled', true)
+    .css({
+      cursor: 'not-allowed'
+    })
   __('.movie-item').html('正在加载中......')
 
   let template = ''
@@ -34,15 +35,17 @@ aboutAjax.on('click', () => {
     })
     
     __('.movie-item').html(template)
-    aboutAjax.prop('disabled', false)
-    aboutAjax.css({
-      cursor: 'pointer'
-    })
+    aboutAjax
+      .prop('disabled', false)
+      .css({
+        cursor: 'pointer'
+      })
   }).catch(error => {
     __('.movie-item').html('请求失败,请检查网络, 重新发起请求')
-    aboutAjax.prop('disabled', false)
-    aboutAjax.css({
-      cursor: 'pointer'
-    })
+    aboutAjax
+      .prop('disabled', false)
+      .css({
+        cursor: 'pointer'
+      })
   })
 })
