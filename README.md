@@ -82,7 +82,7 @@ npm run dev
 * 该命令具体请看package.json scripts命令配置
 * [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L23)
 * [scripts命令配置](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
-* [预览](https://loadingmore.com/webpack-seed)
+
 ```js
 // 普通打包(大部分) npm run build publicPath默认 '/'
 npm run build
@@ -102,6 +102,10 @@ npm run analyzer
 ## 开发规范 （Standard）
 
 查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
+
+## 接口配置 （Api Setting）
+
+查看[API/README](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/README.md)
 
 ## 目录结构 （Source）
 
@@ -138,6 +142,11 @@ npm run analyzer
 - [x] [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板)
 - [ ] web-mobile(移动端模板)
 
+## 更新日志 (Update log)
+
+查看[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
+
+> 本项目目前接口(axios)只能支持到IE10+, 项目本身支持IE9+
 
 ## 贡献代码
 * 先 Fork (https://github.com/BiYuqi/webpack-seed/fork)
@@ -147,12 +156,6 @@ npm run analyzer
 * 创建一个 Pull Request
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
-
-## 更新日志 (Update log)
-
-查看[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
-
-> 本项目目前接口(axios)只能支持到IE10+, 项目本身支持IE9+
 
 ## 参考（Thanks）
 
