@@ -35,7 +35,7 @@ class MinJQ {
     return this
   }
   on(type, fn) {
-    this.elem.addEventListener(type, (e) => {
+    this.elem && this.elem.addEventListener(type, (e) => {
       fn && fn(e)
     })
     return this
