@@ -84,6 +84,13 @@ class MinJQ {
     }
     return this
   }
+  /**
+   * 是否是空对象
+   * @param {Object} obj
+   */
+  isPlainObject(obj) {
+    return obj && typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype
+  }
   getStyle() {}
 }
 const minJq = (arg) => {
