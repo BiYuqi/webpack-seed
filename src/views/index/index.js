@@ -3,12 +3,11 @@
  */
 import '@/common/js/base'
 import './index.scss'
-// 测试用的工具函数
-import { indexPage } from 'utils/tools'
+// 测试用的dom函数
 import __ from 'utils/dom'
 import EjsTest from '@/templates/index.test.ejs'
 
-__('.index-title').html(indexPage())
+__('.index-title').html('HOME')
 // 测试ejs模板使用
 const data = [
   {
