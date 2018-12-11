@@ -138,6 +138,7 @@ npm run analyzer
 - [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）
+- [ ] 搭建单元测试环境(基于karma mocha chai)
 - [ ] 建立分支web-system (后台管理系统模板)
 - [x] [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板)
 - [ ] web-mobile(移动端模板)
