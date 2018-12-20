@@ -134,11 +134,11 @@ npm run analyzer
 - [x] 增加两个文件夹，一个是fix IE兼容, 一个是引入的公用库，自动加载第三方库到页面，避免手动填写
 - [x] 增加网站未登录的模板(无header,footer)
 - [x] 添加多样化layout模板支持(示例layout/layoutAuth)
-- [ ] 添加完整网站demo示例(进行中...)
+- [ ] 搭建单元测试环境(基于karma mocha chai)...
+- [ ] 添加完整网站demo示例(暂停中)
 - [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）
-- [ ] 搭建单元测试环境(基于karma mocha chai)
 - [ ] 建立分支web-system (后台管理系统模板)
 - [x] [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板)
 - [ ] web-mobile(移动端模板)
