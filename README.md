@@ -135,12 +135,13 @@ npm run analyzer
 - [x] 增加网站未登录的模板(无header,footer)
 - [x] 添加多样化layout模板支持(示例layout/layoutAuth)
 - [ ] 搭建单元测试环境(基于karma mocha chai)...
-- [ ] 添加完整网站demo示例(暂停中)
 - [ ] 添加doc使用说明以及实现思路解析
 
 ## LONG TODO（Base on master）
+- [ ] 搭建国际化版本
 - [ ] 建立分支web-system (后台管理系统模板)
-- [x] [web-pc](https://github.com/BiYuqi/webpack-seed/tree/web-pc) (大众网站模板)
+- [ ] 添加完整网站demo示例
+- [ ] 大众网站模板
 - [ ] web-mobile(移动端模板)
 
 ## 更新日志 (Update log)
