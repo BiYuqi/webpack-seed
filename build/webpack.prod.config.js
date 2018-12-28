@@ -90,7 +90,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       root: path.resolve(__dirname, '../'),
       verbose:  true
     }),
-
+    // 根据模块的相对路径生成一个四位数的hash作为模块id
+    new webpack.HashedModuleIdsPlugin(),
     // 压缩抽离样式
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
