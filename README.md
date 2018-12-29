@@ -100,6 +100,12 @@ npm run build:git
 npm run analyzer
 ```
 
+**测试**
+```js
+// karma mocha chai
+npm run test
+```
+
 ## 开发规范 （Standard）
 
 查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
