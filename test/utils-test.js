@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-import { isEmptyObject } from '../src/common/utils/tools.js'
+import { isEmptyObject } from '@/common/utils/tools.js'
 
 describe('Test project tools\'s method', () => {
-  it('isEmptyObject\'s param  empty objectshould be return true', () => {
+  it('isEmptyObject\'s param  empty object should be return true', () => {
     expect(isEmptyObject({})).to.equal(true)
   })
 
