@@ -3,10 +3,10 @@
 @import './reset.scss';
 @import './common.scss';
 
-#ws-wrap {
+.ws-wrap {
   min-height: 100%;
   background-color: #fff;
-  &_inside {
+  &-inside {
     padding-bottom: 50px;
   }
 }
