@@ -81,7 +81,7 @@ npm run dev
 * 本项目由于需要临时部署在git-pages预览 所以改配置临时改为/webpack-seed/
 * 普通打包(大部分) npm run build 默认 '/'
 * 该命令具体请看package.json scripts命令配置
-* [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/build/config.js#L23)
+* [配置详情](https://github.com/BiYuqi/webpack-seed/blob/master/webpack.seed.common.js#L13)
 * [scripts命令配置](https://github.com/BiYuqi/webpack-seed/blob/master/package.json#L8)
 
 ```js
@@ -142,6 +142,7 @@ npm run test
 - [x] 增加网站未登录的模板(无header,footer)
 - [x] 添加多样化layout模板支持(示例layout/layoutAuth)
 - [x] 搭建单元测试环境(基于karma mocha chai)
+- [x] 单独抽离配置文件webpack.seed.common.js
 - [ ] 待完善测试用例编写
 - [ ] 添加doc使用说明以及实现思路解析
 
