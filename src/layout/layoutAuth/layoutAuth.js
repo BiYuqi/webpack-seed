@@ -1,6 +1,6 @@
 const layoutAuth = require('./layoutAuth.ejs')
 const headerBase = require('@/components/headerBase/headerBase.ejs')
-const footerBase = require('@/components/footerAuth/footerAuth.ejs')
+const footerBase = require('@/components/footerBase/footerBase.ejs')
 
 // 第三方库静态地址变量--->注入模板
 const STATIC_FILE = require('@/common/libs/libs.js')
