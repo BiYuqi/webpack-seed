@@ -57,6 +57,7 @@ eg:
 * ---views/ （模块开发文件夹)
 * ----------------子模块，各种模块页面
 * ---vendor/ 第三方库存放在此
+* ---webpack.seed.common.js 项目公共路径配置(供build/config.js使用)
 
 ## 接口调用说明(axios)
 > 本项目默认使用axios调用，可自行更换为JQ的ajax(兼容性好)，本项目目前(axios)接口只能支持到IE10+, 项目本身支持IE9+
