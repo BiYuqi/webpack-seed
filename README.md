@@ -26,7 +26,9 @@
 
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
-
+## 介绍
+- [在线预览](https://loadingmore.com/webpack-seed/)
+- [使用文档(待完善)](http://loadingmore.com/webpack-seed-site/)
 ## 特性 （Feature）
 
 - 支持前后端分离开发
