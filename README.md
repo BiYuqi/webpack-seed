@@ -157,7 +157,7 @@ npm run test
 
 查看[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
 
-> 本项目目前接口(axios)只能支持到IE10+, 项目本身支持IE9+
+> 本项目目前接口(使用axios只能支持到IE10+), 项目本身支持IE9+
 
 ## 贡献代码
 * 先 Fork (https://github.com/BiYuqi/webpack-seed/fork)
