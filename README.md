@@ -146,6 +146,9 @@ npm run test
 - [ ] 待完善测试用例编写
 - [ ] 添加doc使用说明以及实现思路解析
 
+## DOING
+- [ ] 添加doc使用说明以及实现思路解析
+
 ## LONG TODO（Base on master）
 - [ ] 搭建国际化版本
 - [ ] 建立分支web-system (后台管理系统模板)
@@ -161,9 +164,9 @@ npm run test
 
 ## 贡献代码
 * 先 Fork (https://github.com/BiYuqi/webpack-seed/fork)
-* 创建分支 (git checkout -b my-idea)
+* 创建分支 (git checkout -b your-idea)
 * 提交更改 (git commit -am 'Fixed something')
-* 推送更改 (git push origin my-idea)
+* 推送更改 (git push origin your-idea)
 * 创建一个 Pull Request
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
