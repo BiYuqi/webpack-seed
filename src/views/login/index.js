@@ -8,4 +8,3 @@ import __ from 'utils/dom'
 __('.login-btn').on('click', () => {
   window.location.href = '../index.html'
 })
-console.log('login page')
