@@ -3,8 +3,9 @@
  */
 import '@/common/js/base'
 import './login.scss'
+import __ from 'utils/dom'
 
-$('.login-btn').on('click', () => {
+__('.login-btn').on('click', () => {
   window.location.href = '../index.html'
 })
 console.log('login page')
