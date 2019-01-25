@@ -38,5 +38,9 @@ module.exports = {
   /**
    * 页面输出html文件夹命名
   */
-  OUT_PUT_HTML_FOLDER: 'html'
+  OUT_PUT_HTML_FOLDER: 'html',
+ /**
+   * index.html文件的输出路径
+  */
+  INDEX_HTML_PATH: path.resolve(__dirname, 'dist/index.html'),
 }

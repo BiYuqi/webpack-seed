@@ -37,7 +37,11 @@ exports.htmlPlugin = () => {
        * 此处逻辑为，单独抽离index.html放到根目录
        * 其余文件打入html文件件
       */
-      filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
+      filename:
+        filename === 'index'
+        ? ( process.env.NODE_ENV === 'production'
+        ? baseConfig.build.index : `${filename}.html` )
+        : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
       /**
        * 配置网站favicon.ico
        * 自动注入到页面

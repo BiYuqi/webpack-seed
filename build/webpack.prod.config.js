@@ -18,7 +18,7 @@ function resolve (dir) {
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
-    path: resolve('dist'),
+    path: config.build.assetsRoot,
     publicPath: config.build.assetsPublicPath,
     /**
      * 该方案页面路径显示不友好 暂不采取2018.10.07 00:07

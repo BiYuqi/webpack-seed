@@ -24,7 +24,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: utils.entries(),
   output: {
-    path: resolve('dist'),
+    path: config.build.assetsRoot,
     publicPath: '/',
     filename: '[name].js'
   },

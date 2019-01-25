@@ -37,6 +37,7 @@ module.exports = {
     proxyTable: {}
   },
   build: {
+    index: webpackSeedCommon.INDEX_HTML_PATH,
     assetsRoot: path.resolve(__dirname, `../${webpackSeedCommon.OUT_PUT_FOLDER_NAME}`),
     assetsSubDirectory: webpackSeedCommon.OUT_PUT_HTML_FOLDER,
     /**
