@@ -110,6 +110,22 @@ npm run analyzer
 npm run test
 ```
 
+**检测代码格式**
+```js
+npm run lint
+```
+
+**格式化代码**
+```js
+npm run prettier
+```
+
+**自动跑所有校验**
+```js
+// inclde lint prettier test
+npm run ci
+```
+
 ## 开发规范 （Standard）
 
 查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
