@@ -10,7 +10,8 @@
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "test": "karma start",
     "lint": "eslint 'src/*/*.js' 'src/!(vendor)/**/*.js'",
-    "prettier": "prettier --write 'src/*/*.js'"
+    "prettier": "prettier --write 'src/*/*.js'",
+    "ci": "npm run lint && npm run prettier && npm run test"
   },
   "repository": {
     "type": "git",
