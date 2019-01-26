@@ -8,7 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js",
     "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
-    "test": "karma start"
+    "test": "karma start",
+    "lint": "eslint src/api/ src/common/ src/layout/ src/views/"
   },
   "repository": {
     "type": "git",
