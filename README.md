@@ -172,6 +172,7 @@ npm run test
 * 提交更改 (git commit -am 'Fixed something')
 * 推送更改 (git push origin your-idea)
 * 创建一个 Pull Request
+* **提交PR前请先lint代码,否则不会通过. `npm run lint`**
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
