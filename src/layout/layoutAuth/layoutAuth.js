@@ -19,11 +19,11 @@ const printConfig = {
  * return this作用是链式调用 用过jq的都懂 ~.~
  */
 const moduleExports = {
-  init ({ pageTitle }) {
+  init({ pageTitle }) {
     printConfig.pageTitle = pageTitle
     return this
   },
-  run (content) {
+  run(content) {
     // 此处后续可添加全局的初始化配置加载第三库的选项
     const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
     const renderData = {

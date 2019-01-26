@@ -24,36 +24,32 @@ class TestDemo {
   testFetchData() {
     const aboutAjax = __('.about-ajax')
     aboutAjax.on('click', () => {
-      aboutAjax
-        .prop('disabled', true)
-        .css({
-          cursor: 'not-allowed'
-        })
+      aboutAjax.prop('disabled', true).css({
+        cursor: 'not-allowed'
+      })
       __('.movie-item').html('正在加载中......')
 
       let template = ''
-      movieList({}).then(res => {
-        const list = res.data.subjects
-        list.forEach(item => {
-          template += `<a href="${item.alt}" target="_blank">
+      movieList({})
+        .then(res => {
+          const list = res.data.subjects
+          list.forEach(item => {
+            template += `<a href="${item.alt}" target="_blank">
             <li>${item.title} --- ${item.genres.join(',')}</li>
           </a>`
+          })
+
+          __('.movie-item').html(template)
+          aboutAjax.prop('disabled', false).css({
+            cursor: 'pointer'
+          })
         })
-        
-        __('.movie-item').html(template)
-        aboutAjax
-          .prop('disabled', false)
-          .css({
+        .catch(error => {
+          __('.movie-item').html('请求失败,请检查网络, 重新发起请求')
+          aboutAjax.prop('disabled', false).css({
             cursor: 'pointer'
           })
-      }).catch(error => {
-        __('.movie-item').html('请求失败,请检查网络, 重新发起请求')
-        aboutAjax
-          .prop('disabled', false)
-          .css({
-            cursor: 'pointer'
-          })
-      })
+        })
     })
   }
 }

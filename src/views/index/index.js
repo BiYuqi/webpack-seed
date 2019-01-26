@@ -12,7 +12,7 @@ class HomePage {
     this.testTitle()
     this.testEjsTemplete()
   }
-  
+
   testTitle() {
     __('.index-title').html('HOME')
   }
@@ -41,16 +41,20 @@ class HomePage {
         icon: 'iconfont icon-edit'
       }
     ]
-    __('.ejs-dynamic-inject').html(EjsTest({
-      index: data
-    }))
+    __('.ejs-dynamic-inject').html(
+      EjsTest({
+        index: data
+      })
+    )
   }
   // 暂未用到
   testEjsTempleteAsync() {
     setTimeout(() => {
-      $('.ejs-dynamic-inject').html(EjsTest({
-        index: data
-      }))
+      $('.ejs-dynamic-inject').html(
+        EjsTest({
+          index: data
+        })
+      )
     }, 1000)
   }
 }
