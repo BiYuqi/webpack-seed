@@ -13,6 +13,11 @@
     "prettier": "prettier --write 'src/*/*.js'",
     "ci": "npm run lint && npm run prettier && npm run test"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BiYuqi/webpack-seed.git"
@@ -46,6 +51,7 @@
     "glob": "^7.1.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
     "karma": "^3.1.4",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
