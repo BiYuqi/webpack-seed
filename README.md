@@ -163,6 +163,7 @@ npm run ci
 - [x] 添加多样化layout模板支持(示例layout/layoutAuth)
 - [x] 搭建单元测试环境(基于karma mocha chai)
 - [x] 单独抽离配置文件webpack.seed.common.js
+- [x] 添加prettier自动格式化代码
 - [ ] 待完善测试用例编写
 - [ ] 添加doc使用说明以及实现思路解析
 
@@ -171,10 +172,8 @@ npm run ci
 
 ## LONG TODO（Base on master）
 - [ ] 搭建国际化版本
-- [ ] 建立分支web-system (后台管理系统模板)
 - [ ] 添加完整网站demo示例
 - [ ] 大众网站模板
-- [ ] web-mobile(移动端模板)
 
 ## 更新日志 (Update log)
 
@@ -188,7 +187,7 @@ npm run ci
 * 提交更改 (git commit -am 'Fixed something')
 * 推送更改 (git push origin your-idea)
 * 创建一个 Pull Request
-* **提交PR前请先lint代码,否则不会通过. `npm run lint`**
+* **提交PR前请先format代码,否则不会通过. `npm run ci`**
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
