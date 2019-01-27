@@ -35,9 +35,10 @@ class MinJQ {
     return this
   }
   on(type, fn) {
-    this.elem && this.elem.addEventListener(type, (e) => {
-      fn && fn(e)
-    })
+    this.elem &&
+      this.elem.addEventListener(type, e => {
+        fn && fn(e)
+      })
     return this
   }
   html(html) {
@@ -86,7 +87,7 @@ class MinJQ {
   }
   getStyle() {}
 }
-const minJq = (arg) => {
+const minJq = arg => {
   return new MinJQ(arg)
 }
 export default minJq
