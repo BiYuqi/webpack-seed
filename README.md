@@ -125,6 +125,7 @@ npm run prettier
 // inclde lint prettier test
 npm run ci
 ```
+注意：本项目有提交代码前跑lint的功能,请看package.json`husky`字段配置
 
 ## 开发规范 （Standard）
 
@@ -187,7 +188,6 @@ npm run ci
 * 提交更改 (git commit -am 'Fixed something')
 * 推送更改 (git push origin your-idea)
 * 创建一个 Pull Request
-* **提交PR前请先format代码,否则不会通过. `npm run ci`**
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
