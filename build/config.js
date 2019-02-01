@@ -25,7 +25,7 @@ module.exports = {
      * 开发环境跨域配置, 默认关闭, 配置如下
      * 请求到 /api/users 现在会被代理到请求 http://localhost:3000/api/users
      * pathRewrite重写路径
-    */
+     */
     // proxyTable: {
     //   '/api': {
     //     target: 'http://localhost:3000',
@@ -47,7 +47,7 @@ module.exports = {
      * 则设置 baseUrl 为 /my-app/
      * @desc
      * 由于需要部署在git-pages 所以改配置临时改为/webpack-seed/
-    */
+     */
     // 打包时 npm run build:git 该命令会打包的路径会自动带上项目地址/webpack-seed/
     // 普通打包(大部分) npm run build 默认 '/'
     // 该命令具体请看package.json scripts命令配置

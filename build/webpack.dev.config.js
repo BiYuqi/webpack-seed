@@ -6,7 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const utils = require('./utils')
 const baseConfig = require('./config.js')
 
-
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   devtool: 'inline-source-map',

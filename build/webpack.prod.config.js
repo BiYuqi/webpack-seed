@@ -3,15 +3,15 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const utils = require('./utils.js')
 const config = require('./config')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -42,16 +42,16 @@ const webpackConfig = merge(baseWebpackConfig, {
         // 复用的文件，单独抽离 后续再优化此配置
         commons: {
           name: 'commons',
-          chunks: 'all', 
+          chunks: 'all',
           minChunks: 2,
           minSize: 1,
-          priority: 0 
+          priority: 0
         },
         // 提取 node_modules 中代码
-        vendor: { 
+        vendor: {
           name: 'vendor',
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all', 
+          chunks: 'all',
           priority: 10
         }
       }
@@ -88,7 +88,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 打包前清理旧文件夹
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
-      verbose:  true
+      verbose: true
     }),
     // 根据模块的相对路径生成一个四位数的hash作为模块id
     new webpack.HashedModuleIdsPlugin(),

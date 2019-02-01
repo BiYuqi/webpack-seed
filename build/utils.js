@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./config.js')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -36,24 +36,19 @@ exports.htmlPlugin = () => {
       /**
        * 此处逻辑为，单独抽离index.html放到根目录
        * 其余文件打入html文件件
-      */
+       */
       filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
       /**
        * 配置网站favicon.ico
        * 自动注入到页面
-      */
+       */
       favicon: resolve('favicon.ico'),
       /**
        * 此处chunks名字与webpack.prod.config.js配置一致
        * optimization.splitChunks.cacheGroups
        * optimization.runtimeChunk
-      */
-      chunks: [
-        'commons',
-        'vendor',
-        'manifest',
-        filename
-      ],
+       */
+      chunks: ['commons', 'vendor', 'manifest', filename],
       inject: true,
       xhtml: true
     }
@@ -72,13 +67,11 @@ exports.htmlPlugin = () => {
   return arrHtml
 }
 /**
- * 
+ *
  * @param {*} _path
  */
-exports.assetsPath = function (_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? baseConfig.build.assetsSubDirectory
-    : baseConfig.dev.assetsSubDirectory
+exports.assetsPath = function(_path) {
+  const assetsSubDirectory = process.env.NODE_ENV === 'production' ? baseConfig.build.assetsSubDirectory : baseConfig.dev.assetsSubDirectory
 
   return path.posix.join(assetsSubDirectory, _path)
 }
