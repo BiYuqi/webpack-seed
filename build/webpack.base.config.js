@@ -1,12 +1,12 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const utils = require('./utils')
 const config = require('./config')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -51,7 +51,6 @@ module.exports = {
           }
         }
       },
-      // TODO 后期进行项目改造，复用页面
       {
         test: /\.ejs$/,
         include: resolve('src'),
@@ -106,10 +105,10 @@ module.exports = {
     // 配置项目文件别名
     alias: {
       '@': resolve('src'),
-      'assets': resolve('src/common/assets'),
-      'utils': resolve('src/common/utils'),
-      'layout': resolve('src/layout'),
-      'build': resolve('build')
+      assets: resolve('src/common/assets'),
+      utils: resolve('src/common/utils'),
+      layout: resolve('src/layout'),
+      build: resolve('build')
     }
   }
 }

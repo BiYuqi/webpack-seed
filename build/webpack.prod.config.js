@@ -3,15 +3,15 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const utils = require('./utils.js')
 const config = require('./config')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -42,16 +42,16 @@ const webpackConfig = merge(baseWebpackConfig, {
         // 复用的文件，单独抽离 后续再优化此配置
         commons: {
           name: 'commons',
-          chunks: 'all', 
+          chunks: 'all',
           minChunks: 2,
           minSize: 1,
-          priority: 0 
+          priority: 0
         },
         // 提取 node_modules 中代码
-        vendor: { 
+        vendor: {
           name: 'vendor',
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all', 
+          chunks: 'all',
           priority: 10
         }
       }
@@ -61,6 +61,9 @@ const webpackConfig = merge(baseWebpackConfig, {
      * optimization.runtimeChunk 直接置为 true 或设置 name
      * webpack会添加一个只包含运行时(runtime)额外代码块到每一个入口
      * 注：这个需要看场景使用，会导致每个入口都加载多一份运行时代码
+     * manifest js have already inline to every html file, please run build and see it in html.
+     * Maybe we don't need manifest file, because we are a multi-page application. each html page's js maybe not complex.
+     * So it depending on how you understand your js file complex or simple.
      */
     runtimeChunk: {
       name: 'manifest'
@@ -88,7 +91,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 打包前清理旧文件夹
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
-      verbose:  true
+      verbose: true
     }),
     // 根据模块的相对路径生成一个四位数的hash作为模块id
     new webpack.HashedModuleIdsPlugin(),
@@ -99,7 +102,15 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // 页面模板
-    ...utils.htmlPlugin()
+    ...utils.htmlPlugin(),
+
+    // 为了减少请求数量, manifest内联在每个html文件内
+    // 注意一定要在HtmlWebpackPlugin之后引用
+    // inline 的name 和你 runtimeChunk 的 name保持一致
+    new ScriptExtHtmlWebpackPlugin({
+      //`manifest` must same as runtimeChunk name. default is `manifest`
+      inline: /manifest\..*\.js$/
+    })
   ]
 })
 // 分析依赖图

@@ -9,13 +9,13 @@
     "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "test": "karma start",
-    "lint": "eslint 'src/*/*.js' 'src/!(vendor)/**/*.js'",
+    "lint": "eslint 'src/*/*.js' 'src/!(vendor)/**/*.js' 'build/**/*.js'",
     "prettier": "prettier --write 'src/*/*.js'",
     "ci": "npm run lint && npm run prettier && npm run test"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-commit": "npm run lint"
     }
   },
   "repository": {
@@ -69,6 +69,7 @@
     "prettier": "^1.16.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.3",
     "style-loader": "^0.23.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.1",
