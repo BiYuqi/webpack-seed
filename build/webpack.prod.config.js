@@ -61,6 +61,9 @@ const webpackConfig = merge(baseWebpackConfig, {
      * optimization.runtimeChunk 直接置为 true 或设置 name
      * webpack会添加一个只包含运行时(runtime)额外代码块到每一个入口
      * 注：这个需要看场景使用，会导致每个入口都加载多一份运行时代码
+     * manifest js have already inline to every html file, please run build and see it in html.
+     * Maybe we don't need manifest file, because we are a multi-page application. each html page's js maybe not complex.
+     * So it depending on how you understand your js file complex or simple.
      */
     runtimeChunk: {
       name: 'manifest'
@@ -99,7 +102,15 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // 页面模板
-    ...utils.htmlPlugin()
+    ...utils.htmlPlugin(),
+
+    // 为了减少请求数量, manifest内联在每个html文件内
+    // 注意一定要在HtmlWebpackPlugin之后引用
+    // inline 的name 和你 runtimeChunk 的 name保持一致
+    new ScriptExtHtmlWebpackPlugin({
+      //`manifest` must same as runtimeChunk name. default is `manifest`
+      inline: /manifest\..*\.js$/
+    })
   ]
 })
 // 分析依赖图
