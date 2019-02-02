@@ -9,7 +9,7 @@
     "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "test": "karma start",
-    "lint": "eslint 'src/*/*.js' 'src/!(vendor)/**/*.js' 'build/**/*.js'",
+    "lint": "eslint 'src/*/*.js' 'build/**/*.js'",
     "prettier": "prettier --write 'src/*/*.js'",
     "ci": "npm run lint && npm run prettier && npm run test"
   },
