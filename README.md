@@ -1,7 +1,10 @@
 
-# [Webpack-seed](https://github.com/BiYuqi/webpack-seed)
-
-<p align="left">
+<p align="center">
+  <a href="https://github.com/BiYuqi/webpack-seed">
+      <img src="https://github.com/BiYuqi/webpack-seed/blob/master/src/common/assets/image/webpack-seed.png" width="300" alt="Webpack">
+  </a>
+</p>
+<p align="center">
 	<a href="https://webpack.js.org/">
 		<img src="https://img.shields.io/badge/webpack-4.20.2-brightgreen.svg" alt="Webpack">
 	</a>
@@ -17,6 +20,8 @@
   
 </p>
 
+## Introduction
+
 开箱即用的多页面脚手架, 基于webpack4.2x babel7.1x模块化开发可复用的现代化网站, 解决非SPA应用, html复用, 模块化开发编译等问题.
 
 **如果感兴趣该项目, 请点个 [star](https://github.com/BiYuqi/webpack-seed/stargazers)**
@@ -26,10 +31,9 @@
 
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
-## 介绍
-- [在线预览](https://loadingmore.com/webpack-seed/)
-- [使用文档(待完善)](http://loadingmore.com/webpack-seed-site/)
-## 特性 （Feature）
+- [Online demo](https://loadingmore.com/webpack-seed/)
+- [docs(undone)](http://loadingmore.com/webpack-seed-site/)
+## Feature
 
 - 支持前后端分离开发
 - 配置完整的打包方案
@@ -48,7 +52,7 @@
 
 注：本项目不依赖Jquery. lib库引入jquery仅仅是为了演示该项目可以自动加载第三方脚本作为链接使用, 如果不需要,在src/common/libs.js配置文件中移除即可
 
-## 模块化成果
+## What do we want?
 
 展示下页面呈现结果(页面资源加载逻辑),这可能就是我们想要的模块化吧:sparkles:
 
@@ -60,7 +64,7 @@
 购物车 | common.css | goods.css |core.js|common.js | goods.js
 登录页 | common.css | login.css |core.js|common.js | login.js
 
-## 使用指南 （Usage）
+## Getting started
 
 **下载使用**
 ```js
@@ -127,20 +131,20 @@ npm run ci
 ```
 注意：本项目有提交代码前跑lint的功能,请看package.json`husky`字段配置
 
-## 开发规范 （Standard）
+## Coding Standard
 
-查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
+[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md)
 
-## 接口配置 （Api Setting）
+## Api Setting
 
-查看[API/README](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/README.md)
+[API/README](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/README.md)
 
-## 目录结构 （Source）
+## Source Structure
 
-查看[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-source)
+[INSTRODUCTION](https://github.com/BiYuqi/webpack-seed/blob/master/INSTRODUCTION.md#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-source)
 
-## 输出目录 （Output）
-[查看输出](https://github.com/BiYuqi/webpack-seed/tree/gh-pages)
+## Output
+[Output source](https://github.com/BiYuqi/webpack-seed/tree/gh-pages)
 * dist/
 * ---html
 * ---image
@@ -168,21 +172,18 @@ npm run ci
 - [ ] 待完善测试用例编写
 - [ ] 添加doc使用说明以及实现思路解析
 
-## DOING
-- [ ] 添加doc使用说明以及实现思路解析
-
 ## LONG TODO（Base on master）
 - [ ] 搭建国际化版本
 - [ ] 添加完整网站demo示例
 - [ ] 大众网站模板
 
-## 更新日志 (Update log)
+## Changelog
 
-查看[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
+[CHANGELOG](https://github.com/BiYuqi/webpack-seed/blob/master/CHANGELOG.md)
 
 > 本项目目前接口(使用axios只能支持到IE10+), 项目本身支持IE9+
 
-## 贡献代码
+## Contribution
 * 先 Fork (https://github.com/BiYuqi/webpack-seed/fork)
 * 创建分支 (git checkout -b your-idea)
 * 提交更改 (git commit -am 'Fixed something')
@@ -191,6 +192,6 @@ npm run ci
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
-## 参考（Thanks）
+## Reference
 
 本脚手架开发中，ejs模板渲染实现这块参考了[webpack-seed](https://github.com/Array-Huang/webpack-seed), 特此备注
