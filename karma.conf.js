@@ -2,7 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
@@ -53,8 +53,8 @@ module.exports = function(config) {
     reporters: ['progress', 'mocha'],
 
     coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
+      type: 'html',
+      dir: 'coverage/'
     },
 
     // web server port
@@ -81,7 +81,6 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['PhantomJS'],
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -122,13 +121,13 @@ module.exports = function(config) {
         extensions: ['.js'],
         alias: {
           '@': resolve('./src'),
-          'utils': resolve('./src/utils')
+          utils: resolve('./src/utils')
         }
       }
     },
     webpackServer: {
       noInfo: true
-    },
+    }
     // webpackMiddleware: {
     //   stats: 'errors-only'
     // }
