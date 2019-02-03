@@ -66,14 +66,6 @@ module.exports = function(config) {
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
-    
-    // 设置此项 报错信息不提示
-    // client: {
-    //   captureConsole: true,
-    //   mocha: {
-    //     bail: true
-    //   }
-    // },
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
@@ -102,6 +94,11 @@ module.exports = function(config) {
             }
           },
           {
+            test: /\.ejs$/,
+            include: resolve('src'),
+            loader: 'ejs-loader'
+          },
+          {
             test: /\.(sa|sc|c)ss$/,
             use: [
               {
@@ -114,22 +111,47 @@ module.exports = function(config) {
                 loader: 'sass-loader'
               }
             ]
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'image/[name].[hash:7].[ext]'
+            }
+          },
+          {
+            test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'media/[name].[hash:7].[ext]'
+            }
+          },
+          {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'fonts/[name].[hash:7].[ext]'
+            }
           }
         ]
       },
       resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.json'],
+        // 配置项目文件别名
         alias: {
-          '@': resolve('./src'),
-          utils: resolve('./src/utils')
+          '@': resolve('src'),
+          assets: resolve('src/common/assets'),
+          utils: resolve('src/common/utils'),
+          layout: resolve('src/layout'),
+          build: resolve('build')
         }
       }
     },
     webpackServer: {
       noInfo: true
     }
-    // webpackMiddleware: {
-    //   stats: 'errors-only'
-    // }
   })
 }
