@@ -1,0 +1,7 @@
+const content = require('./{{fileName}}.ejs')
+const layout = require('layout/layoutAuth/layoutAuth.js')
+const pageTitle = '{{pageTitle}}'
+
+const temp = layout.init({ pageTitle }).run(content())
+
+module.exports = temp
