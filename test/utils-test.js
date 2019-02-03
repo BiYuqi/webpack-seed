@@ -1,12 +1,37 @@
 import { expect } from 'chai'
-import { isEmptyObject } from '@/common/utils/tools.js'
+import { isEmptyObject, pickBy } from '@/common/utils/tools.js'
 
-describe('Test project tools\'s method', () => {
-  it('isEmptyObject\'s param  empty object should be return true', () => {
-    expect(isEmptyObject({})).to.equal(true)
+describe('Test utils', () => {
+  describe('isEmptyObject', () => {
+    it('should return true', () => {
+      expect(isEmptyObject({})).to.equal(true)
+    })
+
+    it('should return false', () => {
+      expect(isEmptyObject({ a: 1 })).to.equal(false)
+    })
   })
 
-  it('isEmptyObject\'s param not empty object should be return false', () => {
-    expect(isEmptyObject({a: 1})).to.equal(false)
+  describe('pickBy', () => {
+    it('should return correct value', () => {
+      const testCaseOne = {
+        testA: 'testA',
+        testB: null,
+        testC: false
+      }
+      expect(pickBy(testCaseOne)).to.deep.equal({
+        testA: 'testA'
+      })
+    })
+
+    it('should return correct value', () => {
+      const testCaseTwo = {
+        testD: 'testD',
+        testE: NaN
+      }
+      expect(pickBy(testCaseTwo)).to.deep.equal({
+        testD: 'testD'
+      })
+    })
   })
 })
