@@ -8,3 +8,14 @@ export const isEmptyObject = obj => {
   }
   return true
 }
+
+export const pickBy = object => {
+  if (!object) return
+  const result = {}
+  Object.keys(object).forEach(key => {
+    if (object[key]) {
+      result[key] = object[key]
+    }
+  })
+  return result
+}
