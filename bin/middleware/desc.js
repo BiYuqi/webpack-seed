@@ -1,3 +1,5 @@
+const { getDirectoryName, log } = require('../utils/utils')
+
 const check = name => {
   if (/\d/.test(name)) {
     return true
@@ -16,9 +18,11 @@ const descCheck = desc => {
   if (check(desc)) {
     return '模块不能包含数字'
   }
+  const result = getDirectoryName()
+  if (result.includes(desc)) {
+    return '文件夹已存在,请换个文件名重试'
+  }
   return true
 }
 
-// TODO
-// 此处判断是否存在该目录
 module.exports = descCheck

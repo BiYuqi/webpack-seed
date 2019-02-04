@@ -1,6 +1,7 @@
 const chalk = require('chalk')
+const { getDirectoryName } = require('./getdirname')
 
-const mkdir = dir => {
+const mkdir = () => {
   return new Promise((resolve, reject) => {
     fs.mkdir(dir, err => {
       if (err) {
@@ -21,12 +22,17 @@ const getFileName = name => {
     fileName
   }
 }
+
 const log = message => console.log(chalk.green(`${message}`))
+
 const successLog = message => console.log(chalk.magentaBright(`${message}`))
+
 const errorLog = error => console.log(chalk.red(`${error}`))
 
 module.exports = {
+  mkdir,
   getFileName,
+  getDirectoryName,
   log,
   successLog,
   errorLog

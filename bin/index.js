@@ -15,7 +15,7 @@ program.action(() => {
     0. 模块是基于views层创建.
     1. 文件名不包含数字, 模块名即为文件名, 不能与页面现存重复.
     2. 常规的就是直接输入文件名(模块名)即可自动创建页面.
-    3. 创建嵌套页面, 需要输入嵌套规则 path/path/path.
+    3. 创建嵌套页面, 需要输入嵌套规则 path/path/path.[暂未实现 => TODO]
   `)
   inquirer
     .prompt([
@@ -32,6 +32,7 @@ program.action(() => {
     .then(answer => {
       const { description, title } = answer
       const { fileName } = getFileName(description)
+
       fs.mkdir(path.resolve(__dirname, '../', `src/views/${fileName}`), err => {
         if (err) {
           errorLog(err)
