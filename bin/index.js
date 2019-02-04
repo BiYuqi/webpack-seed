@@ -9,13 +9,15 @@ const ora = require('ora')
 
 const descCheck = require('./middleware/desc')
 const { getFileName, log, successLog, errorLog } = require('./utils/utils')
+const TempleteConfig = require('./templates/config')
 
 program.action(() => {
   log(`
     0. 模块是基于views层创建.
     1. 文件名不包含数字, 模块名即为文件名, 不能与页面现存重复.
     2. 常规的就是直接输入文件名(模块名)即可自动创建页面.
-    3. 创建嵌套页面, 需要输入嵌套规则 path/path/path.[暂未实现 => TODO]
+    3. e.g. 输入new-page 即可交互式创建该页面.
+    4. 创建嵌套页面, 需要输入嵌套规则 path/path/path.[暂未实现 => TODO]
   `)
   inquirer
     .prompt([
@@ -25,12 +27,18 @@ program.action(() => {
         validate: descCheck
       },
       {
+        type: 'list',
+        name: 'templete',
+        message: '请选择页面模板',
+        choices: Object.keys(TempleteConfig)
+      },
+      {
         name: 'title',
         message: '请输入页面title(非必填,建议填写)'
       }
     ])
     .then(answer => {
-      const { description, title } = answer
+      const { description, templete, title } = answer
       const { fileName } = getFileName(description)
 
       fs.mkdir(path.resolve(__dirname, '../', `src/views/${fileName}`), err => {
@@ -44,6 +52,8 @@ program.action(() => {
 
         const parseTplResult = handlebars.compile(tplContent)({
           pageTitle: title ? title : '',
+          templateDir: TempleteConfig[templete].dir,
+          templateName: TempleteConfig[templete].name,
           fileName
         })
         const parseIndexResult = handlebars.compile(indexContent)({

@@ -18,6 +18,9 @@ const descCheck = desc => {
   if (check(desc)) {
     return '模块不能包含数字'
   }
+  if (!/^[a-z_-]+$/.test(desc)) {
+    return '文件仅支持字母下划线中划线'
+  }
   const result = getDirectoryName()
   if (result.includes(desc)) {
     return '文件夹已存在,请换个文件名重试'

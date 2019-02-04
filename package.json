@@ -12,7 +12,7 @@
     "lint": "eslint 'src/*/*.js' 'build/**/*.js'",
     "prettier": "prettier --write 'src/*/*.js'",
     "ci": "npm run lint && npm run prettier && npm run test",
-    "create": "node ./bin/index.js"
+    "new": "node ./bin/index.js"
   },
   "husky": {
     "hooks": {
