@@ -12,7 +12,6 @@ const descCheck = desc => {
   if (result.includes(desc)) {
     return '文件夹已存在,请换个文件名重试'
   }
-  log(' 校验成功')
   return true
 }
 

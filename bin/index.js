@@ -8,7 +8,8 @@ const handlebars = require('handlebars')
 
 const descCheck = require('./middleware/desc')
 const { getFileName, log, successLog, errorLog } = require('./utils/utils')
-const TempleteConfig = require('./templates/config')
+const templeteConfig = require('./templates/config')
+const writeFiles = require('./middleware/writefile')
 
 program.action(() => {
   log(`
@@ -29,7 +30,7 @@ program.action(() => {
         type: 'list',
         name: 'templete',
         message: '请选择页面模板',
-        choices: Object.keys(TempleteConfig)
+        choices: Object.keys(templeteConfig)
       },
       {
         name: 'title',
@@ -51,18 +52,18 @@ program.action(() => {
 
         const parseTplResult = handlebars.compile(tplContent)({
           pageTitle: title ? title : '',
-          templateDir: TempleteConfig[templete].dir,
-          templateName: TempleteConfig[templete].name,
+          templateDir: templeteConfig[templete].dir,
+          templateName: templeteConfig[templete].name,
           fileName
         })
         const parseIndexResult = handlebars.compile(indexContent)({
           fileName
         })
 
-        fs.writeFileSync(path.resolve(__dirname, '../', `src/views/${fileName}/tpl.js`), parseTplResult, 'utf8')
-        fs.writeFileSync(path.resolve(__dirname, '../', `src/views/${fileName}/index.js`), parseIndexResult, 'utf-8')
-        fs.writeFileSync(path.resolve(__dirname, '../', `src/views/${fileName}/${fileName}.ejs`), '')
-        fs.writeFileSync(path.resolve(__dirname, '../', `src/views/${fileName}/${fileName}.scss`), '')
+        writeFiles(`src/views/${fileName}/tpl.js`, parseTplResult)
+        writeFiles(`src/views/${fileName}/index.js`, parseIndexResult)
+        writeFiles(`src/views/${fileName}/${fileName}.ejs`)
+        writeFiles(`src/views/${fileName}/${fileName}.scss`)
         successLog('文件创建成功')
       })
     })
