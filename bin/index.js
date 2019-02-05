@@ -5,7 +5,6 @@ const path = require('path')
 const program = require('commander')
 const inquirer = require('inquirer')
 const handlebars = require('handlebars')
-const ora = require('ora')
 
 const descCheck = require('./middleware/desc')
 const { getFileName, log, successLog, errorLog } = require('./utils/utils')

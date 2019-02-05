@@ -1,17 +1,18 @@
 ## 运行
 
-创建新页面, 暂时只支持一种模板
+创建新页面, 暂时支持两种模板
 ```js
 npm run new
 ```
 ## screenShots
 <img width=300 src="./screenShots/step.png">
 <img width=300 src="./screenShots/screen.png">
+
 ## 模板
 页面种类config配置即可
+
 ```js
 目前：standed & notStanded
-
 standed: 含有header footer
 notStanded: 不含有header footer
 ```

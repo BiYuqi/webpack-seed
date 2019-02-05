@@ -1,30 +1,18 @@
-const { getDirectoryName, log } = require('../utils/utils')
-
-const check = name => {
-  if (/\d/.test(name)) {
-    return true
-  }
-  return false
-}
+const { getDirectoryName, log, errorLog } = require('../utils/utils')
 
 const hasNest = name => {
   return name.indexOf('/') > -1
 }
 
 const descCheck = desc => {
-  if (!desc) {
-    return '不能为空'
-  }
-  if (check(desc)) {
-    return '模块不能包含数字'
-  }
   if (!/^[a-z_-]+$/.test(desc)) {
-    return '文件仅支持字母下划线中划线'
+    return '文件仅支持字母,下划线,中划线,暂不支持数字, 且不能为空'
   }
   const result = getDirectoryName()
   if (result.includes(desc)) {
     return '文件夹已存在,请换个文件名重试'
   }
+  log(' 校验成功')
   return true
 }
 
