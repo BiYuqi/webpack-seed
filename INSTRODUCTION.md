@@ -37,7 +37,8 @@ eg:
 * 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
 
 ## 目录结构 （Source）
-
+* **bin**
+* ---命令行配置文件，支持创建页面
 * **build/**
 * ---config.js 开发，打包基础配置(包含输出文件名, 路径配置等都在此配置)
 * ---utils.js 多入口，多页面基础配置
