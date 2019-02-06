@@ -1,4 +1,4 @@
-const { getDirectoryName, log, errorLog } = require('../utils/utils')
+const { getDirectoryName } = require('../utils/utils')
 
 const hasNest = name => {
   return name.indexOf('/') > -1
