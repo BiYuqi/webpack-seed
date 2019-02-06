@@ -1,4 +1,7 @@
 ## 迭代日志
+2019.02.06
+* 新增命令行创建页面[README](./bin/README.md)
+
 2018.10.22
 * 增加个性化模板案例[layoutAuth](https://github.com/BiYuqi/webpack-seed/tree/master/src/layout/layoutAuth)
 
