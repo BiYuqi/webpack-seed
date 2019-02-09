@@ -32,7 +32,7 @@
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
 - [Online demo](https://loadingmore.com/webpack-seed/)
-- [docs(undone)](http://loadingmore.com/webpack-seed-site/)
+- [Docs(undone)](http://loadingmore.com/webpack-seed-site/)
 ## Feature
 
 - 支持前后端分离开发
