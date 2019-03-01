@@ -31,13 +31,20 @@ exports.htmlPlugin = () => {
   entryHtml.forEach(htmlPath => {
     const htmlReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
     const filename = htmlPath.match(htmlReg)[1]
+    let targetFileName = filename
+    if (baseConfig.KEEP_PAGE_DIR && targetFileName !== 'index') {
+      // 保持目录结构，获取相对位置
+      targetFileName = path.relative(baseConfig.NORMAL_PAGE_PATH, htmlPath)
+      // 使用【目录名 + .html】作为最后文件名
+      targetFileName = path.dirname(targetFileName)
+    }
     let config = {
       template: htmlPath,
       /**
        * 此处逻辑为，单独抽离index.html放到根目录
        * 其余文件打入html文件件
        */
-      filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
+      filename: filename === 'index' ? `${targetFileName}.html` : `${baseConfig.build.assetsSubDirectory}/${targetFileName}.html`,
       /**
        * 配置网站favicon.ico
        * 自动注入到页面

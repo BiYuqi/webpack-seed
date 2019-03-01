@@ -37,6 +37,10 @@ module.exports = {
   STATIC_TEMPLATE_NAME: 'tpl',
   /**
    * 页面输出html文件夹命名
-  */
-  OUT_PUT_HTML_FOLDER: 'html'
+   */
+  OUT_PUT_HTML_FOLDER: 'html',
+  /**
+   * 保持输出页面目录层级关系
+   */
+  KEEP_PAGE_DIR: true
 }

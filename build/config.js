@@ -8,6 +8,7 @@ module.exports = {
   STATIC_JS_NAME: webpackSeedCommon.STATIC_JS_NAME,
   STATIC_TEMPLATE_NAME: webpackSeedCommon.STATIC_TEMPLATE_NAME,
   OUT_PUT_FOLDER_NAME: webpackSeedCommon.OUT_PUT_FOLDER_NAME,
+  KEEP_PAGE_DIR: webpackSeedCommon.KEEP_PAGE_DIR,
   dev: {
     // Paths
     assetsSubDirectory: webpackSeedCommon.OUT_PUT_HTML_FOLDER,
