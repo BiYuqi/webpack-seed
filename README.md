@@ -176,6 +176,7 @@ npm run new
 - [x] 增加网站未登录的模板(无header,footer)
 - [x] 添加多样化layout模板支持(示例layout/layoutAuth)
 - [x] 搭建单元测试环境(基于karma mocha chai)
+- [ ] Use jest replace (基于karma mocha chai)
 - [x] 单独抽离配置文件webpack.seed.common.js
 - [x] 添加prettier自动格式化代码
 - [ ] 待完善测试用例编写
