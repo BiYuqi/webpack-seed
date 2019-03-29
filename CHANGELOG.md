@@ -1,4 +1,7 @@
 ## 迭代日志
+2019.03.29
+* 变更基础模板位置from `src/component/` to `src/layout/base`
+
 2019.02.06
 * 新增命令行创建页面[README](./bin/README.md)
 
