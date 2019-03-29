@@ -1,8 +1,8 @@
 const layout = require('./layout.ejs')
-const headerBase = require('@/components/headerBase/headerBase.ejs')
-const footerBase = require('@/components/footerBase/footerBase.ejs')
-const header = require('@/components/header/header.ejs')
-const footer = require('@/components/footer/footer.ejs')
+const headerBase = require('../base/headerBase/headerBase.ejs')
+const footerBase = require('../base/footerBase/footerBase.ejs')
+const header = require('../base/header/header.ejs')
+const footer = require('../base/footer/footer.ejs')
 // 第三方库静态地址变量--->注入模板
 const STATIC_FILE = require('@/common/libs/libs.js')
 
