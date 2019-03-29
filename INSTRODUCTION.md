@@ -31,8 +31,8 @@ eg:
 ```html
 <img src="<%= require('assets/image/demo.png') %>" alt="">
 ```
-* 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/header/header.ejs)
-* 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs)
+* 页面header配置位置(即nav导航栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/base/header/header.ejs)
+* 页面footer配置位置(即footer底部栏配置)[详情](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/base/footer/footer.ejs)
 * 页面header footer业务逻辑(即两者公用js)建议写在common/js该文件下, 统一由base.js注入[示例](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/js)
 * 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
 
@@ -49,8 +49,9 @@ eg:
 * ---common/ 项目公用资源 (公用图片,css,js等配置)
 * ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
 * ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/test-demo/index.js#L9)
-* ---components 项目模板 （复用的页面片段,目前该模板已趋于稳定，细节样式需调整）
+* ---components 项目公用组件部分可以存在此处, 比如自己开发的插件
 * ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
+* ----------------base 页面基础模板
 * ----------------layout 默认模板（header+footer）
 * ----------------layoutAuth 定制化模板 (比如登录页没有header或者相关)
 * ----------------XXXXXXXX 可根据业务需求，定制自己的页面基础模板

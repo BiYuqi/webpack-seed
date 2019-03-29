@@ -8,7 +8,9 @@
 const BUILD_STATIC_FILES = {
   STATIC_BUILD: {
     js: {
-      jquery: require('!!file-loader?name=libs/js/[name].[ext]!../../vendor/common/jquery-3.3.1.min.js')
+      // If you want to load third library, you can set like this.
+      // Will inject bottom of page body.
+      // jquery: require('!!file-loader?name=libs/js/[name].[ext]!../../vendor/common/jquery-3.3.1.min.js')
     },
     fixIe: {
       html5shive: require('!!file-loader?name=libs/js/[name].[ext]!../../vendor/fix-ie/html5shiv.min.js'),
