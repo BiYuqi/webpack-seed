@@ -1,11 +1,10 @@
 module.exports = {
   root: true,
   extends: ["plugin:prettier/recommended"],
+  parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    parser: 'babel-eslint',
     ecmaVersion: 6
-    // es6: true
   },
   env: {
     browser: true
