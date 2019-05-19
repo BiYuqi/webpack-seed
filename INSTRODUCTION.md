@@ -37,29 +37,29 @@ eg:
 * 页面支持ejs模板开发,模板文件建议统一规划到一个文件夹(本项目目前放在[templates/](https://github.com/BiYuqi/webpack-seed/tree/master/src/templates)注:views/目录只能放页面模块，不可放模板) 具体请看 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
 
 ## 目录结构 （Source）
-* **bin**
-* ---命令行配置文件，支持创建页面
-* **build/**
-* ---config.js 开发，打包基础配置(包含输出文件名, 路径配置等都在此配置)
-* ---utils.js 多入口，多页面基础配置
-* ---webpack.base.config.js 基础配置
-* ---webpack.dev.config.js 开发环境
-* ---webpack.prod.config.js 打包环境
-* **src/**
-* ---common/ 项目公用资源 (公用图片,css,js等配置)
-* ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
-* ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/test-demo/index.js#L9)
-* ---components 项目公用组件部分可以存在此处, 比如自己开发的插件
-* ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
-* ----------------base 页面基础模板
-* ----------------layout 默认模板（header+footer）
-* ----------------layoutAuth 定制化模板 (比如登录页没有header或者相关)
-* ----------------XXXXXXXX 可根据业务需求，定制自己的页面基础模板
-* ---templates/ 页面中使用到的模板片段存放目录
-* ---views/ （模块开发文件夹)
-* ----------------子模块，各种模块页面
-* ---vendor/ 第三方库存放在此
-* ---webpack.seed.common.js项目公共路径配置(供build/config.js使用)
+| **bin/**
+| ---命令行配置文件，支持创建页面(如不需要可完整移除, 移除package.json>scripts>new命令)
+| **build/**
+| ---config.js 开发，打包基础配置(包含输出文件名, 路径配置等都在此配置)
+| ---utils.js 多入口，多页面基础配置
+| ---webpack.base.config.js 基础配置
+| ---webpack.dev.config.js 开发环境
+| ---webpack.prod.config.js 打包环境
+| **src/**
+| ---common/ 项目公用资源 (公用图片,css,js等配置)
+| ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
+| ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/test-demo/index.js#L9)
+| ---components 项目公用组件部分可以存在此处, 比如自己开发的插件
+| ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
+| ----------------base 页面基础模板
+| ----------------layout 默认模板（header+footer）
+| ----------------layoutAuth 定制化模板 (比如登录页没有header或者相关)
+| ----------------XXXXXXXX 可根据业务需求，定制自己的页面基础模板
+| ---templates/ 页面中使用到的模板片段存放目录
+| ---views/ （模块开发文件夹)
+| ----------------子模块，各种模块页面
+| ---vendor/ 第三方库存放在此
+| ---webpack.seed.common.js项目公共路径配置(供build/config.js使用)
 
 ## 接口调用说明(axios)
 > 本项目默认使用axios调用，可自行更换为JQ的ajax(兼容性好)，本项目目前(axios)接口只能支持到IE10+, 项目本身支持IE9+
