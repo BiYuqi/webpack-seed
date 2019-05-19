@@ -27,7 +27,7 @@ class GoogleAnalytics {
   }
 
   insertAsLink(script, href) {
-    script.setAttribute('aysnc', true)
+    script.setAttribute('async', true)
     script.setAttribute('src', href)
     document.body.appendChild(script)
   }
