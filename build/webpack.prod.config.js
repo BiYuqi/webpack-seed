@@ -74,11 +74,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         uglifyOptions: {
           cache: true,
           parallel: true,
-          warnings: false,
           comments: false,
+          warnings: false,
           compress: {
-            // 移除 warning
-            warnings: false,
             // 移除 console
             drop_console: true
           }

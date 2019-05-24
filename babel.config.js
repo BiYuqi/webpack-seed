@@ -6,7 +6,8 @@ module.exports = {
         targets: {
           browsers: ['> 1%', 'ios >= 7', 'not ie <= 8']
         },
-        useBuiltIns: 'entry'
+        useBuiltIns: 'usage',
+        corejs: 2
       }
     ]
   ]

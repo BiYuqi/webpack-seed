@@ -34,7 +34,6 @@
   "homepage": "https://github.com/BiYuqi/webpack-seed#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^9.1.5",
     "babel-eslint": "^10.0.1",
@@ -87,6 +86,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "axios": "^0.18.0"
   },
   "browserslist": [
