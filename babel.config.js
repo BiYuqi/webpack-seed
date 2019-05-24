@@ -9,6 +9,5 @@ module.exports = {
         useBuiltIns: 'entry'
       }
     ]
-  ],
-  plugins: ['@babel/plugin-transform-runtime']
+  ]
 }
