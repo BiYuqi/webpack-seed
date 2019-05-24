@@ -1,13 +1,10 @@
-import layout from './layout.ejs'
-import headerBase from '../base/headerBase/headerBase.ejs'
-import footerBase from '../base/footerBase/footerBase.ejs'
-import header from '../base/header/header.ejs'
-import footer from '../base/footer/footer.ejs'
+const layout = require('./layout.ejs')
+const headerBase = require('../base/headerBase/headerBase.ejs')
+const footerBase = require('../base/footerBase/footerBase.ejs')
+const header = require('../base/header/header.ejs')
+const footer = require('../base/footer/footer.ejs')
 // 第三方库静态地址变量--->注入模板
-import STATIC_FILE from '@/common/libs/libs.js'
-
-// 需要全局注入的script脚本，支持注入head & body底部
-// const scriptTags = re
+const STATIC_FILE = require('@/common/libs/libs.js')
 
 /**
  * 页面 title
@@ -41,4 +38,4 @@ const moduleExports = {
   }
 }
 
-export default moduleExports
+module.exports = moduleExports
