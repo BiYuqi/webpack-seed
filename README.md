@@ -202,6 +202,16 @@ npm run new
 
 > [Pull Request使用](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)
 
+## Know issues
+* If you got error about node-sass or sass-loader
+
+`Uncaught Error: Module build failed (from ./node_modules/sass-loader/lib/loader.js)`
+
+run:
+```
+npm rebuild node-sass --force
+``` 
+
 ## Reference
 
 本脚手架开发中，ejs模板渲染实现这块参考了[webpack-seed](https://github.com/Array-Huang/webpack-seed), 特此备注
