@@ -22,6 +22,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     proxy: baseConfig.dev.proxyTable
   },
   plugins: [
+    new webpack.DefinePlugin({
+      ISPROD: JSON.stringify(false)
+    }),
     // hot replace 热更新需要配置该项
     new webpack.HotModuleReplacementPlugin(),
 

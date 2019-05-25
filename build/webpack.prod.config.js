@@ -86,6 +86,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      ISPROD: JSON.stringify(true)
+    }),
     // 打包前清理旧文件夹
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
