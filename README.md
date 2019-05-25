@@ -134,11 +134,12 @@ npm run ci
 
 **支持命令行创建页面**
 
-该命令支持创建页面四件套,帮助快速构建页面,不再一个文件一个文件写
+该命令支持创建页面四件套, 帮助快速构建页面, 无需重复coding
 [README](./bin/README.md)
 ```js
 npm run new
 ```
+> 注：创建页面后需要重新执行`npm run dev`才能生效
 
 ## Coding Standard
 

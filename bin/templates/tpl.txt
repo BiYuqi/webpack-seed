@@ -1,7 +1,7 @@
-const content = require('./{{fileName}}.ejs')
-const layout = require('layout/{{templateDir}}/{{templateName}}.js')
+import content from './{{fileName}}.ejs'
+import layout from 'layout/{{templateDir}}/{{templateName}}.js'
 const pageTitle = '{{pageTitle}}'
 
 const temp = layout.init({ pageTitle }).run(content())
 
-module.exports = temp
+export default temp
