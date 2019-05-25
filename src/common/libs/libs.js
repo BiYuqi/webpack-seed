@@ -5,7 +5,7 @@
  * 注意路径问题
  * 只需要在此处配置好，页面会自动引入
  */
-const BUILD_STATIC_FILES = {
+const addThirdLibrary = {
   STATIC_BUILD: {
     js: {
       // If you want to load third library, you can set like this.
@@ -18,4 +18,4 @@ const BUILD_STATIC_FILES = {
     }
   }
 }
-module.exports = BUILD_STATIC_FILES
+module.exports = addThirdLibrary

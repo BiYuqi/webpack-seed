@@ -4,10 +4,7 @@ import footerBase from '../base/footerBase/footerBase.ejs'
 import header from '../base/header/header.ejs'
 import footer from '../base/footer/footer.ejs'
 // 第三方库静态地址变量--->注入模板
-import STATIC_FILE from '@/common/libs/libs.js'
-
-// 需要全局注入的script脚本，支持注入head & body底部
-// const scriptTags = re
+import addThirdLibrary from '../../common/libs/libs.js'
 
 /**
  * 页面 title
@@ -29,7 +26,7 @@ const moduleExports = {
   },
   run(content) {
     // 此处后续可添加全局的初始化配置加载第三库的选项
-    const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
+    const componentBaseData = Object.assign({}, addThirdLibrary, printConfig)
     const renderData = {
       headerBase: headerBase(componentBaseData),
       footerBase: footerBase(componentBaseData),
