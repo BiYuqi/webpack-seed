@@ -1,10 +1,10 @@
-#wrap{
+.wbs-home{
   text-align: center;
   min-height: 400px;
-  .index-title{
+  &_title{
     padding: 15px;
   }
-  .ejs-dynamic-inject{
+  &_dynamic-inject{
     width: 600px;
     margin: 20px auto 50px;
     box-shadow: 0 2px 4px 2px rgba(14,30,37,.12);
@@ -27,8 +27,8 @@
   }
 }
 @media screen and (max-width: 480px) {
-  #wrap{
-    .ejs-dynamic-inject{
+  .wbs-home{
+    &_dynamic-inject{
       width: 70%;
       margin: 10% auto;
       li{

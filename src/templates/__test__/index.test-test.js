@@ -15,8 +15,8 @@ describe('Test Ejs Template', () => {
   const classReg = /class="([^"]+)"/gm
   const hrefReg = /href="([^"]+)"/
 
-  it('should render correct className ejs-dynamic-item', () => {
-    expect(classReg.exec(html)[1]).to.equal('ejs-dynamic-item')
+  it('should render correct className wbs-home_dynamic-inject-item', () => {
+    expect(classReg.exec(html)[1]).to.equal('wbs-home_dynamic-inject-item')
   })
 
   it('should render correct icon className iconfont icon-rocket', () => {

@@ -1,44 +1,46 @@
 @import './variable.scss';
-.test-btn{
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-// header
-.header{
-  height: 60px;
-  font-weight: bold;
-  background-color: #fff;
-  box-shadow: 0 2px 8px #f0f1f2;
-  color: #666;
-  .header-btn{
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
+.wbs {
+  &-test-btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
   }
-  img{
-    margin-right: 12px;
+
+  &-header{
+    height: 60px;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 0 2px 8px #f0f1f2;
+    color: #666;
+    &_btn-test{
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    img{
+      margin-right: 12px;
+    }
   }
-}
-// footer
-.footer {
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  margin-top: -50px;
-  color: #fff;
-  font-weight: bold;
-  background-color: $baseBg;
-  .icon-heart-fill{
-    color: red;
+
+  &-footer {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: -50px;
+    color: #fff;
+    font-weight: bold;
+    background-color: $baseBg;
+    .icon-heart-fill{
+      color: red;
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
-  .header{
+  .wbs-header{
     padding: 0 15px;
   }
 }

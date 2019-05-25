@@ -1,5 +1,5 @@
 @import '../../common/css/variable.scss';
-.ws-login{
+.wbs-login{
   @include abs(50%, auto, auto, 50%);
   @include tf;
   @include flex(center, center, column);
@@ -7,34 +7,22 @@
   height: 340px;
   border-radius: 6px;
   box-shadow: 1px 2px 18px 1px rgba(0, 0, 0, 0.2);
-  .login-btn{
+  
+  &_btn{
     background-color: $baseBtn;
     color: #fff;
     padding: 5px 13px;
   }
-  .login-title{
-    text-align: center;
-    font-size: 18px;
-    color: rgb(63, 60, 60);
-    font-weight: 700;
-    height: 80px;
-    line-height: 80px;
-  }
-  .ws-login-block{
+  .ws-login_form{
     height: 100%;
     line-height: 100%;
     text-align: center;
     flex: 1;
     @include flex(center, center);
   }
-}
-@media screen and (max-width: 480px) {
-  .ws-login{
+
+  @media screen and (max-width: 480px) {
     width: 85%;
     height: 35%;
-    .login-title{
-      height: 50px;
-      line-height: 50px;
-    }
   }
 }

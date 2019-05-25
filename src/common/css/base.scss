@@ -2,10 +2,12 @@
 @import './reset.scss';
 @import './common.scss';
 
-.ws-wrap {
-  min-height: 100%;
-  background-color: #fff;
-  &-inside {
-    padding-bottom: 50px;
+.wbs {
+  &-wrap {
+    min-height: 100%;
+    background-color: #fff;
+    &-inside {
+      padding-bottom: 50px;
+    }
   }
 }

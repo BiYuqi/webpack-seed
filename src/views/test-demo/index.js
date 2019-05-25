@@ -14,24 +14,30 @@ class TestDemo {
   }
 
   testToolFun() {
-    __('.about-title').html('Test Page')
+    __('.wbs-test-page_title').html('Test Page')
 
-    __('.about-test').on('click', () => {
+    __('.wbs-test-page_about-test').on('click', () => {
       alert('Test Page Js')
     })
   }
 
   testFetchData() {
-    const aboutAjax = __('.about-ajax')
+    const aboutAjax = __('.wbs-test-page_about-ajax')
     aboutAjax.on('click', () => {
       aboutAjax.prop('disabled', true).css({
         cursor: 'not-allowed'
       })
-      __('.movie-item').html('正在加载中......')
+      __('.wbs-test-page_movie').html('正在加载中......')
 
       let template = ''
       movieList({})
         .then(res => {
+          console.log(res)
+          if (res.data.code !== 200) {
+            __('.wbs-test-page_movie').html(res.data.msg)
+            return
+          }
+
           const list = res.data.subjects
           list.forEach(item => {
             template += `<a href="${item.alt}" target="_blank">
@@ -39,13 +45,13 @@ class TestDemo {
           </a>`
           })
 
-          __('.movie-item').html(template)
+          __('.wbs-test-page_movie').html(template)
           aboutAjax.prop('disabled', false).css({
             cursor: 'pointer'
           })
         })
         .catch(error => {
-          __('.movie-item').html('请求失败,请检查网络, 重新发起请求')
+          __('.wbs-test-page_movie').html('请求失败,请检查网络, 重新发起请求')
           aboutAjax.prop('disabled', false).css({
             cursor: 'pointer'
           })

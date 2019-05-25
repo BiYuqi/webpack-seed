@@ -1,15 +1,19 @@
 @import '../../common/css/variable.scss';
-.home-sign{
+.wbs-test-page {
   text-align: center;
-}
-.about-page{
-  display: flex;
-  justify-content: space-between;
-  .about-left,
-  .movie-list{
+  padding: 20px 0;
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_left,
+  &_right{
     width: 50%;
   }
-  .about-btn{
+
+  &_about-btn{
     padding: 6px 10px;
     border-radius: 4px;
     color: #fff;
@@ -18,18 +22,21 @@
     outline: none;
     cursor: pointer;
   }
-  .js-box{
+
+  &_js-box,
+  &_ajax-box {
     text-align: center;
     margin: 15px;
   }
-  .img-box{
+
+  &_img-box{
     text-align: center;
     img{
       width: 95%;
       border: 1px dashed #4bbbdd;
     }
   }
-  .movie-item{
+  &_movie{
     list-style: none;
     padding: 0 15px;
     li{
@@ -40,12 +47,15 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .about-page{
-    display: flex;
-    justify-content: inherit;
-    flex-direction: column;
-    .about-left,
-    .movie-list{
+  .wbs-test-page {
+    &_content {
+      display: flex;
+      justify-content: inherit;
+      flex-direction: column;
+    }
+
+    &_left,
+    &_right{
       width: 100%;
     }
   }
