@@ -1,9 +1,9 @@
-const layoutAuth = require('./layoutAuth.ejs')
-const headerBase = require('../base/headerBase/headerBase.ejs')
-const footerBase = require('../base/footerBase/footerBase.ejs')
+import layoutAuth from './layoutAuth.ejs'
+import headerBase from '../base/headerBase/headerBase.ejs'
+import footerBase from '../base/footerBase/footerBase.ejs'
 
 // 第三方库静态地址变量--->注入模板
-const STATIC_FILE = require('@/common/libs/libs.js')
+import addThirdLibrary from '../../common/libs/libs.js'
 
 /**
  * 页面 title
@@ -25,7 +25,7 @@ const moduleExports = {
   },
   run(content) {
     // 此处后续可添加全局的初始化配置加载第三库的选项
-    const componentBaseData = Object.assign({}, STATIC_FILE, printConfig)
+    const componentBaseData = Object.assign({}, addThirdLibrary, printConfig)
     const renderData = {
       headerBase: headerBase(componentBaseData),
       footerBase: footerBase(componentBaseData),
@@ -35,4 +35,4 @@ const moduleExports = {
   }
 }
 
-module.exports = moduleExports
+export default moduleExports
