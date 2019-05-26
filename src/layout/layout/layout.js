@@ -6,6 +6,9 @@ import footer from '../base/footer/footer.ejs'
 // 第三方库静态地址变量--->注入模板
 import addThirdLibrary from '../../common/libs/libs.js'
 
+// 注入全局script 添加统计信息或者埋点信息
+import scriptTags from '../../common/libs/scriptTags'
+
 /**
  * 页面 title
  */
@@ -26,7 +29,7 @@ const moduleExports = {
   },
   run(content) {
     // 此处后续可添加全局的初始化配置加载第三库的选项
-    const componentBaseData = Object.assign({}, addThirdLibrary, printConfig)
+    const componentBaseData = Object.assign({}, addThirdLibrary, scriptTags, printConfig)
     const renderData = {
       headerBase: headerBase(componentBaseData),
       footerBase: footerBase(componentBaseData),
