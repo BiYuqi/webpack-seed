@@ -47,8 +47,8 @@ program.action(() => {
           throw err
         }
         successLog('创建目录成功')
-        const tplContent = fs.readFileSync(path.resolve(__dirname, 'templates/tpl.txt')).toString()
-        const indexContent = fs.readFileSync(path.resolve(__dirname, 'templates/index.txt')).toString()
+        const tplContent = fs.readFileSync(path.resolve(__dirname, 'templates/tpl.hbs')).toString()
+        const indexContent = fs.readFileSync(path.resolve(__dirname, 'templates/index.hbs')).toString()
 
         const parseTplResult = handlebars.compile(tplContent)({
           pageTitle: title ? title : '',
