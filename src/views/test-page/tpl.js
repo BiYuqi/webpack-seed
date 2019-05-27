@@ -1,6 +1,6 @@
-import content from './news-tech.ejs'
+import content from './test-page.ejs'
 import layout from 'layout/layout/layout.js'
-const pageTitle = '新闻-科技'
+const pageTitle = '测试页面'
 
 const temp = layout.init({ pageTitle }).run(content())
 

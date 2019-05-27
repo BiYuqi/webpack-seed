@@ -2,7 +2,7 @@
  * 默认样式+默认逻辑 common/js/base.js
  */
 import '@/common/js/base'
-import './test-demo.scss'
+import './test-page.scss'
 // 测试用的工具函数
 import __ from 'utils/dom'
 import { movieList } from '@/api/movie'
