@@ -21,22 +21,22 @@ class HomePage {
     // 测试ejs模板使用
     const data = [
       {
-        link: 'html/test-demo.html',
+        link: 'html/test-page.html',
         key: '测试页面',
         icon: 'iconfont icon-rocket'
       },
       {
-        link: 'html/fonts-demo.html',
+        link: 'html/fonts-page.html',
         key: '内置图标库',
         icon: 'iconfont icon-Dollar'
       },
       {
-        link: 'html/login.html',
+        link: 'html/login-page.html',
         key: '登录页面',
         icon: 'iconfont icon-login'
       },
       {
-        link: 'html/news-tech.html',
+        link: 'html/news-page.html',
         key: '多目录测试',
         icon: 'iconfont icon-edit'
       }

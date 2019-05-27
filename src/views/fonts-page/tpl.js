@@ -1,4 +1,4 @@
-import content from './fonts-demo.ejs'
+import content from './fonts-page.ejs'
 import layout from 'layout/layoutAuth/layoutAuth.js'
 const pageTitle = '图标示例'
 

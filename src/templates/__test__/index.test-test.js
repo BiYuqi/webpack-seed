@@ -5,7 +5,7 @@ describe('Test Ejs Template', () => {
   const data = {
     index: [
       {
-        link: 'html/test-demo.html',
+        link: 'html/test-page.html',
         key: '测试页面',
         icon: 'iconfont icon-rocket'
       }
@@ -24,6 +24,6 @@ describe('Test Ejs Template', () => {
   })
 
   it('should render correct href link', () => {
-    expect(hrefReg.exec(html)[1]).to.equal('html/test-demo.html')
+    expect(hrefReg.exec(html)[1]).to.equal('html/test-page.html')
   })
 })
