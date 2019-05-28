@@ -50,7 +50,7 @@
 - 开箱即用的单元测试环境(当然了,测试用例还得您自己写）
 - ...
 
-注：本项目不依赖Jquery. lib.js可引入jquery，该文件配置可自动加载第三方脚本作为链接使用, 如果不需要,在src/common/libs.js配置文件中移除即可
+注：本项目不依赖Jquery. lib.js可引入jquery，该文件配置可自动加载第三方脚本作为链接使用(script标签的形式引入), 如果需要,在src/common/lib/libs.js配置文件中打开注释即可
 
 
 ## What do we want?

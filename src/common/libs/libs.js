@@ -1,9 +1,10 @@
 /**
- * 第三方库地址映射
- * src/layout/layout/layout.js 初始化注入
- * src/components/footer.ejs 自动注入
+ * 第三方库地址映射变量
+ * src/layout/layout/layout.js 初始化注入配置信息
+ * src/layut/base/footerBase/footerBase.ejs 自动注入页面body之前
+ * src/layut/base/headBase/headBase.ejs 自动注入head
  * 注意路径问题
- * 只需要在此处配置好，页面会自动引入
+ * 只需要在此处配置好，页面会自动遍历js和fixIe引入的文件到对应位置
  */
 const addThirdLibrary = {
   STATIC_BUILD: {
