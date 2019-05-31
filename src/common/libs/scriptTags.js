@@ -1,4 +1,4 @@
-const googleAnaluzer = () => {
+const googleAnalyzer = () => {
   const state = {
     src: 'https://www.googletagmanager.com/gtag/js?id=UA-138873126-2',
     context: `
@@ -16,5 +16,5 @@ const googleAnaluzer = () => {
 }
 
 module.exports = {
-  googleAnaluzer
+  googleAnalyzer: googleAnalyzer()
 }
