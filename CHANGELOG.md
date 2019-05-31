@@ -1,4 +1,9 @@
 ## 迭代日志
+2019.06.01!!
+* 支持配置注入script, 优势避免硬编码插入script,直接支持构建时插入script
+[配置文件](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/scriptTags.js)
+[本项目使用案例](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/base/headerBase/headerBase.ejs#L14)
+
 2019.03.29
 * 变更基础模板位置from `src/component/` to `src/layout/base`
 

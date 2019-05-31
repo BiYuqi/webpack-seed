@@ -40,7 +40,9 @@ tpl.js // (模板拼装入口)
 | **src/**
 | ---common/ 项目公用资源 (公用图片,css,js等配置)
 | ----------------libs.js 第三库自动渲染到页面(此处配置的静态资源,会自动注入到页面) [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/common/libs/libs.js) [注入页面](https://github.com/BiYuqi/webpack-seed/blob/master/src/components/footer/footer.ejs) [底层实现](https://github.com/BiYuqi/webpack-seed/blob/master/src/layout/layout/layout.js#L5)
-| ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/test-page/index.js#L9)
+| ----------------scriptTags.js 配置添加全局的script，比如添加google统计，百度地图等script链接皆可配置
+| ---api 接口请求配置 [配置](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/request.js) [编写](https://github.com/BiYuqi/webpack-seed/blob/master/src/api/movie.js) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/test-demo/index.js#L9)
+>>>>>>> Update Readme & Changelog
 | ---components 项目公用组件部分可以存在此处, 比如自己开发的插件
 | ---layout/ 项目结构模板 (供各个子模块调用，后续可扩展多样化模板,可以添加不带侧边栏的模板等)
 | ----------------base 页面基础模板
