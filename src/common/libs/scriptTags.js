@@ -16,5 +16,5 @@ const googleAnalyzer = () => {
 }
 
 module.exports = {
-  googleAnalyzer: googleAnalyzer()
+  googleAnalyzer
 }
