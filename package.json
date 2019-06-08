@@ -92,6 +92,7 @@
   },
   "browserslist": [
     "> 1%",
+    "Firefox ESR",
     "last 2 versions",
     "ie >= 9"
   ]
