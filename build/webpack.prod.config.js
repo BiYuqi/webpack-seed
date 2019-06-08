@@ -78,7 +78,8 @@ const webpackConfig = merge(baseWebpackConfig, {
           warnings: false,
           compress: {
             // 移除 console
-            drop_console: true
+            drop_console: true,
+            drop_debugger: true
           }
         }
       }),

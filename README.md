@@ -212,6 +212,9 @@ run:
 ```
 npm rebuild node-sass --force
 ``` 
+* IE
+- Support IE9+ (not support flex, please note)
+- Axios not support IE9, you can replace it with other ajax libraby.
 
 ## Reference
 
