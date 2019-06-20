@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const portfinder = require('portfinder')
 const baseWebpackConfig = require('./webpack.base.config')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const utils = require('./utils')
@@ -33,4 +34,17 @@ const webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-module.exports = webpackConfig
+module.exports = async () => {
+  portfinder.basePort = webpackConfig.devServer.port
+
+  portfinder.getPort({ host: '127.0.0.1' }, (err, port) => {
+    if (err) {
+      return
+    }
+    const uri = 'http://127.0.0.1:' + port
+
+    webpackConfig.devServer.port = port
+    console.log('Project is running at', uri)
+  })
+  return webpackConfig
+}

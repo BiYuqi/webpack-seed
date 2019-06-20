@@ -72,6 +72,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "portfinder": "^1.0.20",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.2",
