@@ -215,7 +215,3 @@ npm rebuild node-sass --force
 * IE
 - Support IE9+ (not support flex, please note)
 - Axios not support IE9, you can replace it with other ajax libraby.
-
-## Reference
-
-本脚手架开发中，ejs模板渲染实现这块参考了[webpack-seed](https://github.com/Array-Huang/webpack-seed), 特此备注
