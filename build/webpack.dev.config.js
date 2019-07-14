@@ -2,8 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const portfinder = require('portfinder')
+const chalk = require('chalk')
 const baseWebpackConfig = require('./webpack.base.config')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const utils = require('./utils')
 const baseConfig = require('./config.js')
 
@@ -44,7 +44,7 @@ module.exports = async () => {
     const uri = 'http://127.0.0.1:' + port
 
     webpackConfig.devServer.port = port
-    console.log('Project is running at', uri)
+    console.log(chalk.yellow('Project is running at'), chalk.green(uri))
   })
   return webpackConfig
 }
