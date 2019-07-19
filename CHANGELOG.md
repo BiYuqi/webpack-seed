@@ -11,7 +11,7 @@
 * 新增命令行创建页面[README](./bin/README.md)
 
 2018.10.22
-* 增加个性化模板案例[layoutAuth](https://github.com/BiYuqi/webpack-seed/tree/master/src/layout/layoutAuth)
+* 增加个性化模板案例[layout-without-header-footer](https://github.com/BiYuqi/webpack-seed/tree/master/src/layout/layout-without-header-footer)
 
 2018.10.21
 * 增加模板片段支持,页面中可复用的html都可以抽离为ejs模板片段, 由ejs-loader进行编译 [模板](https://github.com/BiYuqi/webpack-seed/blob/master/src/templates/index.test.ejs) [使用](https://github.com/BiYuqi/webpack-seed/blob/master/src/views/index/index.js#L7)
