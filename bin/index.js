@@ -52,8 +52,7 @@ program.action(() => {
 
         const parseTplResult = handlebars.compile(tplContent)({
           pageTitle: title ? title : '',
-          templateDir: templeteConfig[templete].dir,
-          templateName: templeteConfig[templete].name,
+          templateName: templeteConfig[templete],
           fileName
         })
         const parseIndexResult = handlebars.compile(indexContent)({

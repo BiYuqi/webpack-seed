@@ -1,12 +1,6 @@
-// 模板文件夹名字 & 文件名
+// 模板文件webpack alians 名称
 // 供生成页面使用
 module.exports = {
-  standed: {
-    dir: 'layout',
-    name: 'layout'
-  },
-  notStanded: {
-    dir: 'layoutAuth',
-    name: 'layoutAuth'
-  }
+  'layout contain header and footer': 'layoutBase',
+  'layout not contain header or footer': 'layoutWithoutHeaderFooter'
 }

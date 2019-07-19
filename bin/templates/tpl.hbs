@@ -1,5 +1,5 @@
 import content from './{{fileName}}.ejs'
-import layout from 'layout/{{templateDir}}/{{templateName}}.js'
+import layout from '{{templateName}}'
 const pageTitle = '{{pageTitle}}'
 
 const temp = layout.init({ pageTitle }).run(content())
