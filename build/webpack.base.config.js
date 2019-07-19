@@ -102,12 +102,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.json'],
-    // 配置项目文件别名
+    // global alias name
     alias: {
       '@': resolve('src'),
       assets: resolve('src/common/assets'),
       utils: resolve('src/common/utils'),
-      layout: resolve('src/layout'),
+      // with header and footer
+      layoutBase: resolve('src/layout/layout-base/layout'),
+      // without header and footer
+      layoutWithoutHeaderFooter: resolve('src/layout/layout-without-header-footer/layout'),
       build: resolve('build')
     }
   }

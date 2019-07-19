@@ -1,4 +1,4 @@
-import layoutAuth from './layoutAuth.ejs'
+import layout from './layout.ejs'
 import headerBase from '../base/headerBase/headerBase.ejs'
 import footerBase from '../base/footerBase/footerBase.ejs'
 
@@ -34,7 +34,7 @@ const moduleExports = {
       footerBase: footerBase(componentBaseData),
       content
     }
-    return layoutAuth(renderData)
+    return layout(renderData)
   }
 }
 
