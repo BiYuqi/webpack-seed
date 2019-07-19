@@ -37,11 +37,11 @@ const webpackConfig = merge(baseWebpackConfig, {
 module.exports = async () => {
   portfinder.basePort = webpackConfig.devServer.port
 
-  portfinder.getPort({ host: '127.0.0.1' }, (err, port) => {
+  portfinder.getPort({ host: '0.0.0.0' }, (err, port) => {
     if (err) {
       return
     }
-    const uri = 'http://127.0.0.1:' + port
+    const uri = 'http://0.0.0.0:' + port
 
     webpackConfig.devServer.port = port
     console.log(chalk.yellow('Project is running at'), chalk.green(uri))
