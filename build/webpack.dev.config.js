@@ -17,6 +17,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     compress: true,
     port: baseConfig.dev.port,
     noInfo: true,
+    hot: true,
     // 开启调试, 可在移动端等同wifi环境下 ip访问
     disableHostCheck: true,
     // 跨域配置
@@ -41,7 +42,7 @@ module.exports = async () => {
     if (err) {
       return
     }
-    const uri = 'http://0.0.0.0:' + port
+    const uri = 'http://localhost:' + port
 
     webpackConfig.devServer.port = port
     console.log(chalk.yellow('Project is running at'), chalk.green(uri))

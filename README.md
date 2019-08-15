@@ -179,6 +179,7 @@ npm run new
 - [ ] Use jest replace (基于karma mocha chai)
 - [x] 单独抽离配置文件webpack.seed.common.js
 - [x] 添加prettier自动格式化代码
+- [ ] 提供一个cli工具生成项目
 - [ ] 待完善测试用例编写
 - [ ] 添加doc使用说明以及实现思路解析
 
