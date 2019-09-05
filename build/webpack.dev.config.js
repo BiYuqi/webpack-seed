@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const portfinder = require('portfinder')
+const webpackAutoFindPort = require('webpack-auto-find-port')
 const chalk = require('chalk')
 const baseWebpackConfig = require('./webpack.base.config')
 const utils = require('./utils')
 const baseConfig = require('./config.js')
 
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackDevConfig = merge(baseWebpackConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -35,17 +35,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-module.exports = async () => {
-  portfinder.basePort = webpackConfig.devServer.port
-
-  portfinder.getPort({ host: '0.0.0.0' }, (err, port) => {
-    if (err) {
-      return
-    }
-    const uri = 'http://localhost:' + port
-
-    webpackConfig.devServer.port = port
-    console.log(chalk.yellow('Project is running at'), chalk.green(uri))
-  })
-  return webpackConfig
-}
+module.exports = webpackAutoFindPort({
+  config: webpackDevConfig,
+  logger: port => {
+    console.log(chalk.green(`Project is Running at ${port}`))
+  }
+})
