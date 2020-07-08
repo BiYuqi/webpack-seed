@@ -31,8 +31,7 @@
 
 
 **项目bug, 请提 [issue](https://github.com/BiYuqi/webpack-seed/issues)**
-- [Online demo](https://loadingmore.com/webpack-seed/)
-- [Docs(undone)](http://loadingmore.com/webpack-seed-site/)
+- [Online demo](https://biyuqi.github.io/webpack-seed/)
 ## 特性
 
 - 支持前后端分离开发
