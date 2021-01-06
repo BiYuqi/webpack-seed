@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "axios": "^0.18.1"
+    "axios": "^0.21.1"
   },
   "browserslist": [
     "> 1%",
