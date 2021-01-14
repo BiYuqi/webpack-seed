@@ -211,15 +211,9 @@ yarn run new
 
 ## 已知问题
 
-- If you got error about node-sass or sass-loader
+- [x] If you got error about node-sass or sass-loader
 
-`Uncaught Error: Module build failed (from ./node_modules/sass-loader/lib/loader.js)`
-
-run:
-
-```
-npm rebuild node-sass --force
-```
+本项目已经移除 node-sass,使用 dart-sass(即 sass)
 
 - IE
 
