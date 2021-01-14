@@ -29,18 +29,18 @@ const server = axios.create({
 })
 
 server.interceptors.request.use(
-  config => {
+  (config) => {
     config.headers['Content-Type'] = 'application/json; charset=UTF-8'
     // config.headers['Authorization'] = 'Your server return token'
     return config
   },
-  error => {
+  (error) => {
     return Promise.reject(error)
   }
 )
 
 server.interceptors.response.use(
-  response => {
+  (response) => {
     /**
      * 这里可以做接口相关的拦截设置
      */
@@ -50,7 +50,7 @@ server.interceptors.response.use(
     // }
     return response
   },
-  error => {
+  (error) => {
     return Promise.reject(error)
   }
 )

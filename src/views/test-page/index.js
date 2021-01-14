@@ -31,7 +31,7 @@ class TestDemo {
 
       let template = ''
       movieList({})
-        .then(res => {
+        .then((res) => {
           console.log(res)
           if (res.data.code !== 200) {
             __('.wbs-test-page_movie').html(res.data.msg)
@@ -39,7 +39,7 @@ class TestDemo {
           }
 
           const list = res.data.subjects
-          list.forEach(item => {
+          list.forEach((item) => {
             template += `<a href="${item.alt}" target="_blank">
             <li>${item.title} --- ${item.genres.join(',')}</li>
           </a>`
@@ -50,7 +50,7 @@ class TestDemo {
             cursor: 'pointer'
           })
         })
-        .catch(error => {
+        .catch((error) => {
           __('.wbs-test-page_movie').html('请求失败,请检查网络, 重新发起请求')
           aboutAjax.prop('disabled', false).css({
             cursor: 'pointer'

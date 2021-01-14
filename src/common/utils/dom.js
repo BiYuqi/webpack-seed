@@ -36,7 +36,7 @@ class MinJQ {
   }
   on(type, fn) {
     this.elem &&
-      this.elem.addEventListener(type, e => {
+      this.elem.addEventListener(type, (e) => {
         fn && fn(e)
       })
     return this
@@ -87,7 +87,7 @@ class MinJQ {
   }
   getStyle() {}
 }
-const minJq = arg => {
+const minJq = (arg) => {
   return new MinJQ(arg)
 }
 export default minJq
