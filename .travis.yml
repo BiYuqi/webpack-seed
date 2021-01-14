@@ -1,11 +1,8 @@
 language: node_js
 node_js:
-  - '8'
   - '10'
-
-# cache:
-#   directories:
-#     - node_modules
+  - '12'
+  - '14'
 
 before_install:
   - export TZ='Asia/Beijing' # 更改时区
@@ -21,7 +18,7 @@ script:
 
 after_script:
   - cd ./dist
-  - git init 
+  - git init
   - git config user.name "BiYuqi"
   - git config user.email "biyuqiwan@163.com"
   - git add .
