@@ -211,11 +211,15 @@ yarn run new
 
 ## 已知问题
 
-- [x] If you got error about node-sass or sass-loader
+#### 安装 node-sass 失败?
 
-本项目已经移除 node-sass,使用 dart-sass(即 sass)
+推荐使用淘宝镜像, 本项目已经移除 node-sass, 使用 dart-sass(即 sass)
 
-- IE
+#### IE
 
-* Support IE9+ (not support flex, please note)
-* Axios not support IE9, you can replace it with other ajax libraby.
+- 支持 IE9+
+- [axios browser support](https://github.com/axios/axios#browser-support)
+
+#### 关于 windows 平台下 warning Delete `␍` prettier/prettier（eslint 配置的一些问题)
+
+- [x] [solution](https://github.com/BiYuqi/webpack-seed/issues/40)
