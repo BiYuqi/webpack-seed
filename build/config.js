@@ -1,7 +1,5 @@
-'use strict'
-
 const path = require('path')
-const webpackSeedCommon = require('../webpack.seed.common')
+const webpackSeedCommon = require('../ws.config')
 
 module.exports = {
   NORMAL_PAGE_PATH: webpackSeedCommon.NORMAL_PAGE_PATH,

@@ -2689,6 +2689,11 @@ deep-is@^0.1.3, deep-is@~0.1.3:
   resolved "https://registry.npm.taobao.org/deep-is/download/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
 
+deepmerge@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
+  integrity sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
+
 default-gateway@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/default-gateway/download/default-gateway-4.2.0.tgz?cache=0&sync_timestamp=1610365825693&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdefault-gateway%2Fdownload%2Fdefault-gateway-4.2.0.tgz#167104c7500c2115f6dd69b0a536bb8ed720552b"
@@ -4942,6 +4947,11 @@ istanbul@^0.4.0:
     supports-color "^3.1.0"
     which "^1.1.1"
     wordwrap "^1.0.0"
+
+javascript-stringify@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/javascript-stringify/download/javascript-stringify-2.0.1.tgz#6ef358035310e35d667c675ed63d3eb7c1aa19e5"
+  integrity sha1-bvNYA1MQ411mfGde1j0+t8GqGeU=
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -8759,6 +8769,14 @@ webpack-bundle-analyzer@^3.6.1:
     mkdirp "^0.5.1"
     opener "^1.5.1"
     ws "^6.0.0"
+
+webpack-chain@^6.5.1:
+  version "6.5.1"
+  resolved "https://registry.npm.taobao.org/webpack-chain/download/webpack-chain-6.5.1.tgz#4f27284cbbb637e3c8fbdef43eef588d4d861206"
+  integrity sha1-TycoTLu2N+PI+970Pu9YjU2GEgY=
+  dependencies:
+    deepmerge "^1.5.2"
+    javascript-stringify "^2.0.1"
 
 webpack-cli@^3.3.12:
   version "3.3.12"

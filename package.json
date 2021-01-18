@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --inline --mode development --config build/webpack.dev.config",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/dev.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js",
     "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
     "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
@@ -95,6 +95,7 @@
     "webpack": "^4.46.0",
     "webpack-auto-find-port": "0.0.5",
     "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-chain": "^6.5.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"

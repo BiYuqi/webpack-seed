@@ -5,9 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./config.js')
 
-function resolve(dir) {
+const resolve = (dir) => {
   return path.join(__dirname, '..', dir)
 }
+
+exports.resolve = resolve
+
+const sourcePath = path.resolve(__dirname, '..', 'src')
+const buildPath = path.resolve(__dirname, '..', 'dist')
+const testPath = path.resolve(__dirname, '..', 'test')
 
 /**
  * 多入口配置
@@ -15,7 +21,7 @@ function resolve(dir) {
 exports.entries = () => {
   const entryFiles = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_JS_NAME}.js`)
   const entry = {}
-  entryFiles.forEach(filePath => {
+  entryFiles.forEach((filePath) => {
     const fileNameReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_JS_NAME}.js$`)
     const fileName = filePath.match(fileNameReg)[1]
     entry[fileName] = filePath
@@ -28,7 +34,7 @@ exports.entries = () => {
 exports.htmlPlugin = () => {
   const entryHtml = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_TEMPLATE_NAME}.js`)
   const arrHtml = []
-  entryHtml.forEach(htmlPath => {
+  entryHtml.forEach((htmlPath) => {
     const htmlReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
     const filename = htmlPath.match(htmlReg)[1]
     let config = {
@@ -62,7 +68,7 @@ exports.htmlPlugin = () => {
         chunksSortMode: 'dependency'
       })
     }
-    arrHtml.push(new HtmlWebpackPlugin(config))
+    arrHtml.push(config)
   })
   return arrHtml
 }
@@ -70,7 +76,7 @@ exports.htmlPlugin = () => {
  *
  * @param {*} _path
  */
-exports.assetsPath = function(_path) {
+exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production' ? baseConfig.build.assetsSubDirectory : baseConfig.dev.assetsSubDirectory
 
   return path.posix.join(assetsSubDirectory, _path)
