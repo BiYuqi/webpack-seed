@@ -1,28 +1,22 @@
+const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const baseConfig = require('./config.js')
-
-const resolve = (dir) => {
-  return path.join(__dirname, '..', dir)
+const resolve = (dir = '') => {
+  return path.resolve(__dirname, '..', dir)
 }
 
 exports.resolve = resolve
-
-const sourcePath = path.resolve(__dirname, '..', 'src')
-const buildPath = path.resolve(__dirname, '..', 'dist')
-const testPath = path.resolve(__dirname, '..', 'test')
 
 /**
  * 多入口配置
  */
 exports.entries = () => {
-  const entryFiles = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_JS_NAME}.js`)
+  const entryFiles = glob.sync(resolve('src/views') + `/**/*/index.js`)
   const entry = {}
   entryFiles.forEach((filePath) => {
-    const fileNameReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_JS_NAME}.js$`)
+    const fileNameReg = new RegExp(`([^\/]+)\/index.js$`)
     const fileName = filePath.match(fileNameReg)[1]
     entry[fileName] = filePath
   })
@@ -32,10 +26,10 @@ exports.entries = () => {
  * 多页面页面配置
  */
 exports.htmlPlugin = () => {
-  const entryHtml = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_TEMPLATE_NAME}.js`)
+  const entryHtml = glob.sync(resolve('src/views') + `/**/*/tpl.js`)
   const arrHtml = []
   entryHtml.forEach((htmlPath) => {
-    const htmlReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
+    const htmlReg = new RegExp(`([^\/]+)\/tpl\.js$`)
     const filename = htmlPath.match(htmlReg)[1]
     let config = {
       template: htmlPath,
@@ -43,7 +37,7 @@ exports.htmlPlugin = () => {
        * 此处逻辑为，单独抽离index.html放到根目录
        * 其余文件打入html文件件
        */
-      filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
+      filename: filename === 'index' ? `${filename}.html` : `html/${filename}.html`,
       /**
        * 配置网站favicon.ico
        * 自动注入到页面
@@ -72,12 +66,7 @@ exports.htmlPlugin = () => {
   })
   return arrHtml
 }
-/**
- *
- * @param {*} _path
- */
-exports.assetsPath = function (_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production' ? baseConfig.build.assetsSubDirectory : baseConfig.dev.assetsSubDirectory
 
-  return path.posix.join(assetsSubDirectory, _path)
+exports.findExistSync = (context, entry) => {
+  return fs.existsSync(path.resolve(context, entry))
 }

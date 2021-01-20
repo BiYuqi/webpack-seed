@@ -1,23 +1,21 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./base')
-const { resolve, htmlPlugin } = require('./utils')
+const { resolve } = require('./utils')
+const options = require('./options')
 
 config
   .mode('development')
   .output.path(resolve('dist'))
   .filename('[name].js')
+  .publicPath('/')
   .end()
-  .devServer.contentBase([resolve('src'), resolve('dist')])
-  .port(8989)
+  .devServer.contentBase(resolve('dist'))
+  .port(options.port)
   .hot(true)
   .inline(true)
   .noInfo(true)
   .disableHostCheck(true)
   .end()
 
-htmlPlugin().forEach((htmlOptions, index) => {
-  config.plugin(`html-plugin-${index}`).use(HtmlWebpackPlugin, [htmlOptions])
-})
+options.chainWebpack && options.chainWebpack(config)
 
-console.log(JSON.stringify(config.toConfig(), null, 2))
 module.exports = config.toConfig()

@@ -1,9 +1,13 @@
+const webpack = require('webpack')
 const Config = require('webpack-chain')
-const { resolve, entries } = require('./utils')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { resolve, entries, htmlPlugin } = require('./utils')
 
 const config = new Config()
 
 const entriesFilePath = entries()
+
+config.context(resolve(''))
 
 Object.keys(entriesFilePath).forEach((name) => {
   config.entry(name).add(entriesFilePath[name]).end()
@@ -35,7 +39,7 @@ config.module
   .use('sass-loader')
   .loader('sass-loader')
   .end()
-  .use('sass-loader')
+  .use('postcss-loader')
   .loader('postcss-loader')
   .end()
 
@@ -87,5 +91,15 @@ config.resolve.alias
   .set('utils', resolve('src/common/utils'))
   .set('layoutWithoutHeaderFooter', resolve('src/layout/layout-without-header-footer/layout'))
   .end()
+
+config.plugin('define-plugin').use(webpack.DefinePlugin, [
+  {
+    ISPROD: JSON.stringify(false)
+  }
+])
+
+htmlPlugin().forEach((htmlOptions, index) => {
+  config.plugin(`html-plugin-${index}`).use(HtmlWebpackPlugin, [htmlOptions])
+})
 
 module.exports = config
