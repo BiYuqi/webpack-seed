@@ -1,5 +1,6 @@
 @import '../../common/css/variable.scss';
-.wbs-login{
+
+.wbs-login {
   @include abs(50%, auto, auto, 50%);
   @include tf;
   @include flex(center, center, column);
@@ -7,13 +8,13 @@
   height: 340px;
   border-radius: 6px;
   box-shadow: 1px 2px 18px 1px rgba(0, 0, 0, 0.2);
-  
-  &_btn{
+
+  &_btn {
     background-color: $baseBtn;
     color: #fff;
     padding: 5px 13px;
   }
-  .ws-login_form{
+  .ws-login_form {
     height: 100%;
     line-height: 100%;
     text-align: center;

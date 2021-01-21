@@ -4,7 +4,7 @@
 import '@/common/js/base'
 import './index.scss'
 // 测试用的dom函数
-import __ from 'utils/dom'
+import __ from '../../common/utils/dom'
 import EjsTest from '@/templates/index.test.ejs'
 
 class HomePage {

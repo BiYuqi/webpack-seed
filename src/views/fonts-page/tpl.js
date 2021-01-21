@@ -1,7 +1,7 @@
 import content from './fonts-page.ejs'
-import layout from 'layoutWithoutHeaderFooter'
-const pageTitle = '图标示例'
+import { Layout } from '../../layout'
 
-const temp = layout.init({ pageTitle }).run(content())
-
-export default temp
+export default new Layout({
+  pageTitle: '图标示例',
+  renderMode: 'standardWithoutBase'
+}).render(content())

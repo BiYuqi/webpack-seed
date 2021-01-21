@@ -1,7 +1,7 @@
 import content from './login-page.ejs'
-import layout from 'layoutWithoutHeaderFooter'
-const pageTitle = '登录'
+import { Layout } from '../../layout'
 
-const temp = layout.init({ pageTitle }).run(content())
-
-export default temp
+export default new Layout({
+  pageTitle: '登录',
+  renderMode: 'standardWithoutBase'
+}).render(content())

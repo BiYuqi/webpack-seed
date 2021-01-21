@@ -1,7 +1,6 @@
 import content from './news-page.ejs'
-import layout from 'layoutBase'
-const pageTitle = '新闻-科技'
+import { Layout } from '../../../layout'
 
-const temp = layout.init({ pageTitle }).run(content())
-
-export default temp
+export default new Layout({
+  pageTitle: '新闻-科技'
+}).render(content())

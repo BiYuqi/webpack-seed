@@ -12,7 +12,7 @@ install:
 
 script:
   # 为了能在git-pages预览 单独发布带有二级域名的包
-  - npm run build:git
+  - npm run build:github
   # 默认(大部分)
   # - npm run build
 

@@ -3,8 +3,7 @@
  */
 import '@/common/js/base'
 import './test-page.scss'
-// 测试用的工具函数
-import __ from 'utils/dom'
+import __ from '../../common/utils/dom'
 import { movieList } from '@/api/movie'
 
 class TestDemo {

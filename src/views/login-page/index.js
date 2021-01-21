@@ -3,7 +3,7 @@
  */
 import '@/common/js/base'
 import './login-page.scss'
-import __ from 'utils/dom'
+import __ from '../../common/utils/dom'
 
 __('.wbs-login_btn').on('click', () => {
   window.location.href = '/'
