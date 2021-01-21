@@ -5,12 +5,10 @@ import footerBase from './base/footerBase/footerBase.ejs'
 import header from './base/header/header.ejs'
 import footer from './base/footer/footer.ejs'
 // 第三方库静态地址变量--->注入模板
-import { libsConfig } from '@common/libs/libs.js'
+import { libsConfig } from '../common/libs/libs.js'
 // 注入全局script 添加统计信息或者埋点信息
-import { googleAnalyzer } from '@common/libs/scriptTags'
-
-// 支持的两种模板
-const validRenderMode = ['standard', 'standardWithoutBase']
+import { googleAnalyzer } from '../common/libs/scriptTags'
+import { Standard, StandardWithoutBase } from '../constants/template'
 
 /**
  * 注入环境变量
@@ -20,7 +18,7 @@ const validRenderMode = ['standard', 'standardWithoutBase']
 export class Layout {
   constructor(options = {}) {
     this.pageTitle = options.pageTitle
-    this.renderMode = options.renderMode || 'standard'
+    this.renderMode = options.renderMode || Standard
     this.isProduction = process.env.WS_ENV === 'production'
   }
 
@@ -33,14 +31,14 @@ export class Layout {
     }
 
     const skeleton = {
-      standard: baseLayout({
+      [Standard]: baseLayout({
         headerBase: headerBase(EnvVariables),
         footerBase: footerBase(EnvVariables),
         header: header(),
         footer: footer(),
         content
       }),
-      standardWithoutBase: baseLayoutWithout({
+      [StandardWithoutBase]: baseLayoutWithout({
         headerBase: headerBase(EnvVariables),
         footerBase: footerBase(EnvVariables),
         content

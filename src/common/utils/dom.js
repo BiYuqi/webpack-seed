@@ -8,7 +8,7 @@ class MinJQ {
     return reg.test(this.elem.className)
   }
   hasClass(name) {
-    return this.baseReg(name) ? true : false
+    return !!this.baseReg(name)
   }
   addClass(name) {
     if (typeof name !== 'string' || name.indexOf(' ') > -1) {
