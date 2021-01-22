@@ -3,16 +3,16 @@ const path = require('path')
 const glob = require('glob')
 const merge = require('webpack-merge')
 
-const resolve = (dir = '') => {
+function resolve (dir = '') {
   return path.resolve(__dirname, '..', dir)
 }
 
-exports.resolve = resolve
+const isProduction = process.env.NODE_ENV === 'production'
 
 /**
  * 多入口配置
  */
-exports.entries = () => {
+function entries() {
   const entryFiles = glob.sync(resolve('src/views') + `/**/*/index.js`)
   const entry = {}
   entryFiles.forEach((filePath) => {
@@ -25,7 +25,7 @@ exports.entries = () => {
 /**
  * 多页面页面配置
  */
-exports.htmlPlugin = () => {
+function htmlPluginOptions() {
   const entryHtml = glob.sync(resolve('src/views') + `/**/*/tpl.js`)
   const arrHtml = []
   entryHtml.forEach((htmlPath) => {
@@ -38,21 +38,13 @@ exports.htmlPlugin = () => {
        * 其余文件打入html文件件
        */
       filename: filename === 'index' ? `${filename}.html` : `html/${filename}.html`,
-      /**
-       * 配置网站favicon.ico
-       * 自动注入到页面
-       */
       favicon: resolve('favicon.ico'),
-      /**
-       * 此处chunks名字与webpack.prod.config.js配置一致
-       * optimization.splitChunks.cacheGroups
-       * optimization.runtimeChunk
-       */
       chunks: ['commons', 'vendor', 'manifest', filename],
       inject: true,
-      xhtml: true
+      xhtml: true,
+      minify: isProduction
     }
-    if (process.env.NODE_ENV === 'production') {
+    if (isProduction) {
       config = merge(config, {
         minify: {
           removeComments: true,
@@ -67,6 +59,15 @@ exports.htmlPlugin = () => {
   return arrHtml
 }
 
-exports.findExistSync = (context, entry) => {
+function findExistSync(context, entry) {
   return fs.existsSync(path.resolve(context, entry))
+}
+
+
+module.exports = {
+  resolve,
+  entries,
+  htmlPluginOptions,
+  isProduction,
+  findExistSync
 }

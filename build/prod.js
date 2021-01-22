@@ -1,7 +1,7 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const config = require('./base')
 const { resolve } = require('./utils')
@@ -38,7 +38,6 @@ config.optimization
   .runtimeChunk({ name: 'manifest' })
   .splitChunks({
     cacheGroups: {
-      // 复用的文件，单独抽离 后续再优化此配置
       commons: {
         name: 'commons',
         chunks: 'all',
@@ -46,11 +45,10 @@ config.optimization
         minSize: 1,
         priority: 0
       },
-      // 提取 node_modules 中代码
       vendor: {
         name: 'vendor',
         test: /[\\/]node_modules[\\/]/,
-        chunks: 'all',
+        chunks: 'initial',
         priority: 10
       }
     }

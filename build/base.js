@@ -1,7 +1,6 @@
-const webpack = require('webpack')
 const Config = require('webpack-chain')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { resolve, entries, htmlPlugin } = require('./utils')
+const { resolve, entries, htmlPluginOptions } = require('./utils')
 const loadEnv = require('./loadEnv')
 
 // 加载自定环境变量
@@ -86,11 +85,19 @@ config.module
   })
   .end()
 
-config.resolve.extensions.add('.js').add('.json').end()
+config.resolve.extensions
+  .add('.js')
+  .add('.json')
+  .add('.ejs')
+  .end()
 
-config.resolve.alias.set('@', resolve('src')).set('@layout', resolve('src/layout')).set('@common', resolve('src/common')).end()
+config.resolve.alias
+  .set('@', resolve('src'))
+  .set('@layout', resolve('src/layout'))
+  .set('@common', resolve('src/common'))
+  .end()
 
-htmlPlugin().forEach((htmlOptions, index) => {
+htmlPluginOptions().forEach((htmlOptions, index) => {
   config.plugin(`html-plugin-${index}`).use(HtmlWebpackPlugin, [htmlOptions])
 })
 
