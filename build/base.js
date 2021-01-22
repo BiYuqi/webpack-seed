@@ -25,7 +25,7 @@ config.module
   .use('babel')
   .loader('babel-loader')
   .options({
-    presets: [['@babel/preset-env', { modules: false }]]
+    presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3}]]
   })
   .end()
 
