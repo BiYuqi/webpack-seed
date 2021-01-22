@@ -4,15 +4,15 @@ $('.font-weight-normal').on('click', () => {
 
 const demoNav = [
   {
-    pagePath: WS_PLATFORM === 'github' ? '/webpack-seed/index.html' : '/index.html',
+    pagePath: process.env.WS_PLATFORM === 'github' ? '/webpack-seed/index.html' : '/index.html',
     display: '首页'
   },
   {
-    pagePath: WS_PLATFORM === 'github' ? '/webpack-seed/html/test-page.html' : '/html/test-page.html',
+    pagePath: process.env.WS_PLATFORM === 'github' ? '/webpack-seed/html/test-page.html' : '/html/test-page.html',
     display: '测试页'
   },
   {
-    pagePath: WS_PLATFORM === 'github' ? '/webpack-seed/html/fonts-page.html' : '/html/fonts-page.html',
+    pagePath: process.env.WS_PLATFORM === 'github' ? '/webpack-seed/html/fonts-page.html' : '/html/fonts-page.html',
     display: '图标页'
   }
 ]
@@ -20,5 +20,5 @@ const demoNav = [
 $('.nav-list').html(demoNav.map(info => `<a class="p-2 text-dark" href="${info.pagePath}">${info.display}</a>`))
 $('.nav-wrapper').append(`
 <a class="btn btn-outline-primary" href="${
-  WS_PLATFORM === 'github' ? '/webpack-seed/html/login-page.html' : '/html/login-page.html'
+  process.env.WS_PLATFORM === 'github' ? '/webpack-seed/html/login-page.html' : '/html/login-page.html'
 }">登录</a>`)

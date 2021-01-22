@@ -5,7 +5,7 @@ import axios from 'axios'
  */
 const server = axios.create({
   // 测试用的接口, 已经挂掉.
-  baseURL: WS_BASE_API,
+  baseURL: process.env.WS_BASE_API,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json; charset=UTF-8'
@@ -13,17 +13,17 @@ const server = axios.create({
 })
 
 server.interceptors.request.use(
-  (config) => {
+  config => {
     // config.headers['Authorization'] = 'Your server return token'
     return config
   },
-  (error) => {
+  error => {
     return Promise.reject(error)
   }
 )
 
 server.interceptors.response.use(
-  (response) => {
+  response => {
     /**
      * 这里可以做接口相关的拦截设置
      */
@@ -33,7 +33,7 @@ server.interceptors.response.use(
     // }
     return response
   },
-  (error) => {
+  error => {
     return Promise.reject(error)
   }
 )

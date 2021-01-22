@@ -17,16 +17,14 @@ function loadEnv() {
     const hasPath = fs.existsSync(path.resolve(process.cwd(), file))
     if (hasPath) {
       const parsed = dotEnv.parse(fs.readFileSync(file))
+
       dotEnvExpand({
         parsed
       })
 
-
-
       for (const [key, value] of Object.entries(parsed)) {
         if (key.startsWith(envPrefix) && env[key] === undefined) {
           env[key] = value
-          process.env[key] = value
         }
       }
     }

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve, entries, htmlPluginOptions } = require('./utils')
 const loadEnv = require('./loadEnv')
 
-// 加载自定环境变量
+// 加载用户自定义环境变量
 const envs = loadEnv()
 
 const config = new Config()
@@ -102,11 +102,14 @@ htmlPluginOptions().forEach((htmlOptions, index) => {
   config.plugin(`html-plugin-${index}`).use(HtmlWebpackPlugin, [htmlOptions])
 })
 
+// 写入全局变量
 if (Object.keys(envs).length) {
   Object.keys(envs).forEach(env => {
     envs[env] = JSON.stringify(envs[env])
   })
-  config.plugin('define-env').use(webpack.DefinePlugin, [envs])
+  config.plugin('define-env').use(webpack.DefinePlugin, [{
+    'process.env': envs
+  }])
 }
 
 module.exports = config
