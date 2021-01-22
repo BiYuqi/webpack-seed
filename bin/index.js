@@ -17,7 +17,8 @@ program.action(() => {
     1. 文件名不包含数字, 模块名即为文件名, 不能与页面现存重复.
     2. 常规的就是直接输入文件名(模块名)即可自动创建页面.
     3. e.g. 输入new-page 即可交互式创建该页面.
-    4. 创建嵌套页面, 需要输入嵌套规则 path/path/path.[暂未实现 => TODO]
+    4. standard: '标准页面'
+    5. standardWithoutBase: '不包含header和footer的页面'
   `)
   inquirer
     .prompt([
@@ -28,7 +29,7 @@ program.action(() => {
       },
       {
         type: 'list',
-        name: 'templete',
+        name: 'template',
         message: '请选择页面模板',
         choices: Object.keys(templeteConfig)
       },
@@ -37,11 +38,11 @@ program.action(() => {
         message: '请输入页面title(非必填,建议填写)'
       }
     ])
-    .then(answer => {
-      const { description, templete, title } = answer
+    .then((answer) => {
+      const { description, template, title } = answer
       const { fileName } = getFileName(description)
 
-      fs.mkdir(path.resolve(__dirname, '../', `src/views/${fileName}`), err => {
+      fs.mkdir(path.resolve(__dirname, '../', `src/views/${fileName}`), (err) => {
         if (err) {
           errorLog(err)
           throw err
@@ -52,7 +53,7 @@ program.action(() => {
 
         const parseTplResult = handlebars.compile(tplContent)({
           pageTitle: title ? title : '',
-          templateName: templeteConfig[templete],
+          renderMode: templeteConfig[template],
           fileName
         })
         const parseIndexResult = handlebars.compile(indexContent)({

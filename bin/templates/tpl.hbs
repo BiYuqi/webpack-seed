@@ -1,7 +1,8 @@
 import content from './{{fileName}}.ejs'
-import layout from '{{templateName}}'
-const pageTitle = '{{pageTitle}}'
+import { Layout } from '../../layout'
+import { {{renderMode}} } from '../../constants/template'
 
-const temp = layout.init({ pageTitle }).run(content())
-
-export default temp
+export default new Layout({
+  pageTitle: '{{pageTitle}}',
+  renderMode: {{renderMode}}
+}).render(content())

@@ -13,7 +13,7 @@ class TestDemo {
 
   testToolFun() {
     $('.js-btn').on('click', () => {
-      alert('点击被相应')
+      alert('点击被响应')
     })
   }
 
