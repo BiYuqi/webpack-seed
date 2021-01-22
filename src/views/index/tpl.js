@@ -1,7 +1,6 @@
 import content from './index.ejs'
-import layout from 'layoutBase'
-const pageTitle = '首页'
+import { Layout } from '../../layout'
 
-const temp = layout.init({ pageTitle }).run(content())
-
-export default temp
+export default new Layout({
+  pageTitle: '首页'
+}).render(content())

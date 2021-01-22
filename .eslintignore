@@ -1,3 +1,16 @@
 /coverage/**
 src/vendor/
 karma.conf.js
+/build/
+
+src/common/vendor
+dist
+node_modules
+
+package.json
+package-lock.json
+
+.prettierignore
+.prettierrc.js
+.eslintrc.js
+.eslintignore

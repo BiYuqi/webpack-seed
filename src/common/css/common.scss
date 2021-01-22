@@ -1,46 +1,28 @@
-@import './variable.scss';
-.wbs {
-  &-test-btn {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 6px;
-  }
+@import '../assets/fonts/iconfont.css';
+@import './variable';
+@import './reset.scss';
 
-  &-header{
-    height: 60px;
-    font-weight: bold;
-    background-color: #fff;
-    box-shadow: 0 2px 8px #f0f1f2;
-    color: #666;
-    &_btn-test{
-      max-width: 1200px;
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-    }
-    img{
-      margin-right: 12px;
-    }
-  }
+.ws-main {
+  /** 移除了header & footer高度 */
+  min-height: calc(100% - 200px);
+  background-color: #fff;
 
-  &-footer {
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    margin-top: -50px;
-    color: #fff;
-    font-weight: bold;
-    background-color: $baseBg;
-    .icon-heart-fill{
-      color: red;
-    }
+  &__inner {
+    /** footer 始终在最下方 */
+    padding-bottom: 50px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .wbs-header{
-    padding: 0 15px;
+.ws-footer {
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  /** footer 始终在最下方 */
+  margin-top: -50px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #3b454a;
+  .icon-heart-fill {
+    color: red;
   }
 }

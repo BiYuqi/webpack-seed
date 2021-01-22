@@ -1,22 +1,22 @@
+const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const baseConfig = require('./config.js')
-
-function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+function resolve (dir = '') {
+  return path.resolve(__dirname, '..', dir)
 }
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 /**
  * 多入口配置
  */
-exports.entries = () => {
-  const entryFiles = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_JS_NAME}.js`)
+function entries() {
+  const entryFiles = glob.sync(resolve('src/views') + `/**/*/index.js`)
   const entry = {}
-  entryFiles.forEach(filePath => {
-    const fileNameReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_JS_NAME}.js$`)
+  entryFiles.forEach((filePath) => {
+    const fileNameReg = new RegExp(`([^\/]+)\/index.js$`)
     const fileName = filePath.match(fileNameReg)[1]
     entry[fileName] = filePath
   })
@@ -25,11 +25,11 @@ exports.entries = () => {
 /**
  * 多页面页面配置
  */
-exports.htmlPlugin = () => {
-  const entryHtml = glob.sync(baseConfig.NORMAL_PAGE_PATH + `/**/*/${baseConfig.STATIC_TEMPLATE_NAME}.js`)
+function htmlPluginOptions() {
+  const entryHtml = glob.sync(resolve('src/views') + `/**/*/tpl.js`)
   const arrHtml = []
-  entryHtml.forEach(htmlPath => {
-    const htmlReg = new RegExp(`([^\/]+)\/${baseConfig.STATIC_TEMPLATE_NAME}\.js$`)
+  entryHtml.forEach((htmlPath) => {
+    const htmlReg = new RegExp(`([^\/]+)\/tpl\.js$`)
     const filename = htmlPath.match(htmlReg)[1]
     let config = {
       template: htmlPath,
@@ -37,22 +37,14 @@ exports.htmlPlugin = () => {
        * 此处逻辑为，单独抽离index.html放到根目录
        * 其余文件打入html文件件
        */
-      filename: filename === 'index' ? `${filename}.html` : `${baseConfig.build.assetsSubDirectory}/${filename}.html`,
-      /**
-       * 配置网站favicon.ico
-       * 自动注入到页面
-       */
+      filename: filename === 'index' ? `${filename}.html` : `html/${filename}.html`,
       favicon: resolve('favicon.ico'),
-      /**
-       * 此处chunks名字与webpack.prod.config.js配置一致
-       * optimization.splitChunks.cacheGroups
-       * optimization.runtimeChunk
-       */
       chunks: ['commons', 'vendor', 'manifest', filename],
       inject: true,
-      xhtml: true
+      xhtml: true,
+      minify: isProduction
     }
-    if (process.env.NODE_ENV === 'production') {
+    if (isProduction) {
       config = merge(config, {
         minify: {
           removeComments: true,
@@ -62,16 +54,20 @@ exports.htmlPlugin = () => {
         chunksSortMode: 'dependency'
       })
     }
-    arrHtml.push(new HtmlWebpackPlugin(config))
+    arrHtml.push(config)
   })
   return arrHtml
 }
-/**
- *
- * @param {*} _path
- */
-exports.assetsPath = function(_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production' ? baseConfig.build.assetsSubDirectory : baseConfig.dev.assetsSubDirectory
 
-  return path.posix.join(assetsSubDirectory, _path)
+function findExistSync(context, entry) {
+  return fs.existsSync(path.resolve(context, entry))
+}
+
+
+module.exports = {
+  resolve,
+  entries,
+  htmlPluginOptions,
+  isProduction,
+  findExistSync
 }

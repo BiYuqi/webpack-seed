@@ -1,13 +1,12 @@
 {
   "name": "webpack-seed",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "webpack搭建多页面模板",
+  "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open --inline --mode development --config build/webpack.dev.config",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config.js",
-    "build:git": "cross-env NODE_ENV=production env_config=git webpack --config build/webpack.prod.config.js",
-    "analyzer": "cross-env NODE_ENV=production npm_config_report=true npm run build",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/dev.js --staging",
+    "build": "cross-env NODE_ENV=production webpack --config build/prod.js --prod",
+    "build:github": "cross-env NODE_ENV=production webpack --config build/prod.js --github",
     "test": "karma start",
     "lint": "eslint -c .eslintrc.js 'src/**/*.js' 'build/**/*.js'",
     "fix": "eslint --fix 'src/**/*.js' 'build/**/*.js'",
@@ -16,7 +15,7 @@
     "new": "node ./bin/index.js"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=10"
   },
   "husky": {
     "hooks": {
@@ -49,13 +48,16 @@
     "autoprefixer": "^10.2.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "boxen": "^5.0.0",
     "chai": "^4.2.0",
     "chalk": "^4.1.0",
-    "clean-webpack-plugin": "^0.1.19",
+    "clean-webpack-plugin": "^3.0.0",
     "commander": "^6.2.1",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "ejs-loader": "^0.3.5",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
@@ -82,6 +84,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "mocha": "^5.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "portfinder": "^1.0.28",
     "postcss": "^8.2.4",
     "postcss-loader": "^4.1.0",
     "prettier": "^2.2.1",
@@ -90,11 +93,12 @@
     "sass-loader": "^10.1.0",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "style-loader": "^2.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "terser-webpack-plugin": "4.x",
     "url-loader": "^1.1.1",
     "webpack": "^4.46.0",
     "webpack-auto-find-port": "0.0.5",
     "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-chain": "^6.5.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"

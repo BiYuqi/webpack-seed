@@ -3,49 +3,26 @@
  */
 import '@/common/js/base'
 import './index.scss'
-// 测试用的dom函数
-import __ from 'utils/dom'
-import EjsTest from '@/templates/index.test.ejs'
+import CardEjs from './card.ejs'
 
 class HomePage {
   init() {
-    this.testTitle()
-    this.testEjsTemplete()
+    this.renderContent()
   }
 
-  testTitle() {
-    __('.wbs-home_title').html('HOME')
-  }
-
-  testEjsTemplete() {
+  renderContent() {
     // 测试ejs模板使用
     const data = [
-      {
-        link: 'html/test-page.html',
-        key: '测试页面',
-        icon: 'iconfont icon-rocket'
-      },
-      {
-        link: 'html/fonts-page.html',
-        key: '内置图标库',
-        icon: 'iconfont icon-Dollar'
-      },
-      {
-        link: 'html/login-page.html',
-        key: '登录页面',
-        icon: 'iconfont icon-login'
-      },
-      {
-        link: 'html/news-page.html',
-        key: '多目录测试',
-        icon: 'iconfont icon-edit'
-      }
+      '支持前后端分离开发',
+      '配置完整的打包方案',
+      '支持本地开发热更新',
+      'EJS 模板编译',
+      'Base64 图片，雪碧图',
+      '内置字体图标库 500+, 开箱即用',
+      '支持 ES6 编写源码，编译生成生产代码 (最新支持可选链，展开操作符)',
+      '...'
     ]
-    __('.wbs-home_dynamic-inject').html(
-      EjsTest({
-        index: data
-      })
-    )
+    $('.ws-home__content').html(CardEjs({ data }))
   }
 }
 

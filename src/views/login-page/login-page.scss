@@ -1,28 +1,11 @@
-@import '../../common/css/variable.scss';
-.wbs-login{
-  @include abs(50%, auto, auto, 50%);
-  @include tf;
-  @include flex(center, center, column);
-  width: 400px;
-  height: 340px;
-  border-radius: 6px;
-  box-shadow: 1px 2px 18px 1px rgba(0, 0, 0, 0.2);
-  
-  &_btn{
-    background-color: $baseBtn;
-    color: #fff;
-    padding: 5px 13px;
-  }
-  .ws-login_form{
-    height: 100%;
-    line-height: 100%;
-    text-align: center;
-    flex: 1;
-    @include flex(center, center);
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 85%;
-    height: 35%;
-  }
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
