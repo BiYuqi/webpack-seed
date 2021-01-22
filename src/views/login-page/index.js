@@ -5,5 +5,6 @@ import '@/common/js/base'
 import './login-page.scss'
 
 $('.ws-login_btn').on('click', () => {
-  window.location.href = '/'
+  // 为了部署演示版加了publicPath
+  window.location.href = process.env.WS_PLATFORM === 'github' ? '/webpack-seed/' : '/'
 })
