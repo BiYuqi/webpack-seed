@@ -1,10 +1,11 @@
+const webpack = require('webpack')
 const Config = require('webpack-chain')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve, entries, htmlPluginOptions } = require('./utils')
 const loadEnv = require('./loadEnv')
 
 // 加载自定环境变量
-loadEnv()
+const envs = loadEnv()
 
 const config = new Config()
 
@@ -100,5 +101,12 @@ config.resolve.alias
 htmlPluginOptions().forEach((htmlOptions, index) => {
   config.plugin(`html-plugin-${index}`).use(HtmlWebpackPlugin, [htmlOptions])
 })
+
+if (Object.keys(envs).length) {
+  Object.keys(envs).forEach(env => {
+    envs[env] = JSON.stringify(envs[env])
+  })
+  config.plugin('define-env').use(webpack.DefinePlugin, [envs])
+}
 
 module.exports = config

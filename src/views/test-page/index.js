@@ -25,7 +25,7 @@ class TestDemo {
       })
       try {
         const res = await movieList({})
-        if (res) {
+        if (res.code === 200) {
           alert('请求成功')
         }
       } catch (e) {

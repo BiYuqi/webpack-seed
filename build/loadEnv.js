@@ -21,9 +21,12 @@ function loadEnv() {
         parsed
       })
 
+
+
       for (const [key, value] of Object.entries(parsed)) {
         if (key.startsWith(envPrefix) && env[key] === undefined) {
           env[key] = value
+          process.env[key] = value
         }
       }
     }

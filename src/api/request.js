@@ -3,10 +3,9 @@ import axios from 'axios'
 /**
  * 全局的接口配置在此处
  */
-console.log(process.env)
 const server = axios.create({
   // 测试用的接口, 已经挂掉.
-  baseURL: process.env.WS_BASE_API,
+  baseURL: WS_BASE_API,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json; charset=UTF-8'
