@@ -1,19 +1,20 @@
-<div class="wbs-test-page">
-  <h1 class="wbs-test-page_title"></h1>
-</div>
-<div class="wbs-test-page_content">
-  <div class="wbs-test-page_left">
-    <div class="wbs-test-page_js-box">
-      <button class="wbs-test-page_about-btn wbs-test-page_about-test">点击测试js是否注入</button>
-    </div>
-    <div class="wbs-test-page_img-box">
-      <img src="<%= require('@common/assets/image/demo.png') %>" width="600" alt="">
+<div class="row">
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">测试JS事件</h5>
+        <p class="card-text">测试逻辑是否生效.</p>
+        <a href="javascript:;" class="btn btn-primary js-btn">点击</a>
+      </div>
     </div>
   </div>
-  <div class="wbs-test-page_right">
-    <div class="wbs-test-page_ajax-box">
-      <button class="wbs-test-page_about-btn wbs-test-page_about-ajax">点击测试接口请求</button>
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">测试接口请求</h5>
+        <p class="card-text">本项目使用axios作为接口请求工具</p>
+        <a href="javascript:;" class="btn btn-primary axios-btn">点击</a>
+      </div>
     </div>
-    <ul class="wbs-test-page_movie"></ul>
   </div>
 </div>
