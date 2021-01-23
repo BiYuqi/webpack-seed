@@ -2,6 +2,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// Warning: This project is no longer maintained. It does not support Webpack 5.
+// https://github.com/numical/script-ext-html-webpack-plugin#deprecation-warning
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const config = require('./base')
 const { resolve } = require('./utils')
@@ -30,6 +33,13 @@ config
     {
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
+    }
+  ])
+  .end()
+  .plugin('inline-manifest')
+  .use(ScriptExtHtmlWebpackPlugin, [
+    {
+      inline: /manifest\..*\.js$/
     }
   ])
   .end()
