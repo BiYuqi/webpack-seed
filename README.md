@@ -5,10 +5,10 @@
 </p>
 <p align="center">
 	<a href="https://webpack.js.org/">
-		<img src="https://img.shields.io/badge/webpack-4.20.2-brightgreen.svg" alt="Webpack">
+		<img src="https://img.shields.io/badge/webpack-4.46.0-brightgreen.svg" alt="Webpack">
 	</a>
 	<a href="https://babeljs.io/">
-		<img src="https://img.shields.io/badge/babel-7.1.2-brightgreen.svg" alt="babel">
+		<img src="https://img.shields.io/badge/babel-7.12.10-brightgreen.svg" alt="babel">
 	</a>
   <a href="https://github.com/BiYuqi/webpack-seed/tree/gh-pages">
     <img src="https://img.shields.io/travis/BiYuqi/webpack-seed.svg">
@@ -16,7 +16,7 @@
   <a href="https://github.com/BiYuqi/webpack-seed/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   </a>
-  
+
 </p>
 
 ## 前言
@@ -33,6 +33,13 @@
 
 - [旧版分支 1.x](https://github.com/BiYuqi/webpack-seed/tree/v1.x-version)
 
+## 新版本 2.x
+
+- [x] 使用[`webpack-chain`](https://github.com/neutrinojs/webpack-chain)进行构建程序
+- [x] 重构整体页面配置, 包括模板的创建, 静态第三方资源的引入方式
+- [x] 全新的变量管理方式, 类 vue-cli 脚手架的配置, 自动读取根目录的环境变量文件`.env[mode]`
+- [x] 支持在`ws.config.js`进行全局的配置打包等配置, 具体可参考 vue.config.js 配置方式
+
 ## 特性
 
 - 支持前后端分离开发
@@ -45,23 +52,53 @@
 - 内置字体图标库 500+, 开箱即用
 - 支持 ES6 语法，编译生成生产代码
 - 支持开发(生产)环境变量注入(基于.env.[mode]文件,类似于 Vue-CLI 脚手架提供的方案)
-- 编译后的程序不依赖于外部的资源, 可自动替换线上资源地址
-- 开箱即用的单元测试环境(当然了,测试用例还得您自己写）
+- 通用的构建方式, 基本是开箱即用. 同时支持通过`ws.config.js`进行灵活的构建配置
 - ...
 
 注：本项目引入了 jquery, bootstrap，该文件配置可自动加载第三方脚本作为链接使用(script 标签的形式引入), 如果需要,在 src/common/lib/index.js 配置即可
 
-## 我们需要什么?
+## 项目结构
 
-展示下页面呈的输出资源:sparkles:
+```sh
+webpack-seed
+├── dist # 输出目录
+├── bin # 创建页面命令
+├── build # webpack构建目录
+├── src # 项目主目录
+├── .editorconfig
+├── .env.github # 环境变量配置
+├── .env.prod # 环境变量配置
+├── .env.staging # 环境变量配置
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .npmrc # npm源
+├── .postcssrc.js
+├── .prettierignore
+├── .prettierrc.js
+├── .travis.yml # CI当前项目demo部署
+├── favicon.ico
+├── LICENSE
+├── README.md
+├── babel.config.js # babel配置
+├── package.json
+├── ws.config.js # 可通过该配置改webpack等配置
+└── yarn.lock
+```
 
-| 页面   | 公用样式   | 当前页面私有样式 | 底层核心库 | 页面公用类库 | 当前页面私有模块 |
-| ------ | ---------- | ---------------- | ---------- | ------------ | ---------------- |
-| 首页   | common.css | index.css        | core.js    | common.js    | index.js         |
-| 列表页 | common.css | list.css         | core.js    | common.js    | list.js          |
-| 详情页 | common.css | detail.css       | core.js    | common.js    | detail.js        |
-| 购物车 | common.css | goods.css        | core.js    | common.js    | goods.js         |
-| 登录页 | common.css | login.css        | core.js    | common.js    | login.js         |
+## 输出
+
+```sh
+dist
+├── css
+├── favicon.ico
+├── fonts
+├── html
+├── image
+├── index.html
+├── js
+└── libs
+```
 
 ## 使用
 
@@ -78,10 +115,10 @@ yarn install
 **本地开发(dev)**
 
 ```sh
-yarn run dev
+yarn run serve
 ```
 
-**打包(dev)**
+**打包(build)**
 
 ```sh
 yarn run build

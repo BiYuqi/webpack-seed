@@ -35,7 +35,7 @@ function htmlPluginOptions() {
       template: htmlPath,
       /**
        * 此处逻辑为，单独抽离index.html放到根目录
-       * 其余文件打入html文件件
+       * 其余文件打入html目录
        */
       filename: filename === 'index' ? `${filename}.html` : `html/${filename}.html`,
       favicon: resolve('favicon.ico'),
