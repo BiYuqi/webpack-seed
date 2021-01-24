@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const Config = require('webpack-chain')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve, entries, htmlPluginOptions } = require('./utils')
+const options = require('./options')
 const loadEnv = require('./loadEnv')
 
 // 加载用户自定义环境变量
@@ -58,6 +59,10 @@ config.module
   .test(/\.hbs$/)
   .use('handlebars-loader')
   .loader('handlebars-loader')
+  .options({
+    // specify rule for static assets
+    inlineRequires: options.assetsRule
+  })
   .end()
 
 config.module
@@ -78,7 +83,9 @@ config.module
   .loader('url-loader')
   .options({
     limit: 10000,
-    name: 'image/[name].[hash:7].[ext]'
+    name: 'image/[name].[hash:7].[ext]',
+    // when using handlebars with inlineRequires options, we need to set esModule as false
+    esModule: false
   })
   .end()
 

@@ -1,9 +1,11 @@
-import baseLayout from './standard.ejs'
-import baseLayoutWithout from './standardWithoutBase.ejs'
-import headerBase from './base/headerBase/headerBase.ejs'
-import footerBase from './base/footerBase/footerBase.ejs'
-import header from './base/header/header.ejs'
-import footer from './base/footer/footer.ejs'
+import handlebars from 'handlebars'
+import baseLayout from './standard.hbs'
+import baseLayoutWithout from './standardWithoutBase.hbs'
+import headerBase from './base/headerBase/headerBase.hbs'
+import footerBase from './base/footerBase/footerBase.hbs'
+import header from './base/header/header.hbs'
+import footer from './base/footer/footer.hbs'
+
 // 第三方库静态地址变量--->注入模板
 import { libsConfig } from '../common/libs'
 // 注入全局script 添加统计信息或者埋点信息
@@ -27,23 +29,25 @@ export class Layout {
       pageTitle: this.pageTitle,
       isProduction: this.isProduction,
       ...libsConfig,
-      googleAnalyzer
+      googleAnalyzer: googleAnalyzer()
     }
 
     const skeleton = {
       [Standard]: baseLayout({
-        headerBase: headerBase(EnvVariables),
-        footerBase: footerBase(EnvVariables),
-        header: header(),
-        footer: footer(),
-        content
+        headerBase: new handlebars.SafeString(headerBase(EnvVariables)),
+        footerBase: new handlebars.SafeString(footerBase(EnvVariables)),
+        header: new handlebars.SafeString(header()),
+        footer: new handlebars.SafeString(footer()),
+        content: new handlebars.SafeString(content())
       }),
       [StandardWithoutBase]: baseLayoutWithout({
-        headerBase: headerBase(EnvVariables),
-        footerBase: footerBase(EnvVariables),
-        content
+        headerBase: new handlebars.SafeString(headerBase(EnvVariables)),
+        footerBase: new handlebars.SafeString(footerBase(EnvVariables)),
+        content: new handlebars.SafeString(content())
       })
     }
+
+    console.log(skeleton)
 
     return skeleton[this.renderMode]
   }

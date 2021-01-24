@@ -32,6 +32,7 @@
 - [Online demo](https://biyuqi.github.io/webpack-seed/)
 
 - [旧版分支 1.x](https://github.com/BiYuqi/webpack-seed/tree/v1.x-version)
+- [新版 ejs 模板分支](https://github.com/BiYuqi/webpack-seed/tree/v2-ejs-version)
 
 ## 新版本 2.x
 
@@ -140,7 +141,7 @@ ws.config.js
 
 ## TODO
 
-- [x] 支持 ejs 和 handlebars 开发(默认支持 ejs, 如需支持 handlebars 请安装 `yarn add handlebars-loader -D`)
+- [x] 支持 ejs 和 handlebars 开发(默认支持`handlebars`, 如需支持 ejs 请安装 `yarn add ejs-loader -D`, 然后可移除 handlebars 或者 2 个模板共存)
 - [ ] 测试框架默认 Jest
 - [ ] 编写创建项目的脚手架, eslint, jest, 等配置可选
 - [ ] 优化 webpack 配置流程, 尽量黑盒化, 约定大于配置

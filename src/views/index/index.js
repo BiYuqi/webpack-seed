@@ -3,7 +3,7 @@
  */
 import '@/common/js/base'
 import './index.scss'
-import CardEjs from './card.ejs'
+import CardEjs from './card.hbs'
 
 class HomePage {
   init() {

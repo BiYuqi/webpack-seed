@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="基于webpack4, babel7 开发可复用的现代化网站 解决非SPA应用, html复用, 模块化开发等问题">
+    <title>
+      {{#if pageTitle}}
+        {{{pageTitle}}}
+      {{/if}}
+    </title>
+    <!--[if lt IE 9]>
+    {{#each fixIePart}}
+      <script type="text/javascript" src="{{this}}"></script>
+    {{/each}}
+    <![endif]-->
+    <!-- 静态样式文件 -->
+    {{#each cssPart}}
+      <link rel="stylesheet" href="{{this}}" crossorigin="anonymous">
+    {{/each}}
+    <!-- 第三方统计 -->
+    {{#if isProduction}}
+      {{{googleAnalyzer}}}
+    {{/if}}
+  </head>
+  <body>
