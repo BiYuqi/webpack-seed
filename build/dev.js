@@ -11,7 +11,7 @@ config
   .filename('[name].js')
   .publicPath('/')
   .end()
-  .devServer.contentBase(resolve('dist'))
+  .devServer.contentBase([resolve('dist'), resolve('src')])
   .port(options.port)
   .hot(true)
   .inline(true)
