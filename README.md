@@ -140,8 +140,12 @@ ws.config.js
 
 ## TODO
 
-- [ ] 测试框架改为 Jest
-- [ ] ejs 模板改为 handlebars 模板
+- [x] 支持 ejs 和 handlebars 开发(默认支持 ejs, 如需支持 handlebars 请安装 `yarn add handlebars-loader -D`)
+- [ ] 测试框架默认 Jest
 - [ ] 编写创建项目的脚手架, eslint, jest, 等配置可选
 - [ ] 优化 webpack 配置流程, 尽量黑盒化, 约定大于配置
 - [ ] 文档补充
+
+## 已知问题
+
+- 如果使用`handlebars`作为模板开发,在 html 中不能使用`require`进行引用静态资源

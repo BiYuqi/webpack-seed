@@ -47,6 +47,7 @@ config.module
   .loader('postcss-loader')
   .end()
 
+// support ejs
 config.module
   .rule('ejs')
   .test(/\.ejs$/)
@@ -54,14 +55,12 @@ config.module
   .loader('ejs-loader')
   .end()
 
+// support handlebars
 config.module
-  .rule('html')
-  .test(/\.html$/i)
-  .use('html-loader')
-  .loader('html-loader')
-  .options({
-    esModule: true
-  })
+  .rule('handlebars')
+  .test(/\.hbs$/)
+  .use('handlebars-loader')
+  .loader('handlebars-loader')
   .end()
 
 config.module
