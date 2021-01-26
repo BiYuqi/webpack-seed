@@ -27,7 +27,7 @@ after_script:
 
 branches:
   only:
-    - master
+    - demo-page
 env:
  global:
    - GH_REF: github.com/BiYuqi/webpack-seed.git
