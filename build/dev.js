@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const portFinder = require('portfinder')
 const chalk = require('chalk')
 const boxen = require('boxen')
