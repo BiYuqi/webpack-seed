@@ -140,7 +140,6 @@ ws.config.js
 
 ## TODO
 
-- [x] 支持 ejs 和 handlebars 开发(默认支持 ejs, 如需支持 handlebars 请安装 `yarn add handlebars-loader -D`)
 - [ ] 测试框架默认 Jest
 - [ ] 编写创建项目的脚手架, eslint, jest, 等配置可选
 - [ ] 优化 webpack 配置流程, 尽量黑盒化, 约定大于配置
@@ -148,4 +147,21 @@ ws.config.js
 
 ## 已知问题
 
-- 如果使用`handlebars`作为模板开发,在 html 中不能使用`require`进行引用静态资源
+##### 热更新
+
+```js
+const isProd = process.env.WS_ENV === 'production'
+
+module.exports = {
+  baseDir: process.env.WS_PLATFORM === 'github' ? '/webpack-seed/' : '/',
+  chainWebpack: config => {
+    /**
+     * 开发环境开启全量更新
+     * 目前只有js scss改动会热更新, ejs文件并不会热更新，如果需要更新, 请配置如下:
+     */
+    if (!isProd) {
+      config.devServer.watchContentBase(true)
+    }
+  }
+}
+```

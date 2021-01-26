@@ -11,13 +11,16 @@ config
   .filename('[name].js')
   .publicPath('/')
   .end()
-  .devServer.contentBase([resolve('dist'), resolve('src')])
+  .devServer.contentBase([resolve('src'), resolve('dist')])
   .port(options.port)
   .hot(true)
   .inline(true)
   .noInfo(true)
   .disableHostCheck(true)
   .end()
+
+// Open HMR
+config.plugin('HMR').use(webpack.HotModuleReplacementPlugin).end()
 
 options.chainWebpack && options.chainWebpack(config)
 
