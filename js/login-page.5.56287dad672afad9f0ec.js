@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{87:function(n,o,c){n.exports=c(88)},88:function(n,o,c){"use strict";c.r(o);c(15),c(89);$(".ws-login_btn").on("click",(function(){window.location.href="/webpack-seed/"}))},89:function(n,o,c){}},[[87,1,2,0]]]);
