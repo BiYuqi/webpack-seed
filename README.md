@@ -153,7 +153,7 @@ ws.config.js
 const isProd = process.env.WS_ENV === 'production'
 
 module.exports = {
-  baseDir: process.env.WS_PLATFORM === 'github' ? '/webpack-seed/' : '/',
+  baseDir: '/',
   chainWebpack: config => {
     /**
      * 开发环境开启全量更新
