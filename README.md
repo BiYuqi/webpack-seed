@@ -149,6 +149,8 @@ ws.config.js
 
 ##### 热更新
 
+`ws.config.js`添加如下如配置即可
+
 ```js
 const isProd = process.env.WS_ENV === 'production'
 
