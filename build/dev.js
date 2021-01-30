@@ -18,6 +18,7 @@ config
   .inline(true)
   .noInfo(true)
   .disableHostCheck(true)
+  .watchContentBase(true)
   .end()
 
 // Open HMR
