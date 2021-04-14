@@ -14,6 +14,7 @@ config
   .end()
   .devServer.contentBase([resolve('src'), resolve('dist')])
   .port(options.port)
+  .open(true)
   .hot(true)
   .inline(true)
   .noInfo(true)
