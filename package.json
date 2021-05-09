@@ -64,7 +64,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "file-loader": "^2.0.0",
     "glob": "^7.1.6",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.3.7",
     "inquirer": "^7.3.3",
